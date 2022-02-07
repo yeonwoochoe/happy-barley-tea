@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const HeaderDiv = styled.div`
+  position: sticky;
+  top: 0;
   width: 100%;
   height: 104px;
   background-color: #aaa;
