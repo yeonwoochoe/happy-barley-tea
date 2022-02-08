@@ -52,3 +52,49 @@ export const SectionWrapper = styled.div`
   margin: auto;
   padding: ${(props) => props.padding || "0 0 0 0"};
 `;
+
+/* display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 40px; */
+
+// display: flex;
+// flex-wrap: wrap;
+// justify-content: space-between;
+// align-items: center;
+// width: 100%;
+
+export const CardWrapper = styled.div`
+  width: ${(props) => props.width || "100%"};
+`;
+
+export const CardList = styled.ul`
+  width: 100%;
+`;
+
+export const CardLi = styled.li`
+  width: ${(props) => props.width || "100%"};
+  margin-bottom: 40px;
+  background-color: #aaaaaa;
+`;
+
+export const CardImage = styled.div`
+  width: ${(props) => props.width || "100%"};
+  height: ${(props) => props.height};
+  background-color: #dddddd;
+`;
+
+export const CardCaption = styled.dl`
+  margin-top: 10px;
+  align-self: flex-start;
+  text-transform: uppercase;
+  font-weight: bold;
+  dt {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  dd {
+    font-size: 22px;
+  }
+`;

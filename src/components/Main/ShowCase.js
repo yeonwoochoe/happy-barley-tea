@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import {
+  CardCaption,
+  CardImage,
+  CardLi,
+  CardList,
+  CardWrapper,
   HeadTitle,
   SectionWrapper,
   ViewContent,
@@ -23,32 +28,6 @@ const ShowWrapper = styled.div`
   margin: auto;
 `;
 
-const CardList = styled.ul`
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 40px;
-`;
-const CardImage = styled.div`
-  width: 265px;
-  height: 290px;
-  background-color: #fff;
-`;
-
-const CardCaption = styled.dl`
-  margin-top: 10px;
-  align-self: flex-start;
-  text-transform: uppercase;
-  font-weight: bold;
-  dt {
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
-  dd {
-    font-size: 22px;
-  }
-`;
 const ShowCase = () => {
   return (
     <ShowCaseDiv>
@@ -60,44 +39,60 @@ const ShowCase = () => {
         <ShowWrapper>
           <WrapperDiv width={`1280px`}>
             <HeadTitle color={`#ffffff`}>show case</HeadTitle>
-            <CardList>
-              <li>
-                <WrapperDiv>
-                  <CardImage>img</CardImage>
-                  <CardCaption>
-                    <dt>enjoy</dt>
-                    <dd>걸어서 겨울 속으로</dd>
-                  </CardCaption>
-                </WrapperDiv>
-              </li>
-              <li>
-                <WrapperDiv>
-                  <CardImage>img</CardImage>
-                  <CardCaption>
-                    <dt>enjoy</dt>
-                    <dd>걸어서 겨울 속으로</dd>
-                  </CardCaption>
-                </WrapperDiv>
-              </li>
-              <li>
-                <WrapperDiv>
-                  <CardImage>img</CardImage>
-                  <CardCaption>
-                    <dt>enjoy</dt>
-                    <dd>걸어서 겨울 속으로</dd>
-                  </CardCaption>
-                </WrapperDiv>
-              </li>
-              <li>
-                <WrapperDiv>
-                  <CardImage>img</CardImage>
-                  <CardCaption>
-                    <dt>enjoy</dt>
-                    <dd>걸어서 겨울 속으로</dd>
-                  </CardCaption>
-                </WrapperDiv>
-              </li>
-            </CardList>
+            <CardWrapper>
+              <CardList
+                style={{
+                  display: "grid",
+                  gridAutoFlow: "column",
+                  justifyContent: "space-between",
+                }}
+              >
+                <CardLi>
+                  <WrapperDiv>
+                    <CardImage width={"265px"} height={"295px"}>
+                      img
+                    </CardImage>
+                    <CardCaption>
+                      <dt>enjoy</dt>
+                      <dd>걸어서 겨울 속으로</dd>
+                    </CardCaption>
+                  </WrapperDiv>
+                </CardLi>
+                <CardLi>
+                  <WrapperDiv>
+                    <CardImage width={"265px"} height={"295px"}>
+                      img
+                    </CardImage>
+                    <CardCaption>
+                      <dt>enjoy</dt>
+                      <dd>걸어서 겨울 속으로</dd>
+                    </CardCaption>
+                  </WrapperDiv>
+                </CardLi>
+                <CardLi>
+                  <WrapperDiv>
+                    <CardImage width={"265px"} height={"295px"}>
+                      img
+                    </CardImage>
+                    <CardCaption>
+                      <dt>enjoy</dt>
+                      <dd>걸어서 겨울 속으로</dd>
+                    </CardCaption>
+                  </WrapperDiv>
+                </CardLi>
+                <CardLi>
+                  <WrapperDiv>
+                    <CardImage width={"265px"} height={"295px"}>
+                      img
+                    </CardImage>
+                    <CardCaption>
+                      <dt>enjoy</dt>
+                      <dd>걸어서 겨울 속으로</dd>
+                    </CardCaption>
+                  </WrapperDiv>
+                </CardLi>
+              </CardList>
+            </CardWrapper>
           </WrapperDiv>
         </ShowWrapper>
       </SectionWrapper>

@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import {
+  CardCaption,
+  CardImage,
+  CardLi,
+  CardList,
+  CardWrapper,
   HeadTitle,
   SectionWrapper,
   ViewContent,
@@ -38,41 +43,6 @@ const Horoscope = styled.div`
     text-justify: auto;
   }
 `;
-const CardWrapper = styled.div`
-  width: 100%;
-`;
-
-const CardList = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  li {
-    width: calc(33.33% - 40px);
-    margin-bottom: 40px;
-  }
-`;
-
-const CardImage = styled.div`
-  width: 100%;
-  height: 470px;
-  background-color: #ddd;
-`;
-
-const CardCaption = styled.dl`
-  margin-top: 10px;
-  align-self: flex-start;
-  text-transform: uppercase;
-  font-weight: bold;
-  dt {
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
-  dd {
-    font-size: 22px;
-  }
-`;
 const LifeStyle = () => {
   return (
     <LifeStyleDiv>
@@ -84,17 +54,24 @@ const LifeStyle = () => {
             <ViewImage>image</ViewImage>
           </ViewWrapper>
           <CardWrapper>
-            <CardList>
-              <li>
+            <CardList
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <CardLi width={"calc(33.33% - 40px)"}>
                 <WrapperDiv>
-                  <CardImage></CardImage>
+                  <CardImage height={"470px"}>image</CardImage>
                   <CardCaption>
                     <dt>trend</dt>
                     <dd>구동경제의 뉴노멀, 구독을 통합하라</dd>
                   </CardCaption>
                 </WrapperDiv>
-              </li>
-              <li>
+              </CardLi>
+              <CardLi width={"calc(33.33% - 40px)"}>
                 <WrapperDiv>
                   <Horoscope>
                     <h3>Horoscope</h3>
@@ -114,43 +91,43 @@ const LifeStyle = () => {
                     </p>
                   </Horoscope>
                 </WrapperDiv>
-              </li>
-              <li>
+              </CardLi>
+              <CardLi width={"calc(33.33% - 40px)"}>
                 <WrapperDiv>
-                  <CardImage></CardImage>
+                  <CardImage height={"470px"}>image</CardImage>
                   <CardCaption>
                     <dt>trend</dt>
                     <dd>구동경제의 뉴노멀, 구독을 통합하라</dd>
                   </CardCaption>
                 </WrapperDiv>
-              </li>
-              <li>
+              </CardLi>
+              <CardLi width={"calc(33.33% - 40px)"}>
                 <WrapperDiv>
-                  <CardImage></CardImage>
+                  <CardImage height={"470px"}>image</CardImage>
                   <CardCaption>
                     <dt>trend</dt>
                     <dd>구동경제의 뉴노멀, 구독을 통합하라</dd>
                   </CardCaption>
                 </WrapperDiv>
-              </li>
-              <li>
+              </CardLi>
+              <CardLi width={"calc(33.33% - 40px)"}>
                 <WrapperDiv>
-                  <CardImage></CardImage>
+                  <CardImage height={"470px"}>image</CardImage>
                   <CardCaption>
                     <dt>trend</dt>
                     <dd>구동경제의 뉴노멀, 구독을 통합하라</dd>
                   </CardCaption>
                 </WrapperDiv>
-              </li>
-              <li>
+              </CardLi>
+              <CardLi width={"calc(33.33% - 40px)"}>
                 <WrapperDiv>
-                  <CardImage></CardImage>
+                  <CardImage height={"470px"}>image</CardImage>
                   <CardCaption>
                     <dt>trend</dt>
                     <dd>구동경제의 뉴노멀, 구독을 통합하라</dd>
                   </CardCaption>
                 </WrapperDiv>
-              </li>
+              </CardLi>
             </CardList>
           </CardWrapper>
         </WrapperDiv>

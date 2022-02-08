@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import EmailReceive from "../components/Main/EmailReceive";
+import HotIssue from "../components/Main/HotIssue";
 import LifeStyle from "../components/Main/LifeStyle";
 import SearchBox from "../components/Main/SearchBox";
 import ShowCase from "../components/Main/ShowCase";
@@ -18,6 +20,8 @@ const Main = () => {
       <SearchBox />
       <YoutubeBox />
       <SingleEdit />
+      <HotIssue />
+      <EmailReceive />
     </MainWrapper>
   );
 };
