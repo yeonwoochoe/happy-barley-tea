@@ -1,17 +1,8 @@
 import React from "react";
-import styled from "styled-components";
-import ShowCase from "../components/Main/ShowCase";
-
-const MainWrapper = styled.main`
-  width: 100%;
-`;
+import Main from "../pages/Main";
 
 const Router = () => {
-  return (
-    <MainWrapper>
-      <ShowCase />
-    </MainWrapper>
-  );
+  return <Main />;
 };
 
 export default Router;
