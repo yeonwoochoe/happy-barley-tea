@@ -1,22 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { HeadTitle, ViewContent, ViewImage, ViewWrapper } from "../UI/Common";
+import {
+  HeadTitle,
+  SectionWrapper,
+  ViewContent,
+  ViewImage,
+  ViewWrapper,
+  WrapperDiv,
+} from "../UI/Common";
 
 const LifeStyleDiv = styled.section`
   width: 100%;
   background-color: rgba(255, 255, 255);
-`;
-const LifeStyleWrapper = styled.div`
-  width: 1280px;
-  margin: auto;
-  padding-top: 120px;
-`;
-const WrapperDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: ${(props) => props.width || "100%"};
 `;
 
 const Horoscope = styled.div`
@@ -33,14 +28,14 @@ const Horoscope = styled.div`
     margin-bottom: 20px;
     font-size: 18px;
     font-weight: bold;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
   span {
-    display: block;
+    display: inline-block;
     width: 100%;
     margin: auto;
+    word-break: keep-all;
+    text-align: justify;
+    text-justify: auto;
   }
 `;
 const CardWrapper = styled.div`
@@ -81,7 +76,7 @@ const CardCaption = styled.dl`
 const LifeStyle = () => {
   return (
     <LifeStyleDiv>
-      <LifeStyleWrapper>
+      <SectionWrapper width={`1280px`} padding={`120px 0`}>
         <HeadTitle color={`#111111`}>lifestyle</HeadTitle>
         <WrapperDiv>
           <ViewWrapper columns={`1fr 2fr`}>
@@ -159,7 +154,7 @@ const LifeStyle = () => {
             </CardList>
           </CardWrapper>
         </WrapperDiv>
-      </LifeStyleWrapper>
+      </SectionWrapper>
     </LifeStyleDiv>
   );
 };

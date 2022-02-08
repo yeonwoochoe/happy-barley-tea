@@ -1,6 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { HeadTitle, ViewContent, ViewImage, ViewWrapper } from "../UI/Common";
+import {
+  HeadTitle,
+  SectionWrapper,
+  ViewContent,
+  ViewImage,
+  ViewWrapper,
+  WrapperDiv,
+} from "../UI/Common";
 
 const ShowCaseDiv = styled.section`
   width: 100%;
@@ -16,13 +23,6 @@ const ShowWrapper = styled.div`
   margin: auto;
 `;
 
-const WrapperDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: ${(props) => props.width || "100%"};
-`;
 const CardList = styled.ul`
   display: grid;
   grid-auto-flow: column;
@@ -52,7 +52,7 @@ const CardCaption = styled.dl`
 const ShowCase = () => {
   return (
     <ShowCaseDiv>
-      <ShowWrapper>
+      <SectionWrapper width={"1460px"} padding={"0 0 120px 0"}>
         <ViewWrapper columns={`2fr 1.1fr`}>
           <ViewContent>1</ViewContent>
           <ViewImage>2</ViewImage>
@@ -100,7 +100,7 @@ const ShowCase = () => {
             </CardList>
           </WrapperDiv>
         </ShowWrapper>
-      </ShowWrapper>
+      </SectionWrapper>
     </ShowCaseDiv>
   );
 };
