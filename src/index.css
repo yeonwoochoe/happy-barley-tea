@@ -1,0 +1,197 @@
+/* globalStyle.js 추가 전까지 일단 reset이 필요해서 넣음 */
+/* reset.css */
+:root {
+  font-size: 16px;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'Mulish', 'Pretendard', sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre,
+address,
+ul,
+li,
+ol,
+dl,
+dt,
+dd,
+hr,
+img,
+div,
+form,
+fieldset,
+legend,
+input,
+select {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+hr {
+  border: 0;
+  border-bottom: 0.0625rem solid #505050;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+em,
+address,
+i {
+  font-style: normal;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+table,
+tr,
+td,
+th,
+thead,
+tbody,
+tfoot {
+  border: 0.0625rem solid #505050;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+header,
+nav,
+article,
+section,
+aside,
+menu,
+footer,
+figure,
+figcaption,
+hgroup {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+  cursor: text;
+}
+
+label,
+input[type='text'],
+input[type='password'],
+input[type='tel'],
+input[type='url'],
+input[type='email'],
+input[type='search'],
+input[type='checkbox'] {
+  text-indent: 0.5rem;
+  cursor: pointer;
+}
+
+/* common.css */
+/* clearfix */
+.clearfix::after,
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+  width: 100%;
+  height: 0;
+}
+
+/* blind */
+.blind_wrap a > span,
+.blind_wrap button > span,
+.blind {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.blind_wrap a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+/* full */
+.full,
+.full_wrap a,
+.full_wrap button {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* container */
+.container {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+#root {
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.none {
+  display: none;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}

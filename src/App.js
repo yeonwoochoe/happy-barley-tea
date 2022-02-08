@@ -1,14 +1,13 @@
-import React from "react";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
-import Router from "./Router/Router";
+import React from 'react';
+import Router from './Router/Router';
+import Layout from './layout/Layout';
 
 const App = () => {
   return (
     <div>
-      <Header />
-      <Router />
-      <Footer />
+      <Layout>
+        <Router />
+      </Layout>
     </div>
   );
 };
