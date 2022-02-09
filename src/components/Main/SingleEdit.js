@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import {
   CardCaption,
@@ -33,7 +34,7 @@ const SingleEdit = () => {
         <WrapperDiv flexDirection={"row"} justifyContent={"space-between"}>
           <HeadTitle color={`#111111`}>single edit</HeadTitle>
           <HeaderMoreButton>
-            <a> + more</a>
+            <Link> + more</Link>
           </HeaderMoreButton>
         </WrapperDiv>
         <ViewWrapper columns={"2fr 1fr"}>

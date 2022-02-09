@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import {
   CardCaption,
@@ -57,7 +58,7 @@ const LifeStyle = () => {
         <WrapperDiv flexDirection={"row"} justifyContent={"space-between"}>
           <HeadTitle color={`#111111`}>lifestyle</HeadTitle>
           <HeaderMoreButton>
-            <a> + more</a>
+            <Link> + more</Link>
           </HeaderMoreButton>
         </WrapperDiv>
         <WrapperDiv>
