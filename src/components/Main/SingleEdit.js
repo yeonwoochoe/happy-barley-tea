@@ -12,7 +12,7 @@ import {
   ViewImage,
   ViewWrapper,
   WrapperDiv,
-} from "../UI/Common";
+} from "./Common";
 
 const SingleEditDiv = styled.section`
   width: 100%;

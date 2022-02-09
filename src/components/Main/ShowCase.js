@@ -12,7 +12,7 @@ import {
   ViewImage,
   ViewWrapper,
   WrapperDiv,
-} from "../UI/Common";
+} from "./Common";
 
 const ShowCaseDiv = styled.section`
   width: 100%;

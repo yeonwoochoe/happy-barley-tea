@@ -12,7 +12,7 @@ import {
   ViewImage,
   ViewWrapper,
   WrapperDiv,
-} from "../UI/Common";
+} from "./Common";
 
 const LifeStyleDiv = styled.section`
   width: 100%;
@@ -43,7 +43,6 @@ const CardMoreLink = styled.div`
     text-justify: auto;
   }
 `;
-
 const HeaderMoreButton = styled.div`
   margin-top: 40px;
   font-size: 20px;

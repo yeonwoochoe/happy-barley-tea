@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { HeadTitle, SectionWrapper, WrapperDiv } from "../UI/Common";
+import { HeadTitle, SectionWrapper, WrapperDiv } from "./Common";
 
 const YoutubeBoxDiv = styled.section`
   width: 100%;
