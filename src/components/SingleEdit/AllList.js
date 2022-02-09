@@ -1,48 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Card, CardContent, CardImage } from "../UI/Common";
 
-const AllList = () => {
+const AllList = ({ data }) => {
   return (
-    <div className={classes["container"]}>
-      <div className={classes["item"]}>
-        <div>content</div>
-        <div>img</div>
-      </div>
-      <div className={classes["item"]}>
+    <Card>
+      <CardImage style={{ backgroundImage: `url(${data.image})` }}>
+        <Link to="/"> </Link>
+      </CardImage>
+      <CardContent>
         <dl>
-          <dt>content</dt>
-          <dd>메인타이틀</dd>
+          <dt>
+            {data.mainTag}
+            <span>{data.hashTag}</span>
+          </dt>
+          <dt>
+            <Link to="/"> {data.mainTitle}</Link>
+          </dt>
         </dl>
-      </div>
-      <div className={classes["item"]}>
-        <dl>
-          <dt>content</dt>
-        </dl>
-      </div>
-      <div className={classes["item"]}>
-        <dl>
-          <dt>content</dt>
-          <dd>메인타이틀</dd>
-        </dl>
-      </div>
-      <div className={classes["item"]}>
-        <dl>
-          <dt>content</dt>
-          <dd>메인타이틀</dd>
-        </dl>
-      </div>
-      <div className={classes["item"]}>
-        <dl>
-          <dt>content</dt>
-          <dd>메인타이틀</dd>
-        </dl>
-      </div>
-      <div className={classes["item"]}>
-        <dl>
-          <dt>content</dt>
-          <dd>메인타이틀</dd>
-        </dl>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ShowCase from "../components/Main/ShowCase";
+import SingleEdit from "../pages/SingleEdit";
 
 const MainWrapper = styled.main`
   width: 100%;
@@ -9,7 +9,7 @@ const MainWrapper = styled.main`
 const Router = () => {
   return (
     <MainWrapper>
-      <ShowCase />
+      <SingleEdit />
     </MainWrapper>
   );
 };

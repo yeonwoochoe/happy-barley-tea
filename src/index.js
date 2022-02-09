@@ -65,6 +65,15 @@ a {
   color:inherit;
   
 }
+button {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+
 /* IR: image replace */
 .blind_wrap a > span,
 .blind_wrap button > span,
