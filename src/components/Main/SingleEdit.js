@@ -34,7 +34,7 @@ const SingleEdit = () => {
         <WrapperDiv flexDirection={"row"} justifyContent={"space-between"}>
           <HeadTitle color={`#111111`}>single edit</HeadTitle>
           <HeaderMoreButton>
-            <Link> + more</Link>
+            <Link to="/"> + more</Link>
           </HeaderMoreButton>
         </WrapperDiv>
         <ViewWrapper columns={"2fr 1fr"}>

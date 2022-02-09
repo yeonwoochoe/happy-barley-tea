@@ -58,7 +58,7 @@ const LifeStyle = () => {
         <WrapperDiv flexDirection={"row"} justifyContent={"space-between"}>
           <HeadTitle color={`#111111`}>lifestyle</HeadTitle>
           <HeaderMoreButton>
-            <Link> + more</Link>
+            <Link to="/"> + more</Link>
           </HeaderMoreButton>
         </WrapperDiv>
         <WrapperDiv>

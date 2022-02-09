@@ -1,14 +1,12 @@
 import React from "react";
-// import Router from "./Router/Router";
-// import Layout from "./layout/Layout";
-import Main from "./pages/Main";
+import Router from "./Router/Router";
+import Layout from "./layout/Layout";
 
 const App = () => {
   return (
-    <Main />
-    // <Layout>
-    //   <Router />
-    // </Layout>
+    <Layout>
+      <Router />
+    </Layout>
   );
 };
 
