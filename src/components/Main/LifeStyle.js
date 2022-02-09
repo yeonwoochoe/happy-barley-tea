@@ -19,7 +19,7 @@ const LifeStyleDiv = styled.section`
   background-color: rgba(255, 255, 255);
 `;
 
-const Horoscope = styled.div`
+const CardMoreLink = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,11 +43,24 @@ const Horoscope = styled.div`
     text-justify: auto;
   }
 `;
+
+const HeaderMoreButton = styled.div`
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: underline;
+`;
 const LifeStyle = () => {
   return (
     <LifeStyleDiv>
       <SectionWrapper width={`1280px`} padding={`120px 0`}>
-        <HeadTitle color={`#111111`}>lifestyle</HeadTitle>
+        <WrapperDiv flexDirection={"row"} justifyContent={"space-between"}>
+          <HeadTitle color={`#111111`}>lifestyle</HeadTitle>
+          <HeaderMoreButton>
+            <a> + more</a>
+          </HeaderMoreButton>
+        </WrapperDiv>
         <WrapperDiv>
           <ViewWrapper columns={`1fr 2fr`}>
             <ViewContent>content</ViewContent>
@@ -73,7 +86,7 @@ const LifeStyle = () => {
               </CardLi>
               <CardLi width={"calc(33.33% - 40px)"}>
                 <WrapperDiv>
-                  <Horoscope>
+                  <CardMoreLink>
                     <h3>Horoscope</h3>
                     <p>
                       <span>2022.02.08</span>
@@ -89,7 +102,7 @@ const LifeStyle = () => {
                     <p>
                       <span>+ MORE</span>
                     </p>
-                  </Horoscope>
+                  </CardMoreLink>
                 </WrapperDiv>
               </CardLi>
               <CardLi width={"calc(33.33% - 40px)"}>

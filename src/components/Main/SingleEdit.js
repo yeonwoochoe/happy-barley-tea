@@ -18,12 +18,24 @@ const SingleEditDiv = styled.section`
   width: 100%;
   background-color: #ffffff;
 `;
+const HeaderMoreButton = styled.div`
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: underline;
+`;
 
 const SingleEdit = () => {
   return (
     <SingleEditDiv>
       <SectionWrapper width={"1280px"}>
-        <HeadTitle color="#111">single edit</HeadTitle>
+        <WrapperDiv flexDirection={"row"} justifyContent={"space-between"}>
+          <HeadTitle color={`#111111`}>single edit</HeadTitle>
+          <HeaderMoreButton>
+            <a> + more</a>
+          </HeaderMoreButton>
+        </WrapperDiv>
         <ViewWrapper columns={"2fr 1fr"}>
           <ViewImage>image</ViewImage>
           <ViewContent>title</ViewContent>

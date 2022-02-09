@@ -38,8 +38,24 @@ const CardMoreLink = styled.div`
     width: 100%;
     margin: auto;
     word-break: keep-all;
-    text-align: justify;
-    text-justify: auto;
+    text-align: center;
+  }
+`;
+const SnsList = styled.ul`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 20px;
+  li {
+    width: 60px;
+    height: 60px;
+    margin: 0 20px 60px 20px;
+    background-color: #ddd;
+    span {
+      display: none;
+    }
   }
 `;
 
@@ -73,21 +89,32 @@ const HotIssue = () => {
             <CardLi width={"calc(33.33% - 40px)"}>
               <WrapperDiv>
                 <CardMoreLink>
-                  <h3>Horoscope</h3>
-                  <p>
-                    <span>2022.02.08</span>
-                  </p>
+                  <h3>SNS</h3>
                   <p>
                     <span>
-                      완전한 삶이란 애초에 없다. 자잘한 조각을 잘 이어서 연결할
-                      때 더 큰 의미가 생긴다. 그 노력이 엉뚱한 곳으로 빗나갈 수
-                      있다. 하지만 당황하지 말자. 성실함은 배신하지 않으니
-                      결국에는 넓은 바다에 가닿을 수 있다.
+                      내 삶은 풍요롭게 해주는 싱글 플러스 소설 네트워크에서
+                      소통해요.
                     </span>
                   </p>
-                  <p>
-                    <span>+ MORE</span>
-                  </p>
+                  <WrapperDiv>
+                    <SnsList>
+                      <li>
+                        <span>facebook</span>
+                      </li>
+                      <li>
+                        <span>instargram</span>
+                      </li>
+                      <li>
+                        <span>youtube</span>
+                      </li>
+                      <li>
+                        <span>twitter</span>
+                      </li>
+                      <li>
+                        <span>naver post</span>
+                      </li>
+                    </SnsList>
+                  </WrapperDiv>
                 </CardMoreLink>
               </WrapperDiv>
             </CardLi>

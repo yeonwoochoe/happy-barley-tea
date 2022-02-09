@@ -11,15 +11,26 @@ const EmailForm = styled.form`
   align-items: center;
   gap: 20px;
   width: 100%;
+  legend {
+    font-size: 28px;
+    color: #333333;
+    font-weight: bold;
+  }
   input {
     width: 340px;
     height: 55px;
     border: 0;
+    font-size: 18px;
+    padding: 0 20px 0 60px;
   }
   button {
     width: 170px;
     height: 55px;
     border: 0;
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #333333;
   }
 `;
 const EmailReceive = () => {

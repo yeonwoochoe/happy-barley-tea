@@ -5,15 +5,15 @@ export const HeadTitle = styled.h2`
   margin-top: 40px;
   margin-bottom: 40px;
   word-spacing: ${(props) => props.wordSpacing || "-10px"};
-  font-size: 36px;
+  font-size: 60px;
   font-weight: bold;
   text-transform: capitalize;
   color: ${(props) => props.color};
   &::before {
     content: "";
     display: ${(props) => props.display || "inline-block"};
-    width: 18px;
-    height: 30px;
+    width: 24px;
+    height: 48px;
     margin-right: 10px;
     background-color: ${(props) => props.color};
   }
@@ -23,7 +23,7 @@ export const ViewWrapper = styled.div`
   display: grid;
   grid-template-columns: ${(props) => props.columns};
   width: 100%;
-  height: ${(props) => props.height || "400px"};
+  height: ${(props) => props.height || "580px"};
   margin-bottom: 40px;
 `;
 export const ViewContent = styled.div`
@@ -37,9 +37,9 @@ export const ViewImage = styled.div`
 
 export const WrapperDiv = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: ${(props) => props.justifyContent || "center"};
   align-items: center;
-  flex-direction: column;
+  flex-direction: ${(props) => props.flexDirection || "column"};
   width: ${(props) => props.width || "100%"};
 `;
 

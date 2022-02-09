@@ -24,7 +24,7 @@ const ShowWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   max-width: 1460px;
-  padding-bottom: 120px;
+  padding-bottom: 20px;
   margin: auto;
 `;
 
@@ -39,6 +39,7 @@ const ShowCase = () => {
         <ShowWrapper>
           <WrapperDiv width={`1280px`}>
             <HeadTitle color={`#ffffff`}>show case</HeadTitle>
+
             <CardWrapper>
               <CardList
                 style={{
@@ -49,7 +50,7 @@ const ShowCase = () => {
               >
                 <CardLi>
                   <WrapperDiv>
-                    <CardImage width={"265px"} height={"295px"}>
+                    <CardImage width={"290px"} height={"290px"}>
                       img
                     </CardImage>
                     <CardCaption>
@@ -60,7 +61,7 @@ const ShowCase = () => {
                 </CardLi>
                 <CardLi>
                   <WrapperDiv>
-                    <CardImage width={"265px"} height={"295px"}>
+                    <CardImage width={"290px"} height={"290px"}>
                       img
                     </CardImage>
                     <CardCaption>
@@ -71,7 +72,7 @@ const ShowCase = () => {
                 </CardLi>
                 <CardLi>
                   <WrapperDiv>
-                    <CardImage width={"265px"} height={"295px"}>
+                    <CardImage width={"290px"} height={"290px"}>
                       img
                     </CardImage>
                     <CardCaption>
@@ -82,7 +83,7 @@ const ShowCase = () => {
                 </CardLi>
                 <CardLi>
                   <WrapperDiv>
-                    <CardImage width={"265px"} height={"295px"}>
+                    <CardImage width={"290px"} height={"290px"}>
                       img
                     </CardImage>
                     <CardCaption>
