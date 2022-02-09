@@ -1,7 +1,7 @@
 // SA K : header 컴포넌트가 너무 커서 쪼개야 될 것 같음
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const HeaderDiv = styled.header`
   position: sticky;
@@ -13,7 +13,7 @@ const HeaderDiv = styled.header`
     width: 180px;
     height: 50px;
     margin-right: 68px;
-    background-image: url('/assets/logo.png');
+    background-image: url("/assets/logo.png");
     background-size: contain;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -84,7 +84,7 @@ const UserNavi = styled.nav`
     position: relative;
     margin-right: 50px;
     &::after {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       top: 0;
@@ -103,7 +103,7 @@ const UserNavi = styled.nav`
       display: block;
       width: 100%;
       height: 100%;
-      background-image: url('/assets/search-solid.svg');
+      background-image: url("/assets/search-solid.svg");
       background-position: 50% 50%;
       background-repeat: no-repeat;
       background-size: contain;
@@ -117,41 +117,41 @@ function Header() {
       <HeaderWrapper>
         <WrapperDiv>
           <h1>
-            <Link to='/'>
-              <span className='blind'>single plus</span>
+            <Link to="/">
+              <span className="blind">single plus</span>
             </Link>
           </h1>
           <MenuNavi>
-            <h2 className='blind'>Menu Navigation</h2>
+            <h2 className="blind">Menu Navigation</h2>
           </MenuNavi>
           <GlobalNavi>
-            <h2 className='blind'>Global Navigation</h2>
+            <h2 className="blind">Global Navigation</h2>
             <ul>
               <li>
-                <Link to='/showcase'>showcase</Link>
+                <Link to="/showcase">showcase</Link>
               </li>
               <li>
-                <Link to='/lifestyle'>lifestyle</Link>
+                <Link to="/lifestyle">lifestyle</Link>
               </li>
               <li>
-                <Link to='/single-edit'>single edit</Link>
+                <Link to="/single-edit">single edit</Link>
               </li>
             </ul>
           </GlobalNavi>
         </WrapperDiv>
 
         <UserNavi>
-          <h2 className='blind'>User Navigation</h2>
+          <h2 className="blind">User Navigation</h2>
           <ul>
             <li>
-              <Link to='/login'>login</Link>
+              <Link to="/login">login</Link>
             </li>
             <li>
-              <Link to='/join'>join</Link>
+              <Link to="/join">join</Link>
             </li>
             <li>
               <button>
-                <span className='blind'>search</span>
+                <span className="blind">search</span>
               </button>
             </li>
           </ul>
