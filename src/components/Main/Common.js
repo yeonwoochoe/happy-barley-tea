@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeadTitle = styled.h2`
+export const HeaderSecondTitle = styled.h2`
   align-self: ${(props) => props.alignSelf || "flex-start"};
   margin-top: 40px;
   margin-bottom: 40px;
@@ -70,6 +70,10 @@ export const CardWrapper = styled.div`
 `;
 
 export const CardList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
 `;
 

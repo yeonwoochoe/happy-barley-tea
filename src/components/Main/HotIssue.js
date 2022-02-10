@@ -6,7 +6,7 @@ import {
   CardLi,
   CardList,
   CardWrapper,
-  HeadTitle,
+  HeaderSecondTitle,
   SectionWrapper,
   ViewContent,
   ViewImage,
@@ -67,20 +67,13 @@ const HotIssue = () => {
   return (
     <HotIssueDiv>
       <SectionWrapper width={"1280px"} padding={"80px 0"}>
-        <HeadTitle color={"#111"}>hot issue</HeadTitle>
+        <HeaderSecondTitle color={"#111"}>hot issue</HeaderSecondTitle>
         <ViewWrapper columns={"1fr 2fr"}>
           <ViewImage>image</ViewImage>
           <ViewContent>title</ViewContent>
         </ViewWrapper>
         <CardWrapper>
-          <CardList
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <CardList>
             <CardLi width={"calc(33.33% - 40px)"}>
               <WrapperDiv>
                 <CardImage height={"470px"}>image</CardImage>
