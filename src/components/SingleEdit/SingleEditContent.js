@@ -29,6 +29,11 @@ const CardContainer = styled.div`
   gap: 80px 40px;
   height: ${(props) => props.height || "100%"};
   margin-bottom: 100px;
+  @media screen and (max-width: 320px) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 `;
 
 const SoltBtnWrapper = styled.div`

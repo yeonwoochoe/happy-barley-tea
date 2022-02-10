@@ -22,6 +22,7 @@ const MainTitleDiv = styled.div`
   height: auto;
   background-color: #fff;
   margin-bottom: 20px;
+
   div {
     width: 14px;
     height: 30px;
@@ -47,6 +48,10 @@ const BtnWrapper = styled.div`
   max-width: 980px;
   margin: auto;
   margin-bottom: 50px;
+  @media screen and (max-width: 320px) {
+    justify-items: center;
+    gap: 10px;
+  }
 
   button {
     font-size: 18px;
@@ -60,6 +65,7 @@ const SingleEdit = () => {
   const [num, setNum] = useState(0);
   const [PdData, setPdData] = useState([]);
 
+  // data 불러오기
   useEffect(() => {
     axios.get("./data/SingleEdit/dummyData.json").then((res) => setPdData(res.data));
   }, []);
@@ -70,10 +76,9 @@ const SingleEdit = () => {
   };
 
   const code = PdData.filter((data, index) => index === num);
+  // const buttonVaild = PdData.filter((data, index) => index === 0 && data.tabTitle === "ALL");
 
-  const buttonVaild = PdData.filter((data, index) => index === 0 && data.tabTitle === "ALL");
-
-  console.log(buttonVaild);
+  // console.log(buttonVaild);
 
   return (
     <SingleEditDiv>
@@ -94,7 +99,7 @@ const SingleEdit = () => {
         <button>추천순</button>
       </SoltBtnWrapper> */}
       {code.map((data, idx) => (
-        <SingleEditContent key={idx} data={data} fiter={buttonVaild} />
+        <SingleEditContent key={idx} data={data} num={num} setNum={setNum} />
       ))}
     </SingleEditDiv>
   );
