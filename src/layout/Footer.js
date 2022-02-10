@@ -96,8 +96,6 @@ const SnsList = styled.ul`
 const FooterImage = styled.div`
   width: 220px;
   margin-bottom: 10px;
-  background-color: #daf;
-
 `;
 const Footer = () => {
   return (
