@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const HeaderDiv = styled.div`
   position: sticky;
+  z-index: 1000;
   top: 0;
   width: 100%;
   height: 104px;
