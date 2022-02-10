@@ -72,8 +72,6 @@ button {
   cursor: pointer;
   border-radius: 0;
 }
-
-
 /* IR: image replace */
 .blind_wrap a > span,
 .blind_wrap button > span,
@@ -112,6 +110,7 @@ button {
   width: 100%;
   height: 0;
 }
+
 `;
 
 ReactDOM.render(

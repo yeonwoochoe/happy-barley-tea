@@ -1,25 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { HeadTitle, ViewContent, ViewImage, ViewWrapper } from "../UI/Common";
+import {
+  CardCaption,
+  CardImage,
+  CardLi,
+  CardList,
+  CardWrapper,
+  HeadTitle,
+  SectionWrapper,
+  ViewContent,
+  ViewImage,
+  ViewWrapper,
+  WrapperDiv,
+} from "./Common";
 
 const LifeStyleDiv = styled.section`
   width: 100%;
   background-color: rgba(255, 255, 255);
 `;
-const LifeStyleWrapper = styled.div`
-  width: 1280px;
-  margin: auto;
-  padding-top: 120px;
-`;
-const WrapperDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: ${(props) => props.width || "100%"};
-`;
 
-const Horoscope = styled.div`
+const CardMoreLink = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,75 +34,59 @@ const Horoscope = styled.div`
     margin-bottom: 20px;
     font-size: 18px;
     font-weight: bold;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
   span {
-    display: block;
+    display: inline-block;
     width: 100%;
     margin: auto;
+    word-break: keep-all;
+    text-align: justify;
+    text-justify: auto;
   }
 `;
-const CardWrapper = styled.div`
-  width: 100%;
-`;
-
-const CardList = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  li {
-    width: calc(33.33% - 40px);
-    margin-bottom: 40px;
-  }
-`;
-
-const CardImage = styled.div`
-  width: 100%;
-  height: 470px;
-  background-color: #ddd;
-`;
-
-const CardCaption = styled.dl`
-  margin-top: 10px;
-  align-self: flex-start;
-  text-transform: uppercase;
+const HeaderMoreButton = styled.div`
+  margin-top: 40px;
+  font-size: 20px;
   font-weight: bold;
-  dt {
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
-  dd {
-    font-size: 22px;
-  }
+  text-transform: uppercase;
+  text-decoration: underline;
 `;
 const LifeStyle = () => {
   return (
     <LifeStyleDiv>
-      <LifeStyleWrapper>
-        <HeadTitle color={`#111111`}>lifestyle</HeadTitle>
+      <SectionWrapper width={`1280px`} padding={`120px 0`}>
+        <WrapperDiv flexDirection={"row"} justifyContent={"space-between"}>
+          <HeadTitle color={`#111111`}>lifestyle</HeadTitle>
+          <HeaderMoreButton>
+            <Link to="/"> + more</Link>
+          </HeaderMoreButton>
+        </WrapperDiv>
         <WrapperDiv>
           <ViewWrapper columns={`1fr 2fr`}>
             <ViewContent>content</ViewContent>
             <ViewImage>image</ViewImage>
           </ViewWrapper>
           <CardWrapper>
-            <CardList>
-              <li>
+            <CardList
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <CardLi width={"calc(33.33% - 40px)"}>
                 <WrapperDiv>
-                  <CardImage></CardImage>
+                  <CardImage height={"470px"}>image</CardImage>
                   <CardCaption>
                     <dt>trend</dt>
                     <dd>구동경제의 뉴노멀, 구독을 통합하라</dd>
                   </CardCaption>
                 </WrapperDiv>
-              </li>
-              <li>
+              </CardLi>
+              <CardLi width={"calc(33.33% - 40px)"}>
                 <WrapperDiv>
-                  <Horoscope>
+                  <CardMoreLink>
                     <h3>Horoscope</h3>
                     <p>
                       <span>2022.02.08</span>
@@ -117,49 +102,49 @@ const LifeStyle = () => {
                     <p>
                       <span>+ MORE</span>
                     </p>
-                  </Horoscope>
+                  </CardMoreLink>
                 </WrapperDiv>
-              </li>
-              <li>
+              </CardLi>
+              <CardLi width={"calc(33.33% - 40px)"}>
                 <WrapperDiv>
-                  <CardImage></CardImage>
+                  <CardImage height={"470px"}>image</CardImage>
                   <CardCaption>
                     <dt>trend</dt>
                     <dd>구동경제의 뉴노멀, 구독을 통합하라</dd>
                   </CardCaption>
                 </WrapperDiv>
-              </li>
-              <li>
+              </CardLi>
+              <CardLi width={"calc(33.33% - 40px)"}>
                 <WrapperDiv>
-                  <CardImage></CardImage>
+                  <CardImage height={"470px"}>image</CardImage>
                   <CardCaption>
                     <dt>trend</dt>
                     <dd>구동경제의 뉴노멀, 구독을 통합하라</dd>
                   </CardCaption>
                 </WrapperDiv>
-              </li>
-              <li>
+              </CardLi>
+              <CardLi width={"calc(33.33% - 40px)"}>
                 <WrapperDiv>
-                  <CardImage></CardImage>
+                  <CardImage height={"470px"}>image</CardImage>
                   <CardCaption>
                     <dt>trend</dt>
                     <dd>구동경제의 뉴노멀, 구독을 통합하라</dd>
                   </CardCaption>
                 </WrapperDiv>
-              </li>
-              <li>
+              </CardLi>
+              <CardLi width={"calc(33.33% - 40px)"}>
                 <WrapperDiv>
-                  <CardImage></CardImage>
+                  <CardImage height={"470px"}>image</CardImage>
                   <CardCaption>
                     <dt>trend</dt>
                     <dd>구동경제의 뉴노멀, 구독을 통합하라</dd>
                   </CardCaption>
                 </WrapperDiv>
-              </li>
+              </CardLi>
             </CardList>
           </CardWrapper>
         </WrapperDiv>
-      </LifeStyleWrapper>
+      </SectionWrapper>
     </LifeStyleDiv>
   );
 };
