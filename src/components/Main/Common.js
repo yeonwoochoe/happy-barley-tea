@@ -98,3 +98,24 @@ export const CardCaption = styled.dl`
     font-size: 22px;
   }
 `;
+
+export const FaceBook = styled.li`
+  background: ${(props) => `url(${props.backgroundImage})`} no-repeat
+    center/contain;
+`;
+export const Instargram = styled.li`
+  background: ${(props) => `url(${props.backgroundImage})`} no-repeat
+    center/contain;
+`;
+export const Youtube = styled.li`
+  background: ${(props) => `url(${props.backgroundImage})`} no-repeat
+    center/contain;
+`;
+export const Twitter = styled.li`
+  background: ${(props) => `url(${props.backgroundImage})`} no-repeat
+    center/contain;
+`;
+export const NaverPost = styled.li`
+  background: ${(props) => `url(${props.backgroundImage})`} no-repeat
+    center/contain;
+`;

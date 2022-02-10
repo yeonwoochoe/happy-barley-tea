@@ -12,6 +12,11 @@ import {
   ViewImage,
   ViewWrapper,
   WrapperDiv,
+  FaceBook,
+  Instargram,
+  NaverPost,
+  Twitter,
+  Youtube,
 } from "./Common";
 
 const HotIssueDiv = styled.section`
@@ -52,7 +57,6 @@ const SnsList = styled.ul`
     width: 60px;
     height: 60px;
     margin: 0 20px 60px 20px;
-    background-color: #ddd;
     span {
       display: none;
     }
@@ -62,7 +66,7 @@ const SnsList = styled.ul`
 const HotIssue = () => {
   return (
     <HotIssueDiv>
-      <SectionWrapper width={"1280px"}>
+      <SectionWrapper width={"1280px"} padding={"80px 0"}>
         <HeadTitle color={"#111"}>hot issue</HeadTitle>
         <ViewWrapper columns={"1fr 2fr"}>
           <ViewImage>image</ViewImage>
@@ -98,21 +102,23 @@ const HotIssue = () => {
                   </p>
                   <WrapperDiv>
                     <SnsList>
-                      <li>
-                        <span>facebook</span>
-                      </li>
-                      <li>
+                      <Instargram
+                        backgroundImage={`/assets/image-instargram.svg`}
+                      >
                         <span>instargram</span>
-                      </li>
-                      <li>
-                        <span>youtube</span>
-                      </li>
-                      <li>
+                      </Instargram>
+                      <FaceBook backgroundImage={`/assets/image-facebook.svg`}>
+                        <span>facebook</span>
+                      </FaceBook>
+                      <Twitter backgroundImage={`/assets/image-twitter.svg`}>
                         <span>twitter</span>
-                      </li>
-                      <li>
+                      </Twitter>
+                      <Youtube backgroundImage={`/assets/image-youtube.svg`}>
+                        <span>youtube</span>
+                      </Youtube>
+                      <NaverPost backgroundImage={`/assets/image-naver.svg`}>
                         <span>naver post</span>
-                      </li>
+                      </NaverPost>
                     </SnsList>
                   </WrapperDiv>
                 </CardMoreLink>

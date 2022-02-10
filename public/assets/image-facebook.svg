@@ -1,0 +1,15 @@
+<svg id="Group_123" data-name="Group 123" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="62" height="62" viewBox="0 0 62 62">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_46" data-name="Path 46" d="M0,13.251H62v-62H0Z" transform="translate(0 48.749)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="insta" transform="translate(0 0)">
+    <g id="Group_55" data-name="Group 55" clip-path="url(#clip-path)">
+      <g id="Group_51" data-name="Group 51" transform="translate(0 -0.001)">
+        <path id="Path_42" data-name="Path 42" d="M13.251,6.626a31,31,0,0,1-31,31,31,31,0,0,1-31-31,31,31,0,0,1,31-31,31,31,0,0,1,31,31" transform="translate(48.749 24.375)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+  <path id="Path_234" data-name="Path 234" d="M91.973,35.331v-16.1h5.5l.785-6.281H91.973V9.029c0-1.767.589-3.14,3.141-3.14H98.45V.2C97.665.2,95.7,0,93.543,0,88.833,0,85.5,2.944,85.5,8.244v4.711H80v6.281h5.5v16.1Z" transform="translate(-58.38 13.481)" fill-rule="evenodd"/>
+</svg>

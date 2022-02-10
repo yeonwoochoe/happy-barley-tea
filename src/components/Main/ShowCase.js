@@ -46,46 +46,39 @@ const ShowCase = () => {
                   display: "grid",
                   gridAutoFlow: "column",
                   justifyContent: "space-between",
+                  alignItems: "center",
                 }}
               >
-                <CardLi>
+                <CardLi width={`290px`}>
                   <WrapperDiv>
-                    <CardImage width={"290px"} height={"290px"}>
-                      img
-                    </CardImage>
+                    <CardImage height={"290px"}>img</CardImage>
                     <CardCaption>
                       <dt>enjoy</dt>
                       <dd>걸어서 겨울 속으로</dd>
                     </CardCaption>
                   </WrapperDiv>
                 </CardLi>
-                <CardLi>
+                <CardLi width={`290px`}>
                   <WrapperDiv>
-                    <CardImage width={"290px"} height={"290px"}>
-                      img
-                    </CardImage>
+                    <CardImage height={"290px"}>img</CardImage>
                     <CardCaption>
                       <dt>enjoy</dt>
                       <dd>걸어서 겨울 속으로</dd>
                     </CardCaption>
                   </WrapperDiv>
                 </CardLi>
-                <CardLi>
+                <CardLi width={`290px`}>
                   <WrapperDiv>
-                    <CardImage width={"290px"} height={"290px"}>
-                      img
-                    </CardImage>
+                    <CardImage height={"290px"}>img</CardImage>
                     <CardCaption>
                       <dt>enjoy</dt>
                       <dd>걸어서 겨울 속으로</dd>
                     </CardCaption>
                   </WrapperDiv>
                 </CardLi>
-                <CardLi>
+                <CardLi width={`290px`}>
                   <WrapperDiv>
-                    <CardImage width={"290px"} height={"290px"}>
-                      img
-                    </CardImage>
+                    <CardImage height={"290px"}>img</CardImage>
                     <CardCaption>
                       <dt>enjoy</dt>
                       <dd>걸어서 겨울 속으로</dd>
