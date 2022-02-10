@@ -2,9 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import SingleEditConList from "./SingleEditConList";
 
-// import AllList from "./AllList";
-// import ExpertsEditList from "./ExpertsEditList";
-
 const WrapperDiv = styled.div`
   width: 100%;
   max-width: 1280px;
@@ -69,20 +66,23 @@ const SingleEditContent = ({ data }) => {
   return (
     <WrapperDiv>
       <h2 className="blind">single edit content</h2>
-
       <WrapperCard>
         <SoltBtnWrapper justify={`end`}>
           <button>최신순</button>
           <span></span>
           <button>추천순</button>
         </SoltBtnWrapper>
-
         <CardContainer rows={`360px 360px 360px;`} columns={`0fr 0fr 0fr`}>
           {list.content.map((card, id) => (
             <SingleEditConList key={id} data={card} />
           ))}
         </CardContainer>
-        <SoltBtnWrapper justify={`center`} size={`18px`} color={`#333`} decoration={`underline`}>
+        <SoltBtnWrapper
+          justify={`center`}
+          size={`18px`}
+          color={`#333`}
+          decoration={`underline`}
+        >
           <button>&#43;MORE</button>
         </SoltBtnWrapper>
       </WrapperCard>
