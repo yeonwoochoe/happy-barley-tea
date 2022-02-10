@@ -7,7 +7,7 @@ import {
   CardLi,
   CardList,
   CardWrapper,
-  HeadTitle,
+  HeaderSecondTitle,
   SectionWrapper,
   ViewContent,
   ViewImage,
@@ -32,7 +32,7 @@ const SingleEdit = () => {
     <SingleEditDiv>
       <SectionWrapper width={"1280px"}>
         <WrapperDiv flexDirection={"row"} justifyContent={"space-between"}>
-          <HeadTitle color={`#111111`}>single edit</HeadTitle>
+          <HeaderSecondTitle color={`#111111`}>single edit</HeaderSecondTitle>
           <HeaderMoreButton>
             <Link to="/"> + more</Link>
           </HeaderMoreButton>
