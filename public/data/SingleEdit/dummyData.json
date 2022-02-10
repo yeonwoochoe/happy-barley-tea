@@ -1,0 +1,70 @@
+[
+  {
+    "id": 0,
+    "tabTitle": "ALL",
+    "content": [
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "YOUR EDIT ", "hashTag": "#SWEATLIFE", "mainTitle": "텃새 오목눈이" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "YOUR EDIT ", "hashTag": "#SWEATLIFE", "mainTitle": "텃새 오목눈이" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "YOUR EDIT ", "hashTag": "#SWEATLIFE", "mainTitle": "텃새 오목눈이" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "YOUR EDIT ", "hashTag": "#SWEATLIFE", "mainTitle": "텃새 오목눈이" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "YOUR EDIT ", "hashTag": "#SWEATLIFE", "mainTitle": "텃새 오목눈이" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "YOUR EDIT ", "hashTag": "#SWEATLIFE", "mainTitle": "텃새 오목눈이" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "YOUR EDIT ", "hashTag": "#SWEATLIFE", "mainTitle": "텃새 오목눈이" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "YOUR EDIT ", "hashTag": "#SWEATLIFE", "mainTitle": "텃새 오목눈이" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "YOUR EDIT ", "hashTag": "#SWEATLIFE", "mainTitle": "텃새 오목눈이" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "YOUR EDIT ", "hashTag": "#SWEATLIFE", "mainTitle": "텃새 오목눈이" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "YOUR EDIT ", "hashTag": "#SWEATLIFE", "mainTitle": "텃새 오목눈이" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "YOUR EDIT ", "hashTag": "#SWEATLIFE", "mainTitle": "텃새 오목눈이" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "YOUR EDIT ", "hashTag": "#SWEATLIFE", "mainTitle": "텃새 오목눈이" }
+    ]
+  },
+
+  {
+    "id": 1,
+    "tabTitle": "Expert's Edit",
+    "content": [
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "#LIFE", "mainTitle": "이야기가 있는 위스키" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "#LIFE", "mainTitle": "이야기가 있는 위스키" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "#LIFE", "mainTitle": "이야기가 있는 위스키" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "#LIFE", "mainTitle": "이야기가 있는 위스키" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "#LIFE", "mainTitle": "이야기가 있는 위스키" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "#LIFE", "mainTitle": "이야기가 있는 위스키" }
+    ]
+  },
+
+  {
+    "id": 2,
+    "tabTitle": "Your Edit",
+    "content": [
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "#ROUTINE ", "mainTitle": "텃새 오목눈이" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "#ROUTINE ", "mainTitle": "텃새 오목눈이" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "#ROUTINE ", "mainTitle": "텃새 오목눈이" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "#ROUTINE ", "mainTitle": "텃새 오목눈이" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "#ROUTINE ", "mainTitle": "텃새 오목눈이" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTag": "#ROUTINE ", "mainTitle": "텃새 오목눈이" }
+    ]
+  },
+
+  {
+    "id": 3,
+    "tabTitle": "Tester's Edit",
+    "content": [
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTitle": "프리플러스 베스트 리뷰 @young1y_" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTitle": "프리플러스 베스트 리뷰 @young1y_" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTitle": "프리플러스 베스트 리뷰 @young1y_" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTitle": "프리플러스 베스트 리뷰 @young1y_" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTitle": "프리플러스 베스트 리뷰 @young1y_" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTitle": "프리플러스 베스트 리뷰 @young1y_" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTitle": "프리플러스 베스트 리뷰 @young1y_" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTitle": "프리플러스 베스트 리뷰 @young1y_" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTitle": "프리플러스 베스트 리뷰 @young1y_" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTitle": "프리플러스 베스트 리뷰 @young1y_" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTitle": "프리플러스 베스트 리뷰 @young1y_" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTitle": "프리플러스 베스트 리뷰 @young1y_" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTitle": "프리플러스 베스트 리뷰 @young1y_" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTitle": "프리플러스 베스트 리뷰 @young1y_" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTitle": "프리플러스 베스트 리뷰 @young1y_" },
+      { "image": "http://dummyimage.com/300x300.png/dddddd/000000", "mainTitle": "프리플러스 베스트 리뷰 @young1y_" }
+    ]
+  }
+]

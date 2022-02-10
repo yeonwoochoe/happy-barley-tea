@@ -6,7 +6,7 @@ import {
   NaverPost,
   Twitter,
   Youtube,
-} from "../components/Main/Common";
+} from "../components/common/Common";
 
 const FooterDiv = styled.footer`
   width: 100%;

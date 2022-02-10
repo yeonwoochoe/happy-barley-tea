@@ -7,13 +7,13 @@ import {
   CardLi,
   CardList,
   CardWrapper,
-  HeadTitle,
+  HeaderSecondTitle,
   SectionWrapper,
   ViewContent,
   ViewImage,
   ViewWrapper,
   WrapperDiv,
-} from "./Common";
+} from "../common/Common";
 
 const SingleEditDiv = styled.section`
   width: 100%;
@@ -32,7 +32,7 @@ const SingleEdit = () => {
     <SingleEditDiv>
       <SectionWrapper width={"1280px"}>
         <WrapperDiv flexDirection={"row"} justifyContent={"space-between"}>
-          <HeadTitle color={`#111111`}>single edit</HeadTitle>
+          <HeaderSecondTitle color={`#111111`}>single edit</HeaderSecondTitle>
           <HeaderMoreButton>
             <Link to="/"> + more</Link>
           </HeaderMoreButton>

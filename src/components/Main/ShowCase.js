@@ -6,13 +6,13 @@ import {
   CardLi,
   CardList,
   CardWrapper,
-  HeadTitle,
+  HeaderSecondTitle,
   SectionWrapper,
   ViewContent,
   ViewImage,
   ViewWrapper,
   WrapperDiv,
-} from "./Common";
+} from "../common/Common";
 
 const ShowCaseDiv = styled.section`
   width: 100%;
@@ -38,18 +38,10 @@ const ShowCase = () => {
         </ViewWrapper>
         <ShowWrapper>
           <WrapperDiv width={`1280px`}>
-            <HeadTitle color={`#ffffff`}>show case</HeadTitle>
-
+            <HeaderSecondTitle color={`#ffffff`}>show case</HeaderSecondTitle>
             <CardWrapper>
-              <CardList
-                style={{
-                  display: "grid",
-                  gridAutoFlow: "column",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              >
-                <CardLi width={`290px`}>
+              <CardList>
+                <CardLi width={`calc(25% - 40px)`}>
                   <WrapperDiv>
                     <CardImage height={"290px"}>img</CardImage>
                     <CardCaption>
@@ -58,7 +50,7 @@ const ShowCase = () => {
                     </CardCaption>
                   </WrapperDiv>
                 </CardLi>
-                <CardLi width={`290px`}>
+                <CardLi width={`calc(25% - 40px)`}>
                   <WrapperDiv>
                     <CardImage height={"290px"}>img</CardImage>
                     <CardCaption>
@@ -67,7 +59,7 @@ const ShowCase = () => {
                     </CardCaption>
                   </WrapperDiv>
                 </CardLi>
-                <CardLi width={`290px`}>
+                <CardLi width={`calc(25% - 40px)`}>
                   <WrapperDiv>
                     <CardImage height={"290px"}>img</CardImage>
                     <CardCaption>
@@ -76,7 +68,7 @@ const ShowCase = () => {
                     </CardCaption>
                   </WrapperDiv>
                 </CardLi>
-                <CardLi width={`290px`}>
+                <CardLi width={`calc(25% - 40px)`}>
                   <WrapperDiv>
                     <CardImage height={"290px"}>img</CardImage>
                     <CardCaption>

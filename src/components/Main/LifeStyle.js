@@ -7,13 +7,13 @@ import {
   CardLi,
   CardList,
   CardWrapper,
-  HeadTitle,
+  HeaderSecondTitle,
   SectionWrapper,
   ViewContent,
   ViewImage,
   ViewWrapper,
   WrapperDiv,
-} from "./Common";
+} from "../common/Common";
 
 const LifeStyleDiv = styled.section`
   width: 100%;
@@ -56,7 +56,7 @@ const LifeStyle = () => {
     <LifeStyleDiv>
       <SectionWrapper width={`1280px`} padding={`120px 0`}>
         <WrapperDiv flexDirection={"row"} justifyContent={"space-between"}>
-          <HeadTitle color={`#111111`}>lifestyle</HeadTitle>
+          <HeaderSecondTitle color={`#111111`}>lifestyle</HeaderSecondTitle>
           <HeaderMoreButton>
             <Link to="/"> + more</Link>
           </HeaderMoreButton>
@@ -67,14 +67,7 @@ const LifeStyle = () => {
             <ViewImage>image</ViewImage>
           </ViewWrapper>
           <CardWrapper>
-            <CardList
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
+            <CardList>
               <CardLi width={"calc(33.33% - 40px)"}>
                 <WrapperDiv>
                   <CardImage height={"470px"}>image</CardImage>

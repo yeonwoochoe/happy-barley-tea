@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { HeadTitle, SectionWrapper, WrapperDiv } from "./Common";
+import {
+  HeaderSecondTitle,
+  SectionWrapper,
+  WrapperDiv,
+} from "../common/Common";
 const EmailReceiveDiv = styled.aside`
   width: 100%;
   background-color: #fcd200;
@@ -37,7 +41,7 @@ const EmailReceive = () => {
   return (
     <EmailReceiveDiv>
       <SectionWrapper padding={"20px"}>
-        <HeadTitle className="blind">이메일 구독</HeadTitle>
+        <HeaderSecondTitle className="blind">이메일 구독</HeaderSecondTitle>
         <WrapperDiv>
           <EmailForm>
             <legend>당신에게 필요한 소식들을 메일로 받아보세요.</legend>
