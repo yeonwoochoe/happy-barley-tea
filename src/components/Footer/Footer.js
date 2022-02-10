@@ -90,7 +90,7 @@ const FooterImage = styled.div`
   width: 220px;
   height: 85px;
   margin-bottom: 10px;
-  background-color: #ffffff;
+  background-color: #daf;
 `;
 const Footer = () => {
   return (
