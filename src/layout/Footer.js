@@ -6,7 +6,7 @@ import {
   NaverPost,
   Twitter,
   Youtube,
-} from "../components/Main/Common";
+} from "../components/common/Common";
 
 const FooterDiv = styled.footer`
   width: 100%;
@@ -96,8 +96,6 @@ const SnsList = styled.ul`
 const FooterImage = styled.div`
   width: 220px;
   margin-bottom: 10px;
-  background-color: #daf;
-
 `;
 const Footer = () => {
   return (

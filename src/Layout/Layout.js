@@ -1,14 +1,14 @@
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+import Header from "./Header";
+import Footer from "./Footer";
+import { Fragment } from "react";
 
-
-function Layout() {
+function Layout(props) {
   return (
-    <div>
+    <Fragment>
       <Header />
-      
+      {props.children}
       <Footer />
-    </div>
+    </Fragment>
   );
 }
 

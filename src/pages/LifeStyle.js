@@ -1,8 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import StyledH2 from '../components/common/StyledH2';
-import Container from '../components/common/Container';
-import Card from '../components/LifeStyle/Card';
+import React from "react";
+import styled from "styled-components";
+import Card from "../components/LifeStyle/Card";
+import { Container, HeaderSecondTitle } from "../components/common/Common";
 
 const StyledDiv = styled.div`
   width: 100%;
@@ -53,7 +52,7 @@ const LifeStyle = () => {
     <StyledDiv>
       <Container>
         <WrapperTab>
-          <StyledH2>lifestyle</StyledH2>
+          <HeaderSecondTitle color="#111">lifestyle</HeaderSecondTitle>
           <ul>
             <li>all</li>
             <li>trend</li>
@@ -73,7 +72,7 @@ const LifeStyle = () => {
         </WrapperContent>
       </Container>
       <More>
-        <button type='button'>+ more</button>
+        <button type="button">+ more</button>
       </More>
     </StyledDiv>
   );

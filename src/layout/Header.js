@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const HeaderDiv = styled.header`
+  z-index: 2000;
   position: sticky;
   top: 0;
   width: 100%;

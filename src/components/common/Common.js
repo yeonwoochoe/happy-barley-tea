@@ -123,3 +123,10 @@ export const NaverPost = styled.li`
   background: ${(props) => `url(${props.backgroundImage})`} no-repeat
     center/contain;
 `;
+
+export const Container = styled.div`
+  width: 100%;
+  height: 100%;
+  max-width: 1320px;
+  margin: auto;
+`;

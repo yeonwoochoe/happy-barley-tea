@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { HeaderSecondTitle, SectionWrapper, WrapperDiv } from "./Common";
+import {
+  HeaderSecondTitle,
+  SectionWrapper,
+  WrapperDiv,
+} from "../common/Common";
 
 const SearchBoxDiv = styled.section`
   width: 100%;
