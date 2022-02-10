@@ -1,5 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import {
+  FaceBook,
+  Instargram,
+  NaverPost,
+  Twitter,
+  Youtube,
+} from "../components/Main/Common";
 
 const FooterDiv = styled.footer`
   width: 100%;
@@ -48,17 +55,18 @@ const FooterAddress = styled.div`
     margin-bottom: 10px;
     li {
       position: relative;
-      font-weight: bold;
+      margin-right: 10px;
       &::after {
         position: absolute;
         top: 2px;
-        right: -6px;
+        right: -12px;
         content: "";
         display: block;
         border-right: 1px solid #ffffff;
         height: 16px;
       }
       &:last-child::after {
+        margin-right: 0;
         border: 0;
       }
     }
@@ -79,7 +87,6 @@ const SnsList = styled.ul`
   li {
     width: 30px;
     height: 30px;
-    background-color: #ffffff;
     span {
       display: none;
     }
@@ -88,32 +95,38 @@ const SnsList = styled.ul`
 
 const FooterImage = styled.div`
   width: 220px;
-  height: 85px;
   margin-bottom: 10px;
   background-color: #daf;
+
 `;
 const Footer = () => {
   return (
     <FooterDiv>
       <FooterWrapper>
         <FooterInfo>
-          <FooterImage>image</FooterImage>
+          <FooterImage>
+            <img
+              alt="The Single Plus"
+              src="/assets/footer-singles.svg"
+              width={`100%`}
+            ></img>
+          </FooterImage>
           <SnsList>
-            <li>
+            <FaceBook backgroundImage={`/assets/iFacebook.svg`}>
               <span>facebook</span>
-            </li>
-            <li>
+            </FaceBook>
+            <Instargram backgroundImage={`/assets/iInstagram.svg`}>
               <span>instargram</span>
-            </li>
-            <li>
+            </Instargram>
+            <Youtube backgroundImage={`/assets/iYoutube.svg`}>
               <span>youtube</span>
-            </li>
-            <li>
+            </Youtube>
+            <Twitter backgroundImage={`/assets/iTwitter.svg`}>
               <span>twitter</span>
-            </li>
-            <li>
+            </Twitter>
+            <NaverPost backgroundImage={`/assets/iN.svg`}>
               <span>naver post</span>
-            </li>
+            </NaverPost>
           </SnsList>
         </FooterInfo>
         <FooterAddress>
@@ -137,7 +150,7 @@ const Footer = () => {
           <ul>
             <li>매체소개</li>
             <li>이용약관</li>
-            <li>개인정보처리방침</li>
+            <li style={{ fontWeight: "bold" }}>개인정보처리방침</li>
             <li>청소년보호정책</li>
             <li>이메일무단수집거부</li>
           </ul>
@@ -150,23 +163,29 @@ const Footer = () => {
           </ul>
         </FooterAddress>
         <FooterSns>
-          <FooterImage>img</FooterImage>
+          <FooterImage>
+            <img
+              alt="The Single Plus"
+              src="/assets/footer-beauty.svg"
+              width={`100%`}
+            ></img>
+          </FooterImage>
           <SnsList>
-            <li>
+            <FaceBook backgroundImage={`/assets/iFacebook.svg`}>
               <span>facebook</span>
-            </li>
-            <li>
+            </FaceBook>
+            <Instargram backgroundImage={`/assets/iInstagram.svg`}>
               <span>instargram</span>
-            </li>
-            <li>
+            </Instargram>
+            <Youtube backgroundImage={`/assets/iYoutube.svg`}>
               <span>youtube</span>
-            </li>
-            <li>
+            </Youtube>
+            <Twitter backgroundImage={`/assets/iTwitter.svg`}>
               <span>twitter</span>
-            </li>
-            <li>
+            </Twitter>
+            <NaverPost backgroundImage={`/assets/iN.svg`}>
               <span>naver post</span>
-            </li>
+            </NaverPost>
           </SnsList>
         </FooterSns>
       </FooterWrapper>

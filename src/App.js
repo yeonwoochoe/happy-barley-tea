@@ -1,18 +1,12 @@
 import React from "react";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import ShowCase from "./components/ShowCase/ShowCase";
-
-
-
+import Router from "./Router/Router";
+import Layout from "./layout/Layout";
 
 const App = () => {
   return (
-    <div>
-    <Header />
-    <ShowCase />
-    <Footer />
-    </div>
+    <Layout>
+      <Router />
+    </Layout>
   );
 };
 

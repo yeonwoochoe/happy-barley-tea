@@ -1,8 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import { BrowserRouter } from "react-router-dom";
-import { createGlobalStyle } from "styled-components";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
@@ -65,6 +65,12 @@ a {
   color:inherit;
   
 }
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 0;
+}
 /* IR: image replace */
 .blind_wrap a > span,
 .blind_wrap button > span,
@@ -103,6 +109,7 @@ a {
   width: 100%;
   height: 0;
 }
+
 `;
 
 ReactDOM.render(
@@ -112,5 +119,5 @@ ReactDOM.render(
       <App />
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
