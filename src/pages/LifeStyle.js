@@ -7,7 +7,7 @@ import Card from '../components/LifeStyle/Card';
 const StyledDiv = styled.div`
   width: 100%;
   height: auto;
-  padding: 100px 20px;
+  padding: 100px 0 145px;
   background-color: #fff;
 `;
 
@@ -15,6 +15,7 @@ const WrapperTab = styled.div`
   ul {
     display: flex;
     margin-top: 16px;
+    padding: 0 20px;
     gap: 60px;
     font-size: 22px;
     font-weight: 700;
@@ -30,7 +31,20 @@ const WrapperContent = styled.div`
   padding-top: 70px;
   ul {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
+  }
+`;
+
+const More = styled.div`
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+  button {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: underline;
   }
 `;
 
@@ -58,6 +72,9 @@ const LifeStyle = () => {
           </ul>
         </WrapperContent>
       </Container>
+      <More>
+        <button type='button'>+ more</button>
+      </More>
     </StyledDiv>
   );
 };
