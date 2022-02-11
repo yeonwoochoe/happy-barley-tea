@@ -59,11 +59,9 @@ table, tr, td, th, thead, tbody, tfoot {
 * {
   box-sizing: border-box;
 }
-
 a {
   text-decoration:none;
   color:inherit;
-  
 }
 button {
   padding: 0;
@@ -84,7 +82,6 @@ button {
   height: 0;
   overflow: hidden;
 }
-
 .blind_wrap a {
   display: block;
   width: 100%;
@@ -92,16 +89,13 @@ button {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
-
 .none {
   display: none;
 }
-
 .clearfix {
   width: 100%;
   height: auto;
 }
-
 .clearfix:after,
 .clearfix::after {
   content: "";
@@ -110,7 +104,6 @@ button {
   width: 100%;
   height: 0;
 }
-
 `;
 
 ReactDOM.render(
