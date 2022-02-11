@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
+import { CardCaption, CardImage } from "../common/Common";
 
 const Card = styled.div`
   position: relative;
@@ -33,12 +34,6 @@ const CardContent = styled.div`
     }
   }
 `;
-const CardImage = styled.div`
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: initial;
-`;
 
 const IconDiv = styled.div`
   position: absolute;
@@ -60,19 +55,23 @@ const SingleEditConList = ({ data }) => {
       <IconDiv>
         <FaRegHeart />
       </IconDiv>
-      <CardImage style={{ backgroundImage: `url(${data.image})` }}>
-        <Link to="/"> </Link>
+      <CardImage>
+        <Link to="/">
+          <img alt="" src={`${data.image}`}></img>
+        </Link>
       </CardImage>
       <CardContent>
-        <dl>
+        <CardCaption>
           <dt>
-            {data.mainTag}
-            <span>{data.hashTag}</span>
+            <Link to="/">
+              <span>{data.mainTag}</span>
+              <span>{data.hashTag}</span>
+            </Link>
           </dt>
-          <dt>
+          <dd>
             <Link to="/"> {data.mainTitle}</Link>
-          </dt>
-        </dl>
+          </dd>
+        </CardCaption>
       </CardContent>
     </Card>
   );
