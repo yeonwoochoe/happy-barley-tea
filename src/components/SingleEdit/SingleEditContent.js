@@ -60,8 +60,8 @@ const SoltBtnWrapper = styled.div`
   }
 `;
 
-const SingleEditContent = ({ data }) => {
-  const list = data;
+const SingleEditContent = (props) => {
+  const list = props.data;
 
   return (
     <WrapperDiv>
