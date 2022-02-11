@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Card from "../components/LifeStyle/Card";
 import {
   CardList,
-  Container,
   HeaderSecondTitle,
   SectionWrapper,
 } from "../components/common/Common";
