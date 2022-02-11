@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const HeadTitle = styled.h2`
+export const HeaderSecondTitle = styled.h2`
   align-self: ${(props) => props.alignSelf || "flex-start"};
   margin-top: 40px;
   margin-bottom: 40px;
   word-spacing: ${(props) => props.wordSpacing || "-10px"};
-  font-size: 60px;
+  font-size: ${(props) => props.fontSize || "60px"};
   font-weight: bold;
   text-transform: capitalize;
   color: ${(props) => props.color};
@@ -70,6 +70,10 @@ export const CardWrapper = styled.div`
 `;
 
 export const CardList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
 `;
 
@@ -83,6 +87,10 @@ export const CardImage = styled.div`
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height};
   background-color: #dddddd;
+  img {
+    width: 100%;
+    background: no-repeat center/contain;
+  }
 `;
 
 export const CardCaption = styled.dl`
@@ -97,4 +105,32 @@ export const CardCaption = styled.dl`
   dd {
     font-size: 22px;
   }
+`;
+
+export const FaceBook = styled.li`
+  background: ${(props) => `url(${props.backgroundImage})`} no-repeat
+    center/contain;
+`;
+export const Instargram = styled.li`
+  background: ${(props) => `url(${props.backgroundImage})`} no-repeat
+    center/contain;
+`;
+export const Youtube = styled.li`
+  background: ${(props) => `url(${props.backgroundImage})`} no-repeat
+    center/contain;
+`;
+export const Twitter = styled.li`
+  background: ${(props) => `url(${props.backgroundImage})`} no-repeat
+    center/contain;
+`;
+export const NaverPost = styled.li`
+  background: ${(props) => `url(${props.backgroundImage})`} no-repeat
+    center/contain;
+`;
+
+export const Container = styled.div`
+  width: 100%;
+  height: 100%;
+  max-width: 1320px;
+  margin: auto;
 `;

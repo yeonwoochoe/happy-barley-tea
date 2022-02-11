@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import { BrowserRouter } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
@@ -18,7 +18,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 main, menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+input, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -59,13 +59,12 @@ table, tr, td, th, thead, tbody, tfoot {
 * {
   box-sizing: border-box;
 }
-
 a {
   text-decoration:none;
   color:inherit;
-  
 }
 button {
+  padding: 0;
   border: 0;
   background-color: transparent;
   cursor: pointer;
@@ -83,7 +82,6 @@ button {
   height: 0;
   overflow: hidden;
 }
-
 .blind_wrap a {
   display: block;
   width: 100%;
@@ -91,16 +89,13 @@ button {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
-
 .none {
   display: none;
 }
-
 .clearfix {
   width: 100%;
   height: auto;
 }
-
 .clearfix:after,
 .clearfix::after {
   content: "";
@@ -109,7 +104,6 @@ button {
   width: 100%;
   height: 0;
 }
-
 `;
 
 ReactDOM.render(
@@ -119,5 +113,5 @@ ReactDOM.render(
       <App />
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

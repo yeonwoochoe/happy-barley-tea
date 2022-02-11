@@ -6,13 +6,18 @@ import {
   CardLi,
   CardList,
   CardWrapper,
-  HeadTitle,
+  HeaderSecondTitle,
   SectionWrapper,
   ViewContent,
   ViewImage,
   ViewWrapper,
   WrapperDiv,
-} from "./Common";
+  FaceBook,
+  Instargram,
+  NaverPost,
+  Twitter,
+  Youtube,
+} from "../common/Common";
 
 const HotIssueDiv = styled.section`
   width: 100%;
@@ -52,7 +57,6 @@ const SnsList = styled.ul`
     width: 60px;
     height: 60px;
     margin: 0 20px 60px 20px;
-    background-color: #ddd;
     span {
       display: none;
     }
@@ -62,21 +66,14 @@ const SnsList = styled.ul`
 const HotIssue = () => {
   return (
     <HotIssueDiv>
-      <SectionWrapper width={"1280px"}>
-        <HeadTitle color={"#111"}>hot issue</HeadTitle>
+      <SectionWrapper width={"1280px"} padding={"80px 0"}>
+        <HeaderSecondTitle color={"#111"}>hot issue</HeaderSecondTitle>
         <ViewWrapper columns={"1fr 2fr"}>
           <ViewImage>image</ViewImage>
           <ViewContent>title</ViewContent>
         </ViewWrapper>
         <CardWrapper>
-          <CardList
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <CardList>
             <CardLi width={"calc(33.33% - 40px)"}>
               <WrapperDiv>
                 <CardImage height={"470px"}>image</CardImage>
@@ -98,21 +95,23 @@ const HotIssue = () => {
                   </p>
                   <WrapperDiv>
                     <SnsList>
-                      <li>
-                        <span>facebook</span>
-                      </li>
-                      <li>
+                      <Instargram
+                        backgroundImage={`/assets/image-instargram.svg`}
+                      >
                         <span>instargram</span>
-                      </li>
-                      <li>
-                        <span>youtube</span>
-                      </li>
-                      <li>
+                      </Instargram>
+                      <FaceBook backgroundImage={`/assets/image-facebook.svg`}>
+                        <span>facebook</span>
+                      </FaceBook>
+                      <Twitter backgroundImage={`/assets/image-twitter.svg`}>
                         <span>twitter</span>
-                      </li>
-                      <li>
+                      </Twitter>
+                      <Youtube backgroundImage={`/assets/image-youtube.svg`}>
+                        <span>youtube</span>
+                      </Youtube>
+                      <NaverPost backgroundImage={`/assets/image-naver.svg`}>
                         <span>naver post</span>
-                      </li>
+                      </NaverPost>
                     </SnsList>
                   </WrapperDiv>
                 </CardMoreLink>

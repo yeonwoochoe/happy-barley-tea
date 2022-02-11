@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { HeadTitle, SectionWrapper, WrapperDiv } from "./Common";
+import {
+  HeaderSecondTitle,
+  SectionWrapper,
+  WrapperDiv,
+} from "../common/Common";
 
 const SearchBoxDiv = styled.section`
   width: 100%;
@@ -68,9 +72,13 @@ const SearchBox = () => {
   return (
     <SearchBoxDiv>
       <SectionWrapper width={"1280px"} padding={"40px 0 80px 0"}>
-        <HeadTitle alignSelf={"center"} wordSpacing={"-2px"} display={"none"}>
+        <HeaderSecondTitle
+          alignSelf={"center"}
+          wordSpacing={"-2px"}
+          display={"none"}
+        >
           일상에 즐거움을 더하는 이야기를 찾아보세요.
-        </HeadTitle>
+        </HeaderSecondTitle>
         <SeacrhForm>
           <legend className="blind">검색기능</legend>
           <fieldset>

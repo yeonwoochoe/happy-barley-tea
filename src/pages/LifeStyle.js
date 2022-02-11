@@ -1,17 +1,22 @@
-import React from 'react';
-import styled from 'styled-components';
-import StyledH2 from '../components/common/StyledH2';
-import Container from '../components/common/Container';
-import Card from '../components/LifeStyle/Card';
+import React, { useEffect } from "react";
+import styled from "styled-components";
+import Card from "../components/LifeStyle/Card";
+import {
+  CardList,
+  HeaderSecondTitle,
+  SectionWrapper,
+} from "../components/common/Common";
+import { useLocation } from "react-router";
 
-const StyledDiv = styled.div`
+const StyledDiv = styled.section`
   width: 100%;
   height: auto;
-  padding: 100px 0 145px;
+
   background-color: #fff;
 `;
 
 const WrapperTab = styled.div`
+  align-self: start;
   ul {
     display: flex;
     margin-top: 16px;
@@ -49,11 +54,19 @@ const More = styled.div`
 `;
 
 const LifeStyle = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <StyledDiv>
-      <Container>
+      <SectionWrapper width="1320px" padding="100px 0 145px">
         <WrapperTab>
-          <StyledH2>lifestyle</StyledH2>
+          <HeaderSecondTitle fontSize="44px" color="#111">
+            lifestyle
+          </HeaderSecondTitle>
           <ul>
             <li>all</li>
             <li>trend</li>
@@ -65,16 +78,15 @@ const LifeStyle = () => {
             <li>culture</li>
           </ul>
         </WrapperTab>
-
         <WrapperContent>
-          <ul>
+          <CardList>
             <Card />
-          </ul>
+          </CardList>
         </WrapperContent>
-      </Container>
-      <More>
-        <button type='button'>+ more</button>
-      </More>
+        <More>
+          <button type="button">+ more</button>
+        </More>
+      </SectionWrapper>
     </StyledDiv>
   );
 };

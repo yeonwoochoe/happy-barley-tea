@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { HeadTitle, SectionWrapper, WrapperDiv } from "./Common";
+import {
+  HeaderSecondTitle,
+  SectionWrapper,
+  WrapperDiv,
+} from "../common/Common";
 
 const YoutubeBoxDiv = styled.section`
   width: 100%;
@@ -59,7 +63,7 @@ const YoutubeBox = () => {
   return (
     <YoutubeBoxDiv>
       <SectionWrapper padding={"120px 0"}>
-        <HeadTitle className="blind">Youtube</HeadTitle>
+        <HeaderSecondTitle className="blind">Youtube</HeaderSecondTitle>
         <WrapperDiv>
           <WrapperDiv>
             <YoutubeList>

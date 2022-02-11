@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router";
 import styled from "styled-components";
 import EmailReceive from "../components/Main/EmailReceive";
 import HotIssue from "../components/Main/HotIssue";
@@ -13,6 +14,12 @@ const MainWrapper = styled.main`
 `;
 
 const Main = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <MainWrapper>
       <ShowCase />

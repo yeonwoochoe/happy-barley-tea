@@ -6,13 +6,13 @@ import {
   CardLi,
   CardList,
   CardWrapper,
-  HeadTitle,
+  HeaderSecondTitle,
   SectionWrapper,
   ViewContent,
   ViewImage,
   ViewWrapper,
   WrapperDiv,
-} from "./Common";
+} from "../common/Common";
 
 const ShowCaseDiv = styled.section`
   width: 100%;
@@ -38,54 +38,39 @@ const ShowCase = () => {
         </ViewWrapper>
         <ShowWrapper>
           <WrapperDiv width={`1280px`}>
-            <HeadTitle color={`#ffffff`}>show case</HeadTitle>
-
+            <HeaderSecondTitle color={`#ffffff`}>show case</HeaderSecondTitle>
             <CardWrapper>
-              <CardList
-                style={{
-                  display: "grid",
-                  gridAutoFlow: "column",
-                  justifyContent: "space-between",
-                }}
-              >
-                <CardLi>
+              <CardList>
+                <CardLi width={`calc(25% - 40px)`}>
                   <WrapperDiv>
-                    <CardImage width={"290px"} height={"290px"}>
-                      img
-                    </CardImage>
+                    <CardImage height={"290px"}>img</CardImage>
                     <CardCaption>
                       <dt>enjoy</dt>
                       <dd>걸어서 겨울 속으로</dd>
                     </CardCaption>
                   </WrapperDiv>
                 </CardLi>
-                <CardLi>
+                <CardLi width={`calc(25% - 40px)`}>
                   <WrapperDiv>
-                    <CardImage width={"290px"} height={"290px"}>
-                      img
-                    </CardImage>
+                    <CardImage height={"290px"}>img</CardImage>
                     <CardCaption>
                       <dt>enjoy</dt>
                       <dd>걸어서 겨울 속으로</dd>
                     </CardCaption>
                   </WrapperDiv>
                 </CardLi>
-                <CardLi>
+                <CardLi width={`calc(25% - 40px)`}>
                   <WrapperDiv>
-                    <CardImage width={"290px"} height={"290px"}>
-                      img
-                    </CardImage>
+                    <CardImage height={"290px"}>img</CardImage>
                     <CardCaption>
                       <dt>enjoy</dt>
                       <dd>걸어서 겨울 속으로</dd>
                     </CardCaption>
                   </WrapperDiv>
                 </CardLi>
-                <CardLi>
+                <CardLi width={`calc(25% - 40px)`}>
                   <WrapperDiv>
-                    <CardImage width={"290px"} height={"290px"}>
-                      img
-                    </CardImage>
+                    <CardImage height={"290px"}>img</CardImage>
                     <CardCaption>
                       <dt>enjoy</dt>
                       <dd>걸어서 겨울 속으로</dd>
