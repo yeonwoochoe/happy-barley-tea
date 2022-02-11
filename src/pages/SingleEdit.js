@@ -3,6 +3,8 @@ import axios from "axios";
 import styled from "styled-components";
 
 import SingleEditContent from "../components/SingleEdit/SingleEditContent";
+import { useLocation } from "react-router";
+import { HeaderSecondTitle } from "../components/common/Common";
 
 const SingleEditDiv = styled.section`
   width: 100%;
@@ -22,21 +24,6 @@ const MainTitleDiv = styled.div`
   height: auto;
   background-color: #fff;
   margin-bottom: 20px;
-
-  div {
-    width: 14px;
-    height: 30px;
-    margin-right: 10px;
-    background-color: #333;
-  }
-  h2 {
-    padding-top: 0;
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 30px;
-    letter-spacing: 0;
-    text-transform: capitalize;
-  }
 `;
 
 const BtnWrapper = styled.div`
@@ -62,12 +49,20 @@ const BtnWrapper = styled.div`
 `;
 
 const SingleEdit = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   const [num, setNum] = useState(0);
   const [PdData, setPdData] = useState([]);
 
   // data 불러오기
   useEffect(() => {
-    axios.get("./data/SingleEdit/dummyData.json").then((res) => setPdData(res.data));
+    axios
+      .get("./data/SingleEdit/dummyData.json")
+      .then((res) => setPdData(res.data));
   }, []);
 
   const fnTab = (e, i) => {
@@ -83,8 +78,9 @@ const SingleEdit = () => {
   return (
     <SingleEditDiv>
       <MainTitleDiv>
-        <div></div>
-        <h2>single edit</h2>
+        <HeaderSecondTitle fontSize={"44px"} color={`#111`}>
+          single edit
+        </HeaderSecondTitle>
       </MainTitleDiv>
       <BtnWrapper>
         {PdData.map((data, id) => (

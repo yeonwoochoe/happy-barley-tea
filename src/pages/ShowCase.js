@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Figure from "react-bootstrap/Figure";
+import { useLocation } from "react-router";
 
 const ShowCaseDiv = styled.div`
   width: 100%;
@@ -54,6 +55,12 @@ const ShowCaseList = styled.div`
 `;
 
 const ShowCase = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <ShowCaseDiv>
       <ShowCaseWapper>

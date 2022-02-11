@@ -5,7 +5,7 @@ export const HeaderSecondTitle = styled.h2`
   margin-top: 40px;
   margin-bottom: 40px;
   word-spacing: ${(props) => props.wordSpacing || "-10px"};
-  font-size: 60px;
+  font-size: ${(props) => props.fontSize || "60px"};
   font-weight: bold;
   text-transform: capitalize;
   color: ${(props) => props.color};
@@ -87,6 +87,10 @@ export const CardImage = styled.div`
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height};
   background-color: #dddddd;
+  img {
+    width: 100%;
+    background: no-repeat center/contain;
+  }
 `;
 
 export const CardCaption = styled.dl`
