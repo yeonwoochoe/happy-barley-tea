@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
+import { CardCaption, CardImage } from "../common/Common";
 
 const Card = styled.div`
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: calc(33.33% - 40px);
+  margin-bottom: 40px;
   a {
     display: block;
     width: 100%;
@@ -17,27 +18,18 @@ const CardContent = styled.div`
   width: 100%;
   height: auto;
   padding: 0.3rem 0;
-
   dt {
     font-size: 14px;
     font-weight: 700;
     margin-bottom: 5px;
-
     & span {
       color: #999;
     }
-
     &:last-child {
       font-size: 20px;
       font-weight: 400;
     }
   }
-`;
-const CardImage = styled.div`
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: initial;
 `;
 
 const IconDiv = styled.div`
@@ -54,25 +46,29 @@ const IconDiv = styled.div`
   cursor: pointer;
 `;
 
-const SingleEditConList = ({ data }) => {
+const SingleEditConList = (props) => {
   return (
     <Card>
       <IconDiv>
         <FaRegHeart />
       </IconDiv>
-      <CardImage style={{ backgroundImage: `url(${data.image})` }}>
-        <Link to="/"> </Link>
+      <CardImage>
+        <Link to="/">
+          <img alt="" src={`${props.data.image}`}></img>
+        </Link>
       </CardImage>
       <CardContent>
-        <dl>
+        <CardCaption>
           <dt>
-            {data.mainTag}
-            <span>{data.hashTag}</span>
+            <Link to="/">
+              <span>{props.data.mainTag}</span>
+              <span>{props.data.hashTag}</span>
+            </Link>
           </dt>
-          <dt>
-            <Link to="/"> {data.mainTitle}</Link>
-          </dt>
-        </dl>
+          <dd>
+            <Link to="/"> {props.data.mainTitle}</Link>
+          </dd>
+        </CardCaption>
       </CardContent>
     </Card>
   );

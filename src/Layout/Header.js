@@ -1,6 +1,6 @@
 // SA K : header 컴포넌트가 너무 커서 쪼개야 될 것 같음
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const HeaderDiv = styled.header`
@@ -64,6 +64,14 @@ const GlobalNavi = styled.nav`
     font-weight: 700;
     font-size: 18px;
     color: #fff;
+  }
+
+  li {
+    a {
+      &.active {
+        color: #fcd200;
+      }
+    }
   }
 `;
 
@@ -129,13 +137,13 @@ function Header() {
             <h2 className="blind">Global Navigation</h2>
             <ul>
               <li>
-                <Link to="/showcase">showcase</Link>
+                <NavLink to="/showcase">showcase</NavLink>
               </li>
               <li>
-                <Link to="/lifestyle">lifestyle</Link>
+                <NavLink to="/lifestyle">lifestyle</NavLink>
               </li>
               <li>
-                <Link to="/single-edit">single edit</Link>
+                <NavLink to="/single-edit">single edit</NavLink>
               </li>
             </ul>
           </GlobalNavi>
