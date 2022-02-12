@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {HeaderSecondTitle} from "../components/common/Common";
 import Figure from "react-bootstrap/Figure";
 import { useLocation } from "react-router";
-
+import { HeaderSecondTitle } from "../components/common/Common";
 const ShowCaseDiv = styled.div`
   width: 100%;
   background-color: rgba(51, 51, 20);
@@ -23,9 +23,10 @@ const ShowCaseTitle = styled.div`
   width: 100%;
   height: 100%;
   padding-top: 50px;
-`
+`;
 const NewInfo = styled.div`
-  position: relative; z-index: 100; 
+  position: relative;
+  z-index: 100;
   width: 100%;
   height: 880px;
   margin: 104px 0 100px 0;
@@ -37,12 +38,23 @@ const NewInfoImg = styled.div`
   background-color: #fee;
 `;
 const NewCaption = styled.div`
-  position: absolute; z-index: 1000; left: 110px; bottom: 70px;
+  position: absolute;
+  z-index: 1000;
+  left: 110px;
+  bottom: 70px;
   width: 100%;
   height: 90px;
-  dl { width: 100%; height: auto; color:#fff;
-    dt { margin-bottom: 20px; font-size: 32px;}
-    dd { font-size: 18px;}
+  dl {
+    width: 100%;
+    height: auto;
+    color: #fff;
+    dt {
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+    dd {
+      font-size: 18px;
+    }
   }
 `;
 
@@ -53,11 +65,17 @@ const WorkInWinter = styled.div`
   height: 580px;
   margin-bottom: 80px;
   background-color: #3c536e;
-  figure { width: 840px; height: 580px; background-color: #fff;}
-  figcaption { 
-    padding: 0 40px 0 40px; 
-    font-size: 32px; color: #fff;
-    line-height: 580px; }
+  figure {
+    width: 840px;
+    height: 580px;
+    background-color: #fff;
+  }
+  figcaption {
+    padding: 0 40px 0 40px;
+    font-size: 32px;
+    color: #fff;
+    line-height: 580px;
+  }
 `;
 
 const Item = styled.div`
@@ -72,15 +90,23 @@ const Item = styled.div`
 const ItemDiv = styled.div`
   width: 290px;
   height: 382px;
-  figure { width: 290px; height: 290px; margin-bottom: 20px; background-color: #111; }
-  figcaption { font-size: 24px; color: #fff;}
-`
+  figure {
+    width: 290px;
+    height: 290px;
+    margin-bottom: 20px;
+    background-color: #111;
+  }
+  figcaption {
+    font-size: 24px;
+    color: #fff;
+  }
+`;
 
 const ListTitle = styled.div`
   width: 100%;
   height: auto;
   padding-top: 90px;
-`
+`;
 
 const ShowCaseList = styled.div`
   display: flex;
@@ -94,9 +120,17 @@ const ShowCaseList = styled.div`
 const ListDiv = styled.div`
   width: 440px;
   height: 325px;
-  figure { width: 400px; height: 275px; margin-bottom:20px; background-color: #fff;}
-  figcaption { font-size: 24px; color: #fff;}
-`
+  figure {
+    width: 400px;
+    height: 275px;
+    margin-bottom: 20px;
+    background-color: #fff;
+  }
+  figcaption {
+    font-size: 24px;
+    color: #fff;
+  }
+`;
 
 const ShowCase = () => {
   const { pathname } = useLocation();
