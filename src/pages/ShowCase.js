@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Figure from "react-bootstrap/Figure";
-import {HeaderSecondTitle} from "../components/common/Common";
+import { useLocation } from "react-router";
 
 const ShowCaseDiv = styled.div`
   width: 100%;
-  height: 2950px;
-  background-color: #333333;
+  background-color: rgba(51, 51, 20);
+import {HeaderSecondTitle} from "../components/common/Common";
 `;
 
 const ShowCaseWapper = styled.div`
@@ -99,6 +99,12 @@ const ListDiv = styled.div`
 `
 
 const ShowCase = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <ShowCaseDiv>
       <ShowCaseWapper>
