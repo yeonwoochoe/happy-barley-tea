@@ -6,7 +6,6 @@ import { useLocation } from "react-router";
 const ShowCaseDiv = styled.div`
   width: 100%;
   background-color: rgba(51, 51, 20);
-import {HeaderSecondTitle} from "../components/common/Common";
 `;
 
 const ShowCaseWapper = styled.div`
