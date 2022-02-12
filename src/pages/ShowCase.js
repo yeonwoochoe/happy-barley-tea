@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Figure from "react-bootstrap/Figure";
 import { useLocation } from "react-router";
 import { HeaderSecondTitle } from "../components/common/Common";
+
 const ShowCaseDiv = styled.div`
   width: 100%;
   background-color: rgba(51, 51, 20);
