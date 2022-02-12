@@ -17,7 +17,7 @@ import {
   NaverPost,
   Twitter,
   Youtube,
-} from "./Common";
+} from "../common/Common";
 
 const HotIssueDiv = styled.section`
   width: 100%;

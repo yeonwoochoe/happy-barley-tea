@@ -5,7 +5,7 @@ export const HeaderSecondTitle = styled.h2`
   margin-top: 40px;
   margin-bottom: 40px;
   word-spacing: ${(props) => props.wordSpacing || "-10px"};
-  font-size: 60px;
+  font-size: ${(props) => props.fontSize || "60px"};
   font-weight: bold;
   text-transform: capitalize;
   color: ${(props) => props.color};
@@ -48,7 +48,8 @@ export const SectionWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: ${(props) => props.width || "100%"};
+  width: 100%;
+  max-width: ${(props) => props.width || "100%"};
   margin: auto;
   padding: ${(props) => props.padding || "0 0 0 0"};
 `;
@@ -75,6 +76,7 @@ export const CardList = styled.ul`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  margin-top: 60px;
 `;
 
 export const CardLi = styled.li`
@@ -87,6 +89,10 @@ export const CardImage = styled.div`
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height};
   background-color: #dddddd;
+  img {
+    width: 100%;
+    background: no-repeat center/contain;
+  }
 `;
 
 export const CardCaption = styled.dl`
@@ -122,4 +128,11 @@ export const Twitter = styled.li`
 export const NaverPost = styled.li`
   background: ${(props) => `url(${props.backgroundImage})`} no-repeat
     center/contain;
+`;
+
+export const Container = styled.div`
+  width: 100%;
+  height: 100%;
+  max-width: 1320px;
+  margin: auto;
 `;

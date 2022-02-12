@@ -13,7 +13,7 @@ import {
   ViewImage,
   ViewWrapper,
   WrapperDiv,
-} from "./Common";
+} from "../common/Common";
 
 const LifeStyleDiv = styled.section`
   width: 100%;
