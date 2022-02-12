@@ -48,7 +48,8 @@ export const SectionWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: ${(props) => props.width || "100%"};
+  width: 100%;
+  max-width: ${(props) => props.width || "100%"};
   margin: auto;
   padding: ${(props) => props.padding || "0 0 0 0"};
 `;
@@ -75,6 +76,7 @@ export const CardList = styled.ul`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  margin-top: 60px;
 `;
 
 export const CardLi = styled.li`

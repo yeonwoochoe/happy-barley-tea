@@ -5,7 +5,6 @@ import { useLocation } from "react-router";
 
 const ShowCaseDiv = styled.div`
   width: 100%;
-  height: 2950px;
   background-color: rgba(51, 51, 20);
 `;
 
