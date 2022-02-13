@@ -6,8 +6,8 @@ import { CardCaption, CardImage } from "../common/Common";
 
 const Card = styled.div`
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: calc(33.33% - 40px);
+  margin-bottom: 40px;
   a {
     display: block;
     width: 100%;
@@ -18,16 +18,13 @@ const CardContent = styled.div`
   width: 100%;
   height: auto;
   padding: 0.3rem 0;
-
   dt {
     font-size: 14px;
     font-weight: 700;
     margin-bottom: 5px;
-
     & span {
       color: #999;
     }
-
     &:last-child {
       font-size: 20px;
       font-weight: 400;

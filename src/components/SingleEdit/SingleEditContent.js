@@ -1,30 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import { WrapperDiv } from "../common/Common";
 import SingleEditConList from "./SingleEditConList";
 
-const WrapperDiv = styled.div`
-  width: 100%;
-  max-width: 1280px;
-  margin: auto;
-  height: 100%;
-  padding-bottom: 300px;
-`;
-
-const WrapperCard = styled.div`
-  width: auto;
-  height: auto;
-`;
-
 const CardContainer = styled.div`
-  display: grid;
-  grid-template-rows: ${(props) => props.rows};
-  grid-template-columns: ${(props) => props.columns};
-  grid-auto-flow: row dense;
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   width: 100%;
-  max-width: 1280px;
-  gap: 80px 40px;
   height: ${(props) => props.height || "100%"};
+  margin-top: 40px;
   margin-bottom: 100px;
   @media screen and (max-width: 320px) {
     display: flex;
@@ -37,9 +23,7 @@ const SoltBtnWrapper = styled.div`
   display: flex;
   justify-content: ${(props) => props.justify};
   gap: 20px;
-  width: 980px;
-  height: auto;
-  margin: auto;
+  width: 100%;
   margin-bottom: 20px;
   text-align: right;
 
@@ -65,27 +49,24 @@ const SingleEditContent = (props) => {
 
   return (
     <WrapperDiv>
-      <h2 className="blind">single edit content</h2>
-      <WrapperCard>
-        <SoltBtnWrapper justify={`end`}>
-          <button>최신순</button>
-          <span></span>
-          <button>추천순</button>
-        </SoltBtnWrapper>
-        <CardContainer rows={`360px 360px 360px;`} columns={`0fr 0fr 0fr`}>
-          {list.content.map((card, id) => (
-            <SingleEditConList key={id} data={card} />
-          ))}
-        </CardContainer>
-        <SoltBtnWrapper
-          justify={`center`}
-          size={`18px`}
-          color={`#333`}
-          decoration={`underline`}
-        >
-          <button>&#43;MORE</button>
-        </SoltBtnWrapper>
-      </WrapperCard>
+      <SoltBtnWrapper justify={`end`}>
+        <button>최신순</button>
+        <span></span>
+        <button>추천순</button>
+      </SoltBtnWrapper>
+      <CardContainer>
+        {list.content.map((card, id) => (
+          <SingleEditConList key={id} data={card} />
+        ))}
+      </CardContainer>
+      <SoltBtnWrapper
+        justify={`center`}
+        size={`18px`}
+        color={`#333`}
+        decoration={`underline`}
+      >
+        <button>&#43;MORE</button>
+      </SoltBtnWrapper>
     </WrapperDiv>
   );
 };
