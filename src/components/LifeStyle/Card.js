@@ -1,128 +1,34 @@
-import React, { Fragment } from "react";
-import styled from "styled-components";
-import { CardCaption, CardImage, WrapperDiv } from "../common/Common";
+import React, { Fragment } from 'react';
+import styled from 'styled-components';
+import { CardCaption, CardImage, WrapperDiv } from '../common/Common';
 
 const StyledLi = styled.li`
   width: calc(33.33% - 40px);
   height: 548px;
   margin-bottom: 40px;
 
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
   &:nth-child(5),
   &:nth-child(9) {
-    width: calc(66.67% - 40px);
+    width: calc(66.67% - 20px);
   }
 `;
 
-function Card() {
+function Card(props) {
   return (
     <Fragment>
       <StyledLi>
         <WrapperDiv>
-          <CardImage height={"470px"}>
-            <img src="" alt="" />
+          <CardImage height={'470px'}>
+            <img src={props.image} alt={props.description} />
           </CardImage>
           <CardCaption>
-            <dt>trend</dt>
-            <dd>이커머스가 쏘아 올린 구독</dd>
-          </CardCaption>
-        </WrapperDiv>
-      </StyledLi>
-      <StyledLi>
-        <WrapperDiv>
-          <CardImage height={"470px"}>
-            <img src="" alt="" />
-          </CardImage>
-          <CardCaption>
-            <dt>trend</dt>
-            <dd>이커머스가 쏘아 올린 구독</dd>
-          </CardCaption>
-        </WrapperDiv>
-      </StyledLi>
-      <StyledLi>
-        <WrapperDiv>
-          <CardImage height={"470px"}>
-            <img src="" alt="" />
-          </CardImage>
-          <CardCaption>
-            <dt>trend</dt>
-            <dd>이커머스가 쏘아 올린 구독</dd>
-          </CardCaption>
-        </WrapperDiv>
-      </StyledLi>
-      <StyledLi>
-        <WrapperDiv>
-          <CardImage height={"470px"}>
-            <img src="" alt="" />
-          </CardImage>
-          <CardCaption>
-            <dt>trend</dt>
-            <dd>이커머스가 쏘아 올린 구독</dd>
-          </CardCaption>
-        </WrapperDiv>
-      </StyledLi>
-      <StyledLi>
-        <WrapperDiv>
-          <CardImage height={"470px"}>
-            <img src="" alt="" />
-          </CardImage>
-          <CardCaption>
-            <dt>trend</dt>
-            <dd>이커머스가 쏘아 올린 구독</dd>
-          </CardCaption>
-        </WrapperDiv>
-      </StyledLi>
-      <StyledLi>
-        <WrapperDiv>
-          <CardImage height={"470px"}>
-            <img src="" alt="" />
-          </CardImage>
-          <CardCaption>
-            <dt>trend</dt>
-            <dd>이커머스가 쏘아 올린 구독</dd>
-          </CardCaption>
-        </WrapperDiv>
-      </StyledLi>
-      <StyledLi>
-        <WrapperDiv>
-          <CardImage height={"470px"}>
-            <img src="" alt="" />
-          </CardImage>
-          <CardCaption>
-            <dt>trend</dt>
-            <dd>이커머스가 쏘아 올린 구독</dd>
-          </CardCaption>
-        </WrapperDiv>
-      </StyledLi>
-      <StyledLi>
-        <WrapperDiv>
-          <CardImage height={"470px"}>
-            <img src="" alt="" />
-          </CardImage>
-          <CardCaption>
-            <dt>trend</dt>
-            <dd>이커머스가 쏘아 올린 구독</dd>
-          </CardCaption>
-        </WrapperDiv>
-      </StyledLi>
-      <StyledLi>
-        <WrapperDiv>
-          <CardImage height={"470px"}>
-            <img src="" alt="" />
-          </CardImage>
-          <CardCaption>
-            <dt>trend</dt>
-            <dd>이커머스가 쏘아 올린 구독</dd>
-          </CardCaption>
-        </WrapperDiv>
-      </StyledLi>
-      <StyledLi>
-        <WrapperDiv>
-          <CardImage height={"470px"}>
-            <img src="" alt="" />
-          </CardImage>
-          <CardCaption>
-            <dt>trend</dt>
-            <dd>이커머스가 쏘아 올린 구독</dd>
+            <dt>{props.category}</dt>
+            <dd>{props.description}</dd>
           </CardCaption>
         </WrapperDiv>
       </StyledLi>

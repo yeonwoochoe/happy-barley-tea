@@ -1,13 +1,66 @@
-import React, { useEffect } from "react";
-import styled from "styled-components";
-import Card from "../components/LifeStyle/Card";
+import React, { useEffect } from 'react';
+import styled from 'styled-components';
+import Card from '../components/LifeStyle/Card';
 import {
   CardList,
   HeaderSecondTitle,
   SectionWrapper,
   WrapperDiv,
-} from "../components/common/Common";
-import { useLocation } from "react-router";
+} from '../components/common/Common';
+import { useLocation } from 'react-router';
+
+const DUMMY_DATA = [
+  {
+    image: 'https://picsum.photos/470',
+    category: 'culture',
+    description: '여성 캐릭터가 뒤흔든 사극 판도',
+  },
+  {
+    image: 'https://picsum.photos/470',
+    category: 'culture',
+    description: '여성 캐릭터가 뒤흔든 사극 판도',
+  },
+  {
+    image: 'https://picsum.photos/470',
+    category: 'culture',
+    description: '여성 캐릭터가 뒤흔든 사극 판도',
+  },
+  {
+    image: 'https://picsum.photos/470',
+    category: 'culture',
+    description: '여성 캐릭터가 뒤흔든 사극 판도',
+  },
+  {
+    image: 'https://picsum.photos/470',
+    category: 'culture',
+    description: '여성 캐릭터가 뒤흔든 사극 판도',
+  },
+  {
+    image: 'https://picsum.photos/470',
+    category: 'culture',
+    description: '여성 캐릭터가 뒤흔든 사극 판도',
+  },
+  {
+    image: 'https://picsum.photos/470',
+    category: 'culture',
+    description: '여성 캐릭터가 뒤흔든 사극 판도',
+  },
+  {
+    image: 'https://picsum.photos/470',
+    category: 'culture',
+    description: '여성 캐릭터가 뒤흔든 사극 판도',
+  },
+  {
+    image: 'https://picsum.photos/470',
+    category: 'culture',
+    description: '여성 캐릭터가 뒤흔든 사극 판도',
+  },
+  {
+    image: 'https://picsum.photos/470',
+    category: 'culture',
+    description: '여성 캐릭터가 뒤흔든 사극 판도',
+  },
+];
 
 const StyledDiv = styled.section`
   width: 100%;
@@ -51,9 +104,9 @@ const LifeStyle = () => {
 
   return (
     <StyledDiv>
-      <SectionWrapper width="1320px" padding="100px 0 145px">
+      <SectionWrapper width='1320px' padding='100px 0 145px'>
         <WrapperDiv>
-          <HeaderSecondTitle fontSize="44px" color="#111">
+          <HeaderSecondTitle fontSize='44px' color='#111'>
             lifestyle
           </HeaderSecondTitle>
           <WrapperDiv>
@@ -71,11 +124,18 @@ const LifeStyle = () => {
         </WrapperDiv>
         <WrapperDiv>
           <CardList>
-            <Card />
+            {DUMMY_DATA.map((data, idx) => (
+              <Card
+                key={idx}
+                category={data.category}
+                image={data.image}
+                description={data.description}
+              />
+            ))}
           </CardList>
         </WrapperDiv>
         <More>
-          <button type="button">+ more</button>
+          <button type='button'>+ more</button>
         </More>
       </SectionWrapper>
     </StyledDiv>
