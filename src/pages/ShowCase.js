@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import Figure from "react-bootstrap/Figure";
 import { useLocation } from "react-router";
+import { HeaderSecondTitle } from "../components/common/Common";
 
 const ShowCaseDiv = styled.div`
   width: 100%;
@@ -13,44 +14,122 @@ const ShowCaseWapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 0;
+  width: 100%;
+  height: auto;
+  padding: 0 80px 0 80px;
 `;
 
+const ShowCaseTitle = styled.div`
+  width: 100%;
+  height: 100%;
+  padding-top: 50px;
+`;
 const NewInfo = styled.div`
-  width: 1280px;
+  position: relative;
+  z-index: 100;
+  width: 100%;
   height: 880px;
-  margin-top: 144px;
-  margin-bottom: 100px;
+  margin: 104px 0 100px 0;
+`;
+
+const NewInfoImg = styled.div`
+  width: 100%;
+  height: 100%;
   background-color: #fee;
 `;
-const NewInfoImg = styled.div``;
-const NewCaption = styled.div``;
+const NewCaption = styled.div`
+  position: absolute;
+  z-index: 1000;
+  left: 110px;
+  bottom: 70px;
+  width: 100%;
+  height: 90px;
+  dl {
+    width: 100%;
+    height: auto;
+    color: #fff;
+    dt {
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+    dd {
+      font-size: 18px;
+    }
+  }
+`;
 
 const WorkInWinter = styled.div`
-  width: 1280px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
   height: 580px;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
   background-color: #3c536e;
+  figure {
+    width: 840px;
+    height: 580px;
+    background-color: #fff;
+  }
+  figcaption {
+    padding: 0 40px 0 40px;
+    font-size: 32px;
+    color: #fff;
+    line-height: 580px;
+  }
 `;
 
 const Item = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 1280px;
+  width: 100%;
   height: 382px;
-  margin-bottom: 100px;
-  background-color: #ffffff;
+  margin-bottom: 40px;
+`;
+
+const ItemDiv = styled.div`
+  width: 290px;
+  height: 382px;
+  figure {
+    width: 290px;
+    height: 290px;
+    margin-bottom: 20px;
+    background-color: #111;
+  }
+  figcaption {
+    font-size: 24px;
+    color: #fff;
+  }
+`;
+
+const ListTitle = styled.div`
+  width: 100%;
+  height: auto;
+  padding-top: 90px;
 `;
 
 const ShowCaseList = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 1320px;
+  width: 100%;
   height: 325px;
+  margin-top: 27px;
   margin-bottom: 100px;
-  background-color: #ffffff;
+`;
+const ListDiv = styled.div`
+  width: 440px;
+  height: 325px;
+  figure {
+    width: 400px;
+    height: 275px;
+    margin-bottom: 20px;
+    background-color: #fff;
+  }
+  figcaption {
+    font-size: 24px;
+    color: #fff;
+  }
 `;
 
 const ShowCase = () => {
@@ -63,6 +142,9 @@ const ShowCase = () => {
   return (
     <ShowCaseDiv>
       <ShowCaseWapper>
+        <ShowCaseTitle>
+          <HeaderSecondTitle color="#fff">showcase</HeaderSecondTitle>
+        </ShowCaseTitle>
         <NewInfo>
           <NewInfoImg>img</NewInfoImg>
           <NewCaption>
@@ -76,48 +158,51 @@ const ShowCase = () => {
           </NewCaption>
         </NewInfo>
         <WorkInWinter>
-          <Figure>
-            <Figure.Image width={840} height={580} />
-            <Figure.Caption>걸어서 겨울 속으로</Figure.Caption>
-          </Figure>
+          <figure>img</figure>
+          <figcaption>걸어서 겨울 속으로</figcaption>
         </WorkInWinter>
         <Item>
-          <Figure>
-            <Figure.Image width={290} height={290} />
-            <Figure.Caption>맛있는 제주의 낮과 밤</Figure.Caption>
-          </Figure>
-          <Figure>
-            <Figure.Image width={290} height={290} />
-            <Figure.Caption>인센스 주의보</Figure.Caption>
-          </Figure>
-          <Figure>
-            <Figure.Image width={290} height={290} />
-            <Figure.Caption>
-              번진듯 자연스러운 입술을 위한, 립 키서
-            </Figure.Caption>
-          </Figure>
-          <Figure>
-            <Figure.Image width={290} height={290} />
-            <Figure.Caption>가성비 좋은 벤츠 SUV, EQA</Figure.Caption>
-          </Figure>
+          <ItemDiv>
+            <figure>img</figure>
+            <figcaption>맛있는 제주의 낮과 밤</figcaption>
+          </ItemDiv>
+          <ItemDiv>
+            <figure>img</figure>
+            <figcaption>인센스 주의보</figcaption>
+          </ItemDiv>
+          <ItemDiv>
+            <figure>img</figure>
+            <figcaption>번진듯 자연스러운 입술을 위한, 립커서</figcaption>
+          </ItemDiv>
+          <ItemDiv>
+            <figure>img</figure>
+            <figcaption>가성비 좋은 벤츠 SUV, EQA</figcaption>
+          </ItemDiv>
         </Item>
+        <ListTitle>
+          <HeaderSecondTitle color="#fff">showcase list</HeaderSecondTitle>
+        </ListTitle>
         <ShowCaseList>
-          <Figure>
-            <Figure.Image width={400} height={275} />
-            <Figure.Caption>호랑이 기운 맛보실래요?</Figure.Caption>
-          </Figure>
-          <Figure>
-            <Figure.Image width={400} height={275} />
-            <Figure.Caption>호랑이 기운 맛보실래요?</Figure.Caption>
-          </Figure>
-          <Figure>
-            <Figure.Image width={400} height={275} />
-            <Figure.Caption>호랑이 기운 맛보실래요?</Figure.Caption>
-          </Figure>
-          <Figure>
-            <Figure.Image width={400} height={275} />
-            <Figure.Caption>호랑이 기운 맛보실래요?</Figure.Caption>
-          </Figure>
+          <ListDiv>
+            <figure>img</figure>
+            <figcaption>효소 다이어트 전성시대</figcaption>
+          </ListDiv>
+          <ListDiv>
+            <figure>img</figure>
+            <figcaption>한겨울의 미술 산책</figcaption>
+          </ListDiv>
+          <ListDiv>
+            <figure>img</figure>
+            <figcaption>호랑이 기운 맛보실래요?</figcaption>
+          </ListDiv>
+          <ListDiv>
+            <figure>img</figure>
+            <figcaption>빵순이를 위한 건강 빵집 4</figcaption>
+          </ListDiv>
+          <ListDiv>
+            <figure>img</figure>
+            <figcaption>서울 신상 맛집 업데이트</figcaption>
+          </ListDiv>
         </ShowCaseList>
       </ShowCaseWapper>
     </ShowCaseDiv>
