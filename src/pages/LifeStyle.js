@@ -5,39 +5,28 @@ import {
   CardList,
   HeaderSecondTitle,
   SectionWrapper,
+  WrapperDiv,
 } from "../components/common/Common";
 import { useLocation } from "react-router";
 
 const StyledDiv = styled.section`
   width: 100%;
   height: auto;
-
   background-color: #fff;
 `;
 
-const WrapperTab = styled.div`
-  align-self: start;
-  ul {
-    display: flex;
-    margin-top: 16px;
-    padding: 0 20px;
-    gap: 60px;
-    font-size: 22px;
-    font-weight: 700;
-    color: #9f9f9f;
-    text-transform: capitalize;
-    li:first-child {
-      text-transform: uppercase;
-    }
-  }
-`;
-
-const WrapperContent = styled.div`
-  padding-top: 70px;
-  ul {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+const TabMenuList = styled.ul`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+  gap: 60px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #9f9f9f;
+  text-transform: capitalize;
+  li:first-child {
+    text-transform: uppercase;
   }
 `;
 
@@ -63,26 +52,28 @@ const LifeStyle = () => {
   return (
     <StyledDiv>
       <SectionWrapper width="1320px" padding="100px 0 145px">
-        <WrapperTab>
+        <WrapperDiv>
           <HeaderSecondTitle fontSize="44px" color="#111">
             lifestyle
           </HeaderSecondTitle>
-          <ul>
-            <li>all</li>
-            <li>trend</li>
-            <li>enjoy</li>
-            <li>shopping</li>
-            <li>relationship</li>
-            <li>business</li>
-            <li>viewpoint</li>
-            <li>culture</li>
-          </ul>
-        </WrapperTab>
-        <WrapperContent>
+          <WrapperDiv>
+            <TabMenuList>
+              <li>all</li>
+              <li>trend</li>
+              <li>enjoy</li>
+              <li>shopping</li>
+              <li>relationship</li>
+              <li>business</li>
+              <li>viewpoint</li>
+              <li>culture</li>
+            </TabMenuList>
+          </WrapperDiv>
+        </WrapperDiv>
+        <WrapperDiv>
           <CardList>
             <Card />
           </CardList>
-        </WrapperContent>
+        </WrapperDiv>
         <More>
           <button type="button">+ more</button>
         </More>
