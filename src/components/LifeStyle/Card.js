@@ -12,8 +12,8 @@ const StyledLi = styled.li`
     height: 100%;
     object-fit: cover;
   }
-  &:nth-child(5),
-  &:nth-child(9) {
+  &:nth-child(10n - 5),
+  &:nth-child(10n - 1) {
     width: calc(66.67% - 20px);
   }
 `;

@@ -9,59 +9,6 @@ import {
 } from '../components/common/Common';
 import { useLocation } from 'react-router';
 
-// const DUMMY_DATA = [
-//   {
-//     image: 'https://picsum.photos/470',
-//     category: 'culture',
-//     description: '여성 캐릭터가 뒤흔든 사극 판도',
-//   },
-//   {
-//     image: 'https://picsum.photos/470',
-//     category: 'culture',
-//     description: '여성 캐릭터가 뒤흔든 사극 판도',
-//   },
-//   {
-//     image: 'https://picsum.photos/470',
-//     category: 'culture',
-//     description: '여성 캐릭터가 뒤흔든 사극 판도',
-//   },
-//   {
-//     image: 'https://picsum.photos/470',
-//     category: 'culture',
-//     description: '여성 캐릭터가 뒤흔든 사극 판도',
-//   },
-//   {
-//     image: 'https://picsum.photos/470',
-//     category: 'culture',
-//     description: '여성 캐릭터가 뒤흔든 사극 판도',
-//   },
-//   {
-//     image: 'https://picsum.photos/470',
-//     category: 'culture',
-//     description: '여성 캐릭터가 뒤흔든 사극 판도',
-//   },
-//   {
-//     image: 'https://picsum.photos/470',
-//     category: 'culture',
-//     description: '여성 캐릭터가 뒤흔든 사극 판도',
-//   },
-//   {
-//     image: 'https://picsum.photos/470',
-//     category: 'culture',
-//     description: '여성 캐릭터가 뒤흔든 사극 판도',
-//   },
-//   {
-//     image: 'https://picsum.photos/470',
-//     category: 'culture',
-//     description: '여성 캐릭터가 뒤흔든 사극 판도',
-//   },
-//   {
-//     image: 'https://picsum.photos/470',
-//     category: 'culture',
-//     description: '여성 캐릭터가 뒤흔든 사극 판도',
-//   },
-// ];
-
 const StyledDiv = styled.section`
   width: 100%;
   height: auto;
@@ -100,6 +47,8 @@ const LifeStyle = () => {
   const dataUrl = './data/LifeStyle/dummyData.json';
   const [isLoading, setIsloding] = useState(true);
   const [loadedData, setLoadedData] = useState([]);
+  const [filterData, setFilterData] = useState([]);
+  const [clickNum, setClickNum] = useState(1);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -123,9 +72,18 @@ const LifeStyle = () => {
       });
   }, []);
 
+  useEffect(() => {
+    setFilterData(loadedData.filter((el, idx) => idx < 10 * clickNum));
+  }, [loadedData, clickNum]);
+
   if (isLoading) {
     return <p>Loading...</p>;
   }
+
+  const fetchMoreHandler = e => {
+    e.preventDefault();
+    setClickNum(clickNum + 1);
+  };
 
   return (
     <StyledDiv>
@@ -149,13 +107,15 @@ const LifeStyle = () => {
         </WrapperDiv>
         <WrapperDiv>
           <CardList>
-            {loadedData.map(data => (
+            {filterData.map(data => (
               <Card key={data.id} category={data.category} image={data.image} title={data.title} />
             ))}
           </CardList>
         </WrapperDiv>
         <More>
-          <button type='button'>+ more</button>
+          <button type='button' onClick={fetchMoreHandler}>
+            + more
+          </button>
         </More>
       </SectionWrapper>
     </StyledDiv>
