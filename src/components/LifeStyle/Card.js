@@ -24,11 +24,11 @@ function Card(props) {
       <StyledLi>
         <WrapperDiv>
           <CardImage height={'470px'}>
-            <img src={props.image} alt={props.description} />
+            <img src={props.image} alt={props.title} />
           </CardImage>
           <CardCaption>
             <dt>{props.category}</dt>
-            <dd>{props.description}</dd>
+            <dd>{props.title}</dd>
           </CardCaption>
         </WrapperDiv>
       </StyledLi>

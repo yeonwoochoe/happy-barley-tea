@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Card from '../components/LifeStyle/Card';
 import {
@@ -9,58 +9,58 @@ import {
 } from '../components/common/Common';
 import { useLocation } from 'react-router';
 
-const DUMMY_DATA = [
-  {
-    image: 'https://picsum.photos/470',
-    category: 'culture',
-    description: '여성 캐릭터가 뒤흔든 사극 판도',
-  },
-  {
-    image: 'https://picsum.photos/470',
-    category: 'culture',
-    description: '여성 캐릭터가 뒤흔든 사극 판도',
-  },
-  {
-    image: 'https://picsum.photos/470',
-    category: 'culture',
-    description: '여성 캐릭터가 뒤흔든 사극 판도',
-  },
-  {
-    image: 'https://picsum.photos/470',
-    category: 'culture',
-    description: '여성 캐릭터가 뒤흔든 사극 판도',
-  },
-  {
-    image: 'https://picsum.photos/470',
-    category: 'culture',
-    description: '여성 캐릭터가 뒤흔든 사극 판도',
-  },
-  {
-    image: 'https://picsum.photos/470',
-    category: 'culture',
-    description: '여성 캐릭터가 뒤흔든 사극 판도',
-  },
-  {
-    image: 'https://picsum.photos/470',
-    category: 'culture',
-    description: '여성 캐릭터가 뒤흔든 사극 판도',
-  },
-  {
-    image: 'https://picsum.photos/470',
-    category: 'culture',
-    description: '여성 캐릭터가 뒤흔든 사극 판도',
-  },
-  {
-    image: 'https://picsum.photos/470',
-    category: 'culture',
-    description: '여성 캐릭터가 뒤흔든 사극 판도',
-  },
-  {
-    image: 'https://picsum.photos/470',
-    category: 'culture',
-    description: '여성 캐릭터가 뒤흔든 사극 판도',
-  },
-];
+// const DUMMY_DATA = [
+//   {
+//     image: 'https://picsum.photos/470',
+//     category: 'culture',
+//     description: '여성 캐릭터가 뒤흔든 사극 판도',
+//   },
+//   {
+//     image: 'https://picsum.photos/470',
+//     category: 'culture',
+//     description: '여성 캐릭터가 뒤흔든 사극 판도',
+//   },
+//   {
+//     image: 'https://picsum.photos/470',
+//     category: 'culture',
+//     description: '여성 캐릭터가 뒤흔든 사극 판도',
+//   },
+//   {
+//     image: 'https://picsum.photos/470',
+//     category: 'culture',
+//     description: '여성 캐릭터가 뒤흔든 사극 판도',
+//   },
+//   {
+//     image: 'https://picsum.photos/470',
+//     category: 'culture',
+//     description: '여성 캐릭터가 뒤흔든 사극 판도',
+//   },
+//   {
+//     image: 'https://picsum.photos/470',
+//     category: 'culture',
+//     description: '여성 캐릭터가 뒤흔든 사극 판도',
+//   },
+//   {
+//     image: 'https://picsum.photos/470',
+//     category: 'culture',
+//     description: '여성 캐릭터가 뒤흔든 사극 판도',
+//   },
+//   {
+//     image: 'https://picsum.photos/470',
+//     category: 'culture',
+//     description: '여성 캐릭터가 뒤흔든 사극 판도',
+//   },
+//   {
+//     image: 'https://picsum.photos/470',
+//     category: 'culture',
+//     description: '여성 캐릭터가 뒤흔든 사극 판도',
+//   },
+//   {
+//     image: 'https://picsum.photos/470',
+//     category: 'culture',
+//     description: '여성 캐릭터가 뒤흔든 사극 판도',
+//   },
+// ];
 
 const StyledDiv = styled.section`
   width: 100%;
@@ -97,10 +97,35 @@ const More = styled.div`
 
 const LifeStyle = () => {
   const { pathname } = useLocation();
+  const dataUrl = './data/LifeStyle/dummyData.json';
+  const [isLoading, setIsloding] = useState(true);
+  const [loadedData, setLoadedData] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  useEffect(() => {
+    setIsloding(true);
+    fetch(dataUrl)
+      .then(res => res.json())
+      .then(data => {
+        const dataArr = [];
+        for (const key in data) {
+          const rel = {
+            id: key,
+            ...data[key],
+          };
+          dataArr.push(rel);
+        }
+        setIsloding(false);
+        setLoadedData(dataArr);
+      });
+  }, []);
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <StyledDiv>
@@ -124,13 +149,8 @@ const LifeStyle = () => {
         </WrapperDiv>
         <WrapperDiv>
           <CardList>
-            {DUMMY_DATA.map((data, idx) => (
-              <Card
-                key={idx}
-                category={data.category}
-                image={data.image}
-                description={data.description}
-              />
+            {loadedData.map(data => (
+              <Card key={data.id} category={data.category} image={data.image} title={data.title} />
             ))}
           </CardList>
         </WrapperDiv>
