@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Outlet, Route, Routes, useLocation } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import Card from '../components/LifeStyle/Card';
-import {
-  CardList,
-  HeaderSecondTitle,
-  SectionWrapper,
-  WrapperDiv,
-} from '../components/common/Common';
-import { useLocation } from 'react-router';
+import LifeStyleCardListAll from '../components/LifeStyle/LifeStyleCardListAll';
+import { HeaderSecondTitle, SectionWrapper, WrapperDiv } from '../components/common/Common';
 
 const StyledDiv = styled.section`
   width: 100%;
@@ -47,8 +43,9 @@ const LifeStyle = () => {
   const dataUrl = './data/LifeStyle/dummyData.json';
   const [isLoading, setIsloding] = useState(true);
   const [loadedData, setLoadedData] = useState([]);
-  const [filterData, setFilterData] = useState([]);
   const [clickNum, setClickNum] = useState(1);
+
+  const filterData = loadedData.filter((card, idx) => idx < 10 * clickNum);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -72,10 +69,6 @@ const LifeStyle = () => {
       });
   }, []);
 
-  useEffect(() => {
-    setFilterData(loadedData.filter((el, idx) => idx < 10 * clickNum));
-  }, [loadedData, clickNum]);
-
   if (isLoading) {
     return <p>Loading...</p>;
   }
@@ -94,24 +87,40 @@ const LifeStyle = () => {
           </HeaderSecondTitle>
           <WrapperDiv>
             <TabMenuList>
-              <li>all</li>
-              <li>trend</li>
-              <li>enjoy</li>
-              <li>shopping</li>
-              <li>relationship</li>
-              <li>business</li>
-              <li>viewpoint</li>
-              <li>culture</li>
+              <li>
+                <NavLink to='all'>all</NavLink>
+              </li>
+              <li>
+                <NavLink to='#'>trend</NavLink>
+              </li>
+              <li>
+                <NavLink to='#'>enjoy</NavLink>
+              </li>
+              <li>
+                <NavLink to='#'>shopping</NavLink>
+              </li>
+              <li>
+                <NavLink to='#'>relationship</NavLink>
+              </li>
+              <li>
+                <NavLink to='#'>business</NavLink>
+              </li>
+              <li>
+                <NavLink to='#'>viewpoint</NavLink>
+              </li>
+              <li>
+                <NavLink to='#'>culture</NavLink>
+              </li>
             </TabMenuList>
           </WrapperDiv>
         </WrapperDiv>
-        <WrapperDiv>
-          <CardList>
-            {filterData.map(data => (
-              <Card key={data.id} category={data.category} image={data.image} title={data.title} />
-            ))}
-          </CardList>
-        </WrapperDiv>
+
+        {/* <Routes>
+          <Route path='lifestyle/all' element={<LifeStyleCardListAll />} />
+        </Routes> */}
+        {/* <Outlet /> */}
+        <LifeStyleCardListAll data={filterData} />
+
         <More>
           <button type='button' onClick={fetchMoreHandler}>
             + more

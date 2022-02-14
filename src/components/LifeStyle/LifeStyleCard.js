@@ -18,7 +18,7 @@ const StyledLi = styled.li`
   }
 `;
 
-function Card(props) {
+function LifeStyleCard(props) {
   return (
     <Fragment>
       <StyledLi>
@@ -36,4 +36,4 @@ function Card(props) {
   );
 }
 
-export default Card;
+export default LifeStyleCard;
