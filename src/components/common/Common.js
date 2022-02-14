@@ -82,7 +82,6 @@ export const CardList = styled.ul`
 export const CardLi = styled.li`
   width: ${props => props.width || '100%'};
   margin-bottom: 40px;
-  background-color: #aaaaaa;
 `;
 
 export const CardImage = styled.div`
