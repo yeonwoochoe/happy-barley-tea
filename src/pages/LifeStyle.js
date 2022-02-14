@@ -1,13 +1,9 @@
-import React, { useEffect } from "react";
-import styled from "styled-components";
-import Card from "../components/LifeStyle/Card";
-import {
-  CardList,
-  HeaderSecondTitle,
-  SectionWrapper,
-  WrapperDiv,
-} from "../components/common/Common";
-import { useLocation } from "react-router";
+import React, { useEffect, useState } from 'react';
+import { Outlet, Route, Routes, useLocation } from 'react-router';
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+import LifeStyleCardListAll from '../components/LifeStyle/LifeStyleCardListAll';
+import { HeaderSecondTitle, SectionWrapper, WrapperDiv } from '../components/common/Common';
 
 const StyledDiv = styled.section`
   width: 100%;
@@ -44,38 +40,91 @@ const More = styled.div`
 
 const LifeStyle = () => {
   const { pathname } = useLocation();
+  const dataUrl = './data/LifeStyle/dummyData.json';
+  const [isLoading, setIsloding] = useState(true);
+  const [loadedData, setLoadedData] = useState([]);
+  const [clickNum, setClickNum] = useState(1);
+
+  const filterData = loadedData.filter((card, idx) => idx < 10 * clickNum);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  useEffect(() => {
+    setIsloding(true);
+    fetch(dataUrl)
+      .then(res => res.json())
+      .then(data => {
+        const dataArr = [];
+        for (const key in data) {
+          const rel = {
+            id: key,
+            ...data[key],
+          };
+          dataArr.push(rel);
+        }
+        setIsloding(false);
+        setLoadedData(dataArr);
+      });
+  }, []);
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  const fetchMoreHandler = e => {
+    e.preventDefault();
+    setClickNum(clickNum + 1);
+  };
+
   return (
     <StyledDiv>
-      <SectionWrapper width="1320px" padding="100px 0 145px">
+      <SectionWrapper width='1320px' padding='100px 0 145px'>
         <WrapperDiv>
-          <HeaderSecondTitle fontSize="44px" color="#111">
+          <HeaderSecondTitle fontSize='44px' color='#111'>
             lifestyle
           </HeaderSecondTitle>
           <WrapperDiv>
             <TabMenuList>
-              <li>all</li>
-              <li>trend</li>
-              <li>enjoy</li>
-              <li>shopping</li>
-              <li>relationship</li>
-              <li>business</li>
-              <li>viewpoint</li>
-              <li>culture</li>
+              <li>
+                <NavLink to='all'>all</NavLink>
+              </li>
+              <li>
+                <NavLink to='#'>trend</NavLink>
+              </li>
+              <li>
+                <NavLink to='#'>enjoy</NavLink>
+              </li>
+              <li>
+                <NavLink to='#'>shopping</NavLink>
+              </li>
+              <li>
+                <NavLink to='#'>relationship</NavLink>
+              </li>
+              <li>
+                <NavLink to='#'>business</NavLink>
+              </li>
+              <li>
+                <NavLink to='#'>viewpoint</NavLink>
+              </li>
+              <li>
+                <NavLink to='#'>culture</NavLink>
+              </li>
             </TabMenuList>
           </WrapperDiv>
         </WrapperDiv>
-        <WrapperDiv>
-          <CardList>
-            <Card />
-          </CardList>
-        </WrapperDiv>
+
+        {/* <Routes>
+          <Route path='lifestyle/all' element={<LifeStyleCardListAll />} />
+        </Routes> */}
+        {/* <Outlet /> */}
+        <LifeStyleCardListAll data={filterData} />
+
         <More>
-          <button type="button">+ more</button>
+          <button type='button' onClick={fetchMoreHandler}>
+            + more
+          </button>
         </More>
       </SectionWrapper>
     </StyledDiv>
