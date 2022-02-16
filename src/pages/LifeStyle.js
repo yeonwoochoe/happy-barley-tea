@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Outlet, Route, Routes, useLocation } from 'react-router';
-import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router';
 import styled from 'styled-components';
-import LifeStyleCardListAll from '../components/LifeStyle/LifeStyleCardListAll';
+import LifeStyleCardList from '../components/LifeStyle/LifeStyleCardList';
 import { HeaderSecondTitle, SectionWrapper, WrapperDiv } from '../components/common/Common';
 
 const StyledDiv = styled.section`
@@ -24,6 +23,12 @@ const TabMenuList = styled.ul`
   li:first-child {
     text-transform: uppercase;
   }
+  button {
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    text-transform: inherit;
+  }
 `;
 
 const More = styled.div`
@@ -44,8 +49,27 @@ const LifeStyle = () => {
   const [isLoading, setIsloding] = useState(true);
   const [loadedData, setLoadedData] = useState([]);
   const [clickNum, setClickNum] = useState(1);
+  const [categoryName, setCategoryName] = useState('all');
 
-  const filterData = loadedData.filter((card, idx) => idx < 10 * clickNum);
+  const categoryArr = [
+    'all',
+    'trend',
+    'enjoy',
+    'shopping',
+    'relationship',
+    'business',
+    'viewpoint',
+    'culture',
+  ];
+
+  const categoryFilter = loadedData.filter((card, idx) => {
+    if (categoryName === 'all') {
+      return card;
+    } else {
+      return categoryName === card.category;
+    }
+  });
+  const numFilter = categoryFilter.filter((card, idx) => idx < 10 * clickNum);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -73,6 +97,11 @@ const LifeStyle = () => {
     return <p>Loading...</p>;
   }
 
+  const movePageHandler = props => {
+    setClickNum(1);
+    setCategoryName(props);
+  };
+
   const fetchMoreHandler = e => {
     e.preventDefault();
     setClickNum(clickNum + 1);
@@ -87,39 +116,18 @@ const LifeStyle = () => {
           </HeaderSecondTitle>
           <WrapperDiv>
             <TabMenuList>
-              <li>
-                <NavLink to='all'>all</NavLink>
-              </li>
-              <li>
-                <NavLink to='#'>trend</NavLink>
-              </li>
-              <li>
-                <NavLink to='#'>enjoy</NavLink>
-              </li>
-              <li>
-                <NavLink to='#'>shopping</NavLink>
-              </li>
-              <li>
-                <NavLink to='#'>relationship</NavLink>
-              </li>
-              <li>
-                <NavLink to='#'>business</NavLink>
-              </li>
-              <li>
-                <NavLink to='#'>viewpoint</NavLink>
-              </li>
-              <li>
-                <NavLink to='#'>culture</NavLink>
-              </li>
+              {categoryArr.map((el, idx) => (
+                <li key={idx}>
+                  <button type='button' onClick={() => movePageHandler(el)}>
+                    {el}
+                  </button>
+                </li>
+              ))}
             </TabMenuList>
           </WrapperDiv>
         </WrapperDiv>
 
-        {/* <Routes>
-          <Route path='lifestyle/all' element={<LifeStyleCardListAll />} />
-        </Routes> */}
-        {/* <Outlet /> */}
-        <LifeStyleCardListAll data={filterData} />
+        <LifeStyleCardList data={numFilter} />
 
         <More>
           <button type='button' onClick={fetchMoreHandler}>

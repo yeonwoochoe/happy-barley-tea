@@ -2,7 +2,7 @@ import React from 'react';
 import { WrapperDiv, CardList } from '../common/Common';
 import LifeStyleCard from './LifeStyleCard';
 
-function LifeStyleCardListAll(props) {
+function LifeStyleCardList(props) {
   return (
     <WrapperDiv>
       <CardList>
@@ -19,4 +19,4 @@ function LifeStyleCardListAll(props) {
   );
 }
 
-export default LifeStyleCardListAll;
+export default LifeStyleCardList;
