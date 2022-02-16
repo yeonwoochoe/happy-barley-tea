@@ -127,7 +127,7 @@ const LifeStyle = () => {
           </WrapperDiv>
         </WrapperDiv>
 
-        <LifeStyleCardList data={numFilter} />
+        <LifeStyleCardList data={numFilter} category={categoryName} />
 
         <More>
           <button type='button' onClick={fetchMoreHandler}>
