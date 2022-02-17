@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# ☕ Happy Bareley Tea
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## Single plus
+4명의 프론트직군이 간단한 플랫폼을 활용한 홈페이지 웹 구성을 목표로<br />
+클론 웹 구현으로 협력시에 git 사용법을 익힘을 목표로 하고 있습니다.<br />
+https://m.thesingle.co.kr/
 
-### `npm start`
+## 🏠 Members
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ <table>
+      <thead>
+        <tr>
+          <th>상민</th>
+          <th>슬아</th>
+          <th>연우</th>
+          <th>은비</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td align="center">
+            <a href="https://avatars.githubusercontent.com/u/34502254?v=4">
+              <img
+                width="100"
+                height="100"
+                src="https://avatars.githubusercontent.com/u/34502254?v=4"
+                alt="profile"
+              />
+            </a>
+          </td>
+          <td align="center">
+            <a href="https://avatars.githubusercontent.com/u/89890213?v=4">
+              <img
+                width="100"
+                height="100"
+                src="https://avatars.githubusercontent.com/u/89890213?v=4"
+                alt="profile"
+              />
+            </a>
+          </td>
+          <td align="center">
+            <a href="https://avatars.githubusercontent.com/u/89890240?v=4">
+              <img
+                width="100"
+                height="100"
+                src="https://avatars.githubusercontent.com/u/89890240?v=4"
+                alt="profile"
+              />
+            </a>
+          </td>
+          <td align="center">
+            <a href="https://avatars.githubusercontent.com/u/89890390?v=4">
+              <img
+                width="100"
+                height="100"
+                src="https://avatars.githubusercontent.com/u/89890390?v=4"
+                alt="profile"
+              />
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td align="center"><a href="https://github.com/advanced-rising">risingcore</a></td>
+          <td align="center"><a href="https://github.com/sakang07">sak</a></td>
+          <td align="center"><a href="https://github.com/yeonwoochoe">yeonwoo</a></td>
+          <td align="center"><a href="https://github.com/mittwoch01">mittwoch</a></td>
+        </tr>
+      </tbody>
+    </table>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠 Git Commit Template
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+- **feat** : 새로운 기능을 추가할 경우
+- **fix** : 버그를 고친 경우
+- **design** : CSS 등 사용자 UI 디자인 변경
+- **style** : 코드 포맷 변경, 세미 콜론 누락, 코드 수정이 없는 경우
+- **refactor** : 프로덕션 코드 리팩토링
+- **comment** : 필요한 주석 추가 및 변경
+- **docs** : 문서를 수정한 경우
+- **test** : 테스트 추가, 테스트 리팩토링(프로덕션 코드 변경 X)
+- **chore** : 빌드 태스트 업데이트, 패키지 매니저를 설정하는 경우(프로덕션 코드 변경 X)
+- **rename** : 파일 혹은 폴더명을 수정하거나 옮기는 작업만인 경우
+- **remove** : 파일을 삭제하는 작업만 수행한 경우
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📁 Directory
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 📁  public
 
-### `npm run eject`
+- 📁  **assets** : image 등이 들어가는 폴더.
+- 📁  **data** : json 파일 등의 data를 모아둔 폴더.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 📁  src
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 📁  **components** : 작은 단위의 컴포넌트가 모인 폴더.
+  - 📁  **common** : 여러 번 재사용되는 컴포넌트를 모아둔 폴더.
+  - 📁  **page 이름과 동일한 directory** : 특정 page에서만 사용되는 컴포넌트를 모아둔 폴더.
+- 📁  **pages** : 독립된 page 컴포넌트.
+- 📁  **router** : router-dom 폴더.
+  - Router.js
+- 📁  **layout** : layout 컴포넌트, header, footer 등이 모인 폴더.
+- 📁  **utils** : 상수나 공통 함수 등을 담는 폴더.
+- **📁  store** : redux나 context 관련 전역 변수를 담은 폴더.
+- **GlobalStyle.js** : reset.css
+- **theme.js** : common.css
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 이벤트 핸들러 props
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `on*` 접두사 + 동사의 형태로 작성.
+- _onClick, onClose, onSubmit..._
 
-## Learn More
+### 이벤트 핸들러
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `*handler` 동사 + 접미사의 형태로 작성.
+- _isValidHandler, isLoginEnteredHandler..._
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```jsx
+<Component **onClick**={**isValidHandler**} />
+```

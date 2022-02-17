@@ -1,10 +1,12 @@
 import React from 'react';
 import { WrapperDiv, CardList } from '../common/Common';
+import LifeStyleSort from './LifeStyleSort';
 import LifeStyleCard from './LifeStyleCard';
 
-function LifeStyleCardListAll(props) {
+function LifeStyleCardList(props) {
   return (
     <WrapperDiv>
+      <LifeStyleSort category={props.category} sort={props.sort} />
       <CardList>
         {props.data.map(data => (
           <LifeStyleCard
@@ -19,4 +21,4 @@ function LifeStyleCardListAll(props) {
   );
 }
 
-export default LifeStyleCardListAll;
+export default LifeStyleCardList;
