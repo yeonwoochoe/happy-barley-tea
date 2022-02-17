@@ -62,14 +62,15 @@ const LifeStyle = () => {
     'culture',
   ];
 
-  const categoryFilter = loadedData.filter((card, idx) => {
-    if (categoryName === 'all') {
-      return card;
-    } else {
-      return categoryName === card.category;
-    }
-  });
-  const numFilter = categoryFilter.filter((card, idx) => idx < 10 * clickNum);
+  const filterData = loadedData
+    .filter((card, idx) => {
+      if (categoryName === 'all') {
+        return card;
+      } else {
+        return categoryName === card.category;
+      }
+    })
+    .filter((card, idx) => idx < 10 * clickNum);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -97,9 +98,23 @@ const LifeStyle = () => {
     return <p>Loading...</p>;
   }
 
-  const movePageHandler = props => {
+  const movePageHandler = cateName => {
     setClickNum(1);
-    setCategoryName(props);
+    setCategoryName(cateName);
+  };
+
+  const sortNewHandler = () => {
+    const sortData = [...loadedData];
+    sortData.sort((a, b) => new Date(b.date) - new Date(a.date));
+    console.log(sortData, 'new');
+    setLoadedData(sortData);
+  };
+
+  const sortPopularHandler = () => {
+    const sortData = [...loadedData];
+    sortData.sort((a, b) => b.good - a.good);
+    console.log(sortData, 'good');
+    setLoadedData(sortData);
   };
 
   const fetchMoreHandler = e => {
@@ -127,7 +142,11 @@ const LifeStyle = () => {
           </WrapperDiv>
         </WrapperDiv>
 
-        <LifeStyleCardList data={numFilter} category={categoryName} />
+        <LifeStyleCardList
+          data={filterData}
+          category={categoryName}
+          sort={[sortNewHandler, sortPopularHandler]}
+        />
 
         <More>
           <button type='button' onClick={fetchMoreHandler}>

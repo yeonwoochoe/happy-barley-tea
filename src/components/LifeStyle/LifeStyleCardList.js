@@ -4,13 +4,10 @@ import LifeStyleSort from './LifeStyleSort';
 import LifeStyleCard from './LifeStyleCard';
 
 function LifeStyleCardList(props) {
-  const dataArr = [...props.data];
-  console.log(dataArr);
-
   return (
     <WrapperDiv>
+      <LifeStyleSort category={props.category} sort={props.sort} />
       <CardList>
-        <LifeStyleSort category={props.category} date={props.date} good={props.good} />
         {props.data.map(data => (
           <LifeStyleCard
             key={data.id}
