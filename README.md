@@ -16,16 +16,44 @@
       <tbody>
         <tr>
           <td>
-            <a href="https://avatars.githubusercontent.com/u/34502254?v=4"></a>
+            <a href="https://avatars.githubusercontent.com/u/34502254?v=4">
+              <img
+                width="100"
+                height="100"
+                src="https://avatars.githubusercontent.com/u/34502254?v=4"
+                alt="profile"
+              />
+            </a>
           </td>
           <td>
-            <a href="https://avatars.githubusercontent.com/u/89890213?v=4"></a>
+            <a href="https://avatars.githubusercontent.com/u/89890213?v=4">
+              <img
+                width="100"
+                height="100"
+                src="https://avatars.githubusercontent.com/u/89890213?v=4"
+                alt="profile"
+              />
+            </a>
           </td>
           <td>
-            <a href="https://avatars.githubusercontent.com/u/89890240?v=4"></a>
+            <a href="https://avatars.githubusercontent.com/u/89890240?v=4">
+              <img
+                width="100"
+                height="100"
+                src="https://avatars.githubusercontent.com/u/89890240?v=4"
+                alt="profile"
+              />
+            </a>
           </td>
           <td>
-            <a href="https://avatars.githubusercontent.com/u/89890390?v=4"></a>
+            <a href="https://avatars.githubusercontent.com/u/89890390?v=4">
+              <img
+                width="100"
+                height="100"
+                src="https://avatars.githubusercontent.com/u/89890390?v=4"
+                alt="profile"
+              />
+            </a>
           </td>
         </tr>
         <tr>
