@@ -2,12 +2,14 @@
 
 ## Happy Bareley Tea
 
-4명의 프론트직군이 간단한 플랫폼을 활용한 홈페이지 웹 구성을 목표로
+
 
 ## Single plus
-
+4명의 프론트직군이 간단한 플랫폼을 활용한 홈페이지 웹 구성을 목표로
 클론 웹 구현으로 협력시에 git 사용법을 익힘을 목표로 하고 있습니다.
 https://m.thesingle.co.kr/
+
+## 🏠 Members
 
  <table>
       <thead>
