@@ -4,7 +4,38 @@
 
 4명의 프론트직군이 간단한 플랫폼을 활용한 홈페이지 웹 구성을 목표로 하고 있다.
 
-
+<table>
+      <thead>
+        <tr>
+          <th>상민</th>
+          <th>슬아</th>
+          <th>연우</th>
+          <th>은비</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <a href="https://avatars.githubusercontent.com/u/34502254?v=4"></a>
+          </td>
+          <td>
+            <a href="https://avatars.githubusercontent.com/u/89890213?v=4"></a>
+          </td>
+          <td>
+            <a href="https://avatars.githubusercontent.com/u/89890240?v=4"></a>
+          </td>
+          <td>
+            <a href="https://avatars.githubusercontent.com/u/89890390?v=4"></a>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/advanced-rising">risingcore</a></td>
+          <td><a href="https://github.com/sakang07">sak</a></td>
+          <td><a href="https://github.com/yeonwoochoe">yeonwoo</a></td>
+          <td><a href="https://github.com/mittwoch01">mittwoch</a></td>
+        </tr>
+      </tbody>
+    </table>
 
 ---
 
