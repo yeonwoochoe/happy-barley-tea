@@ -1,6 +1,4 @@
-## Naming Convention
-
-## Happy Bareley Tea
+# ☕ Happy Bareley Tea
 
 
 
@@ -74,7 +72,7 @@ https://m.thesingle.co.kr/
 
 ---
 
-## Git Commit Template
+## 🛠 Git Commit Template
 
 ---
 
@@ -90,7 +88,7 @@ https://m.thesingle.co.kr/
 - **rename** : 파일 혹은 폴더명을 수정하거나 옮기는 작업만인 경우
 - **remove** : 파일을 삭제하는 작업만 수행한 경우
 
-## Directory
+## 📁 Directory
 
 ---
 
