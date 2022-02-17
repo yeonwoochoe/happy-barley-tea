@@ -1,5 +1,15 @@
 ## Naming Convention
 
+
+## Happy Bareley Tea
+
+프론트 직군이지만, 간단한 백단을 활용한 홈페이지 구성을 목표로 하고 있다.
+
+
+
+
+
+
 ---
 
 ## Git Commit Template
