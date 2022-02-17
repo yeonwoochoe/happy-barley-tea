@@ -2,9 +2,14 @@
 
 ## Happy Bareley Tea
 
-4명의 프론트직군이 간단한 플랫폼을 활용한 홈페이지 웹 구성을 목표로 하고 있다.
+4명의 프론트직군이 간단한 플랫폼을 활용한 홈페이지 웹 구성을 목표로
 
-<table>
+## Single plus
+
+클론 웹 구현으로 협력시에 git 사용법을 익힘을 목표로 하고 있습니다.
+https://m.thesingle.co.kr/
+
+ <table>
       <thead>
         <tr>
           <th>상민</th>
@@ -15,7 +20,7 @@
       </thead>
       <tbody>
         <tr>
-          <td>
+          <td align="center">
             <a href="https://avatars.githubusercontent.com/u/34502254?v=4">
               <img
                 width="100"
@@ -25,7 +30,7 @@
               />
             </a>
           </td>
-          <td>
+          <td align="center">
             <a href="https://avatars.githubusercontent.com/u/89890213?v=4">
               <img
                 width="100"
@@ -35,7 +40,7 @@
               />
             </a>
           </td>
-          <td>
+          <td align="center">
             <a href="https://avatars.githubusercontent.com/u/89890240?v=4">
               <img
                 width="100"
@@ -45,7 +50,7 @@
               />
             </a>
           </td>
-          <td>
+          <td align="center">
             <a href="https://avatars.githubusercontent.com/u/89890390?v=4">
               <img
                 width="100"
@@ -57,10 +62,10 @@
           </td>
         </tr>
         <tr>
-          <td><a href="https://github.com/advanced-rising">risingcore</a></td>
-          <td><a href="https://github.com/sakang07">sak</a></td>
-          <td><a href="https://github.com/yeonwoochoe">yeonwoo</a></td>
-          <td><a href="https://github.com/mittwoch01">mittwoch</a></td>
+          <td align="center"><a href="https://github.com/advanced-rising">risingcore</a></td>
+          <td align="center"><a href="https://github.com/sakang07">sak</a></td>
+          <td align="center"><a href="https://github.com/yeonwoochoe">yeonwoo</a></td>
+          <td align="center"><a href="https://github.com/mittwoch01">mittwoch</a></td>
         </tr>
       </tbody>
     </table>
