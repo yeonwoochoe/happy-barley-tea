@@ -1,14 +1,17 @@
 ## Naming Convention
 
-
 ## Happy Bareley Tea
 
-프론트 직군이지만, 간단한 백단을 활용한 홈페이지 구성을 목표로 하고 있다.
+4명의 프론트직군이 간단한 플랫폼을 활용한 홈페이지 웹 구성을 목표로 하고 있다.
 
-
-
-
-
+<div>
+<ul>
+<li><a href="https://github.com/advanced-rising">risingcore</a></li>
+<li><a href="https://github.com/sakang07">sak</a></li>
+<li><a href="https://github.com/yeonwoochoe">yeonwoo</a></li>
+<li><a href="https://github.com/mittwoch01">mittwoch</a></li>
+</ul>
+</div>
 
 ---
 
@@ -28,8 +31,6 @@
 - **rename** : 파일 혹은 폴더명을 수정하거나 옮기는 작업만인 경우
 - **remove** : 파일을 삭제하는 작업만 수행한 경우
 
-    
-
 ## Directory
 
 ---
@@ -42,27 +43,26 @@
 ### 📁  src
 
 - 📁  **components** : 작은 단위의 컴포넌트가 모인 폴더.
-    - 📁  **common** : 여러 번 재사용되는 컴포넌트를 모아둔 폴더.
-    - 📁  **page 이름과 동일한 directory** : 특정 page에서만 사용되는 컴포넌트를 모아둔 폴더.
+  - 📁  **common** : 여러 번 재사용되는 컴포넌트를 모아둔 폴더.
+  - 📁  **page 이름과 동일한 directory** : 특정 page에서만 사용되는 컴포넌트를 모아둔 폴더.
 - 📁  **pages** : 독립된 page 컴포넌트.
 - 📁  **router** : router-dom 폴더.
-    - Router.js
+  - Router.js
 - 📁  **layout** : layout 컴포넌트, header, footer 등이 모인 폴더.
 - 📁  **utils** : 상수나 공통 함수 등을 담는 폴더.
 - **📁  store** : redux나 context 관련 전역 변수를 담은 폴더.
 - **GlobalStyle.js** : reset.css
 - **theme.js** : common.css
 
-
 ### 이벤트 핸들러 props
 
 - `on*` 접두사 + 동사의 형태로 작성.
-- *onClick, onClose, onSubmit...*
+- _onClick, onClose, onSubmit..._
 
 ### 이벤트 핸들러
 
 - `*handler` 동사 + 접미사의 형태로 작성.
-- *isValidHandler, isLoginEnteredHandler...*
+- _isValidHandler, isLoginEnteredHandler..._
 
 ```jsx
 <Component **onClick**={**isValidHandler**} />
