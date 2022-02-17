@@ -4,68 +4,7 @@
 
 4명의 프론트직군이 간단한 플랫폼을 활용한 홈페이지 웹 구성을 목표로 하고 있다.
 
-<div>
-      <ul
-        style="
-          list-style: none;
-          display: flex;
-          gap: 10px;
-          justify-content: start;
-          text-align: center;
-        "
-      >
-        <li style="padding: 10px; border: 1px solid #333">
-          <div
-            style="width: 100px; border: 1px solid #333; margin-bottom: 10px"
-          >
-            <img
-              style="width: 100%"
-              src="https://avatars.githubusercontent.com/u/34502254?v=4"
-              alt="profile"
-            />
-          </div>
-          <div>
-            <a href="https://github.com/advanced-rising">risingcore</a>
-          </div>
-        </li>
-        <li style="padding: 10px; border: 1px solid #333">
-          <div
-            style="width: 100px; border: 1px solid #333; margin-bottom: 10px"
-          >
-            <img
-              style="width: 100%"
-              src="https://avatars.githubusercontent.com/u/89890213?v=4"
-              alt="profile"
-            />
-          </div>
-          <a href="https://github.com/sakang07">sak</a>
-        </li>
-        <li style="padding: 10px; border: 1px solid #333">
-          <div
-            style="width: 100px; border: 1px solid #333; margin-bottom: 10px"
-          >
-            <img
-              style="width: 100%"
-              src="https://avatars.githubusercontent.com/u/89890240?v=4"
-              alt="profile"
-            />
-          </div>
-          <a href="https://github.com/yeonwoochoe">yeonwoo</a>
-        </li>
-        <li style="padding: 10px; border: 1px solid #333">
-          <div
-            style="width: 100px; border: 1px solid #333; margin-bottom: 10px"
-          >
-            <img
-              style="width: 100%"
-              src="https://avatars.githubusercontent.com/u/89890390?v=4"
-              alt="profile"
-            />
-          </div>
-          <a href="https://github.com/mittwoch01">mittwoch</a>
-        </li>
-      </ul>
-    </div>
+
 
 ---
 
