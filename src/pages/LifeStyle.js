@@ -3,6 +3,8 @@ import { useLocation } from 'react-router';
 import styled from 'styled-components';
 import LifeStyleCardList from '../components/LifeStyle/LifeStyleCardList';
 import { HeaderSecondTitle, SectionWrapper, WrapperDiv } from '../components/common/Common';
+// import { db } from '../../firebase-config';
+// import 'firebase/firestore';
 
 const StyledDiv = styled.section`
   width: 100%;
@@ -112,8 +114,8 @@ const LifeStyle = () => {
 
   const sortPopularHandler = () => {
     const sortData = [...loadedData];
-    sortData.sort((a, b) => b.good - a.good);
-    console.log(sortData, 'good');
+    sortData.sort((a, b) => b.like - a.like);
+    console.log(sortData, 'like');
     setLoadedData(sortData);
   };
 
