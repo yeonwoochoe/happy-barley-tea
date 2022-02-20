@@ -3,8 +3,9 @@ import { useLocation } from 'react-router';
 import styled from 'styled-components';
 import LifeStyleCardList from '../components/LifeStyle/LifeStyleCardList';
 import { HeaderSecondTitle, SectionWrapper, WrapperDiv } from '../components/common/Common';
-// import { db } from '../../firebase-config';
-// import 'firebase/firestore';
+import { db, storage } from '../firebase-config';
+import { collection, onSnapshot } from 'firebase/firestore';
+import { ref, listAll, list, getDownloadURL } from 'firebase/storage';
 
 const StyledDiv = styled.section`
   width: 100%;
@@ -47,32 +48,21 @@ const More = styled.div`
 
 const LifeStyle = () => {
   const { pathname } = useLocation();
-  const dataUrl = './data/LifeStyle/dummyData.json';
   const [isLoading, setIsloding] = useState(true);
   const [loadedData, setLoadedData] = useState([]);
   const [clickNum, setClickNum] = useState(1);
-  const [categoryName, setCategoryName] = useState('all');
+  const [categoryName, setCategoryName] = useState('All');
 
   const categoryArr = [
-    'all',
-    'trend',
-    'enjoy',
-    'shopping',
-    'relationship',
-    'business',
-    'viewpoint',
-    'culture',
+    'All',
+    'Trend',
+    'Enjoy',
+    'Shopping',
+    'Relationship',
+    'Business',
+    'Viewpoint',
+    'Culture',
   ];
-
-  const filterData = loadedData
-    .filter((card, idx) => {
-      if (categoryName === 'all') {
-        return card;
-      } else {
-        return categoryName === card.category;
-      }
-    })
-    .filter((card, idx) => idx < 10 * clickNum);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -80,21 +70,39 @@ const LifeStyle = () => {
 
   useEffect(() => {
     setIsloding(true);
-    fetch(dataUrl)
-      .then(res => res.json())
-      .then(data => {
-        const dataArr = [];
-        for (const key in data) {
-          const rel = {
-            id: key,
-            ...data[key],
-          };
-          dataArr.push(rel);
-        }
-        setIsloding(false);
-        setLoadedData(dataArr);
-      });
+    onSnapshot(collection(db, 'lifestyle'), snapshot => {
+      const dataArr = [];
+      const textArr = snapshot.docs.map(doc => doc.data());
+      for (const key in textArr) {
+        const rel = {
+          image: `https://firebasestorage.googleapis.com/v0/b/the-single-plus.appspot.com/o/lifestyle%2Fthumb_${key.padStart(
+            3,
+            '0'
+          )}.png?alt=media&token=8e94089b-651c-4904-95d8-103ae92d681b`,
+          ...textArr[key],
+        };
+        dataArr.push(rel);
+      }
+
+      console.log(dataArr);
+      setLoadedData(dataArr);
+    });
+
+    setIsloding(false);
   }, []);
+
+  const storageRef = ref(storage, 'lifestyle/thumb_00001.png');
+  getDownloadURL(storageRef).then(url => console.log(url));
+
+  const filterData = loadedData
+    .filter((card, idx) => {
+      if (categoryName === 'All') {
+        return card;
+      } else {
+        return categoryName === card.category;
+      }
+    })
+    .filter((card, idx) => idx < 10 * clickNum);
 
   if (isLoading) {
     return <p>Loading...</p>;
