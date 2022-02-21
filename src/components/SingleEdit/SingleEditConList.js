@@ -46,7 +46,7 @@ const IconDiv = styled.div`
   cursor: pointer;
 `;
 
-const SingleEditConList = (props) => {
+const SingleEditConList = ({ item }) => {
   return (
     <Card>
       <IconDiv>
@@ -54,19 +54,19 @@ const SingleEditConList = (props) => {
       </IconDiv>
       <CardImage>
         <Link to="/">
-          <img alt="" src={`${props.data.image}`}></img>
+          <img alt="" src={`${item.image}`}></img>
         </Link>
       </CardImage>
       <CardContent>
         <CardCaption>
           <dt>
             <Link to="/">
-              <span>{props.data.mainTag}</span>
-              <span>{props.data.hashTag}</span>
+              <span>{item.mainTag}</span>
+              <span>{item.hashTag}</span>
             </Link>
           </dt>
           <dd>
-            <Link to="/"> {props.data.mainTitle}</Link>
+            <Link to="/"> {item.mainTitle}</Link>
           </dd>
         </CardCaption>
       </CardContent>

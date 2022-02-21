@@ -90,7 +90,9 @@ export const CardImage = styled.div`
   background-color: #dddddd;
   img {
     width: 100%;
-    background: no-repeat center/contain;
+    height: 100%;
+    object-fit: cover;
+    background: no-repeat center/cover;
   }
 `;
 

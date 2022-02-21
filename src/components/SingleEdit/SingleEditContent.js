@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { FaRegHeart } from "react-icons/fa";
+import { CardCaption, CardImage } from "../common/Common";
+
 import { WrapperDiv } from "../common/Common";
-import SingleEditConList from "./SingleEditConList";
 
 const CardContainer = styled.div`
   display: flex;
@@ -44,9 +47,49 @@ const SoltBtnWrapper = styled.div`
   }
 `;
 
-const SingleEditContent = (props) => {
-  const list = props.data;
+const Card = styled.div`
+  position: relative;
+  width: calc(33.33% - 40px);
+  margin-bottom: 40px;
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+`;
+const CardContent = styled.div`
+  width: 100%;
+  height: auto;
+  padding: 0.3rem 0;
+  dt {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    & span {
+      color: #333;
+    }
+    &:last-child {
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+`;
 
+const IconDiv = styled.div`
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 48px;
+  height: 48px;
+  background-color: #fff;
+  border-radius: 100%;
+  font-size: 30px;
+  line-height: 53px;
+  text-align: center;
+  cursor: pointer;
+`;
+
+const SingleEditContent = ({ item, fetchMoreHandler }) => {
   return (
     <WrapperDiv>
       <SoltBtnWrapper justify={`end`}>
@@ -55,9 +98,33 @@ const SingleEditContent = (props) => {
         <button>추천순</button>
       </SoltBtnWrapper>
       <CardContainer>
-        {list.content.map((card, id) => (
-          <SingleEditConList key={id} data={card} />
-        ))}
+        {item.map((Val) => {
+          return (
+            <Card key={Val.id}>
+              <IconDiv>
+                <FaRegHeart />
+              </IconDiv>
+              <CardImage height={`400px`}>
+                <Link to="/">
+                  <img alt="" src={`${Val.image}`} />
+                </Link>
+              </CardImage>
+              <CardContent>
+                <CardCaption>
+                  <dt>
+                    <Link to="/">
+                      <span> {Val.category}</span>
+                      <span>{Val.tag}</span>
+                    </Link>
+                  </dt>
+                  <dd>
+                    <Link to="/"> {Val.title}</Link>
+                  </dd>
+                </CardCaption>
+              </CardContent>
+            </Card>
+          );
+        })}
       </CardContainer>
       <SoltBtnWrapper
         justify={`center`}
@@ -65,7 +132,9 @@ const SingleEditContent = (props) => {
         color={`#333`}
         decoration={`underline`}
       >
-        <button>&#43;MORE</button>
+        <button type="button" onClick={fetchMoreHandler}>
+          &#43;MORE
+        </button>
       </SoltBtnWrapper>
     </WrapperDiv>
   );

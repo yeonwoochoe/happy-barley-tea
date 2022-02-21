@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import styled from "styled-components";
-
+// import DummyData from "../components/SingleEdit/DummyData";
+// import TabBtn from "../components/SingleEdit/TabBtn";
 import SingleEditContent from "../components/SingleEdit/SingleEditContent";
+import { db, storage } from "../firebase-config";
+import { collection, onSnapshot } from "firebase/firestore";
+import { ref, getDownloadURL } from "firebase/storage";
+
 import { useLocation } from "react-router";
 import {
   HeaderSecondTitle,
@@ -29,12 +33,13 @@ const TabMenuList = styled.ul`
   li:first-child {
     text-transform: uppercase;
   }
-  @media screen and (max-width: 320px) {
-    justify-items: center;
-    gap: 10px;
+  button {
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    text-transform: inherit;
   }
 `;
-
 const SingleEdit = () => {
   const { pathname } = useLocation();
 
@@ -42,25 +47,62 @@ const SingleEdit = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  const [num, setNum] = useState(0);
-  const [PdData, setPdData] = useState([]);
+  const [isLoading, setIsloding] = useState(true);
+  const [clickNum, setClickNum] = useState(1);
+  const [item, setItem] = useState([]);
+  const [categoryName, setCategoryName] = useState("all");
 
-  // data 불러오기
+  const categoryArr = ["all", "Expert's Edit", "Your Edit", "Tester's Edit"];
+
   useEffect(() => {
-    axios
-      .get("./data/SingleEdit/dummyData.json")
-      .then((res) => setPdData(res.data));
+    setIsloding(true);
+    onSnapshot(collection(db, "singleEdit"), (snapshot) => {
+      const dataArr = [];
+      const textArr = snapshot.docs.map((doc) => doc.data());
+      for (const key in textArr) {
+        const rel = {
+          image: `https://firebasestorage.googleapis.com/v0/b/the-single-plus.appspot.com/o/singleEdit%2Fthumb_${key.padStart(
+            3,
+            "0"
+          )}.png?alt=media&token=62f796ec-0cf3-4bbb-aba2-0c727accd534`,
+          ...textArr[key],
+        };
+        dataArr.push(rel);
+      }
+
+      console.log(dataArr);
+      setItem(dataArr);
+    });
+
+    setIsloding(false);
   }, []);
 
-  const fnTab = (e, i) => {
-    e.preventDefault();
-    setNum(i);
+  const storageRef = ref(storage, "singleEdit/thumb_000.png");
+  getDownloadURL(storageRef).then((url) => console.log(url));
+
+  const filterData = item
+    .filter((card, idx) => {
+      if (categoryName === "all") {
+        return card;
+      } else {
+        return categoryName === card.category;
+      }
+    })
+    .filter((card, idx) => idx < 9 * clickNum);
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  const movePageHandler = (cateName) => {
+    setClickNum(1);
+    setCategoryName(cateName);
   };
 
-  const code = PdData.filter((data, index) => index === num);
-  // const buttonVaild = PdData.filter((data, index) => index === 0 && data.tabTitle === "ALL");
-
-  // console.log(buttonVaild);
+  const fetchMoreHandler = (e) => {
+    e.preventDefault();
+    setClickNum(clickNum + 1);
+  };
 
   return (
     <SingleEditDiv>
@@ -71,17 +113,20 @@ const SingleEdit = () => {
           </HeaderSecondTitle>
           <WrapperDiv>
             <TabMenuList>
-              {PdData.map((data, id) => (
-                <li key={data.id} type="button" onClick={(e) => fnTab(e, id)}>
-                  {data.tabTitle}
+              {categoryArr.map((el, idx) => (
+                <li key={idx}>
+                  <button type="button" onClick={() => movePageHandler(el)}>
+                    {el}
+                  </button>
                 </li>
               ))}
             </TabMenuList>
           </WrapperDiv>
         </WrapperDiv>
-        {code.map((data, idx) => (
-          <SingleEditContent key={idx} data={data} num={num} setNum={setNum} />
-        ))}
+        <SingleEditContent
+          item={filterData}
+          fetchMoreHandler={fetchMoreHandler}
+        />
       </SectionWrapper>
     </SingleEditDiv>
   );
