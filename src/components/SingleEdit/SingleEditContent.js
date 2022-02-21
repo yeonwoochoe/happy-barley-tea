@@ -1,30 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import SingleEditConList from "./SingleEditConList";
+import { Link } from "react-router-dom";
+import { FaRegHeart } from "react-icons/fa";
+import { CardCaption, CardImage } from "../common/Common";
 
-const WrapperDiv = styled.div`
-  width: 100%;
-  max-width: 1280px;
-  margin: auto;
-  height: 100%;
-  padding-bottom: 300px;
-`;
-
-const WrapperCard = styled.div`
-  width: auto;
-  height: auto;
-`;
+import { WrapperDiv } from "../common/Common";
 
 const CardContainer = styled.div`
-  display: grid;
-  grid-template-rows: ${(props) => props.rows};
-  grid-template-columns: ${(props) => props.columns};
-  grid-auto-flow: row dense;
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   width: 100%;
-  max-width: 1280px;
-  gap: 80px 40px;
   height: ${(props) => props.height || "100%"};
+  margin-top: 40px;
   margin-bottom: 100px;
   @media screen and (max-width: 320px) {
     display: flex;
@@ -37,9 +26,7 @@ const SoltBtnWrapper = styled.div`
   display: flex;
   justify-content: ${(props) => props.justify};
   gap: 20px;
-  width: 980px;
-  height: auto;
-  margin: auto;
+  width: 100%;
   margin-bottom: 20px;
   text-align: right;
 
@@ -60,32 +47,93 @@ const SoltBtnWrapper = styled.div`
   }
 `;
 
-const SingleEditContent = ({ data }) => {
-  const list = data;
+const Card = styled.div`
+  position: relative;
+  width: calc(33.33% - 40px);
+  margin-bottom: 40px;
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+`;
+const CardContent = styled.div`
+  width: 100%;
+  height: auto;
+  padding: 0.3rem 0;
+  dt {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    & span {
+      color: #333;
+    }
+    &:last-child {
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+`;
 
+const IconDiv = styled.div`
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 48px;
+  height: 48px;
+  background-color: #fff;
+  border-radius: 100%;
+  font-size: 30px;
+  line-height: 53px;
+  text-align: center;
+  cursor: pointer;
+`;
+
+const SingleEditContent = ({ item, setItem }) => {
   return (
     <WrapperDiv>
-      <h2 className="blind">single edit content</h2>
-      <WrapperCard>
-        <SoltBtnWrapper justify={`end`}>
-          <button>최신순</button>
-          <span></span>
-          <button>추천순</button>
-        </SoltBtnWrapper>
-        <CardContainer rows={`360px 360px 360px;`} columns={`0fr 0fr 0fr`}>
-          {list.content.map((card, id) => (
-            <SingleEditConList key={id} data={card} />
-          ))}
-        </CardContainer>
-        <SoltBtnWrapper
-          justify={`center`}
-          size={`18px`}
-          color={`#333`}
-          decoration={`underline`}
-        >
-          <button>&#43;MORE</button>
-        </SoltBtnWrapper>
-      </WrapperCard>
+      <SoltBtnWrapper justify={`end`}>
+        <button>최신순</button>
+        <span></span>
+        <button>추천순</button>
+      </SoltBtnWrapper>
+      <CardContainer>
+        {item.map((Val) => {
+          return (
+            <Card key={Val.id}>
+              <IconDiv>
+                <FaRegHeart />
+              </IconDiv>
+              <CardImage height={`400px`}>
+                <Link to="/">
+                  <img alt="" src={`${Val.img}`} />
+                </Link>
+              </CardImage>
+              <CardContent>
+                <CardCaption>
+                  <dt>
+                    <Link to="/">
+                      <span> {Val.mainTag}</span>
+                      <span>{Val.subTag}</span>
+                    </Link>
+                  </dt>
+                  <dd>
+                    <Link to="/"> {Val.title}</Link>
+                  </dd>
+                </CardCaption>
+              </CardContent>
+            </Card>
+          );
+        })}
+      </CardContainer>
+      <SoltBtnWrapper
+        justify={`center`}
+        size={`18px`}
+        color={`#333`}
+        decoration={`underline`}
+      >
+        <button>&#43;MORE</button>
+      </SoltBtnWrapper>
     </WrapperDiv>
   );
 };

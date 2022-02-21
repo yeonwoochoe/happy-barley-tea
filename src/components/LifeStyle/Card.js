@@ -5,7 +5,8 @@ import { CardCaption, CardImage, WrapperDiv } from "../common/Common";
 const StyledLi = styled.li`
   width: calc(33.33% - 40px);
   height: 548px;
-  margin: 0 20px 77px;
+  margin-bottom: 40px;
+
   &:nth-child(5),
   &:nth-child(9) {
     width: calc(66.67% - 40px);

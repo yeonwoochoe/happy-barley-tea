@@ -1,0 +1,123 @@
+const DummyData = [
+  {
+    id: "1",
+    mainTag: "Expert's Edit /",
+    subTag: "#LIFE",
+    title: "올 데이 아이 세럼",
+    category: "Expert's Edit",
+    img: "http://dummyimage.com/300x300.png/dddddd/000000",
+  },
+  {
+    id: "2",
+    mainTag: "Expert's Edit /",
+    subTag: "#BEAUTY",
+    title: "올 데이 아이 세럼",
+    category: "Expert's Edit",
+    img: "http://dummyimage.com/300x300.png/dddddd/000000",
+  },
+  {
+    id: "3",
+    mainTag: "Expert's Edit /",
+    subTag: "#BEAUTY",
+    title: "올 데이 아이 세럼",
+    category: "Expert's Edit",
+    img: "http://dummyimage.com/300x300.png/dddddd/000000",
+  },
+  {
+    id: "4",
+    mainTag: "Your Edit /",
+    subTag: "#SWEATLIFE",
+    title: "제주도 인생샷 맛집",
+    category: "Your Edit",
+    hashTag: "$1",
+    img: "http://dummyimage.com/300x300.png/dddddd/000000",
+  },
+  {
+    id: "5",
+    mainTag: "Your Edit /",
+    subTag: "#SWEATLIFE",
+    title: "제주도 인생샷 맛집",
+    category: "Your Edit",
+    img: "http://dummyimage.com/300x300.png/dddddd/000000",
+  },
+  {
+    id: "6",
+    mainTag: "Your Edit /",
+    subTag: "#SWEATLIFE",
+    title: "제주도 인생샷 맛집",
+    category: "Your Edit",
+    img: "http://dummyimage.com/300x300.png/dddddd/000000",
+  },
+  {
+    id: "7",
+    mainTag: "Expert's Edit /",
+    subTag: "#BEAUTY",
+    title: "올 데이 아이 세럼",
+    category: "Expert's Edit",
+    img: "http://dummyimage.com/300x300.png/dddddd/000000",
+  },
+  {
+    id: "8",
+    mainTag: "Expert's Edit /",
+    subTag: "#BEAUTY",
+    title: "올 데이 아이 세럼",
+    category: "Expert's Edit",
+    img: "http://dummyimage.com/300x300.png/dddddd/000000",
+  },
+  {
+    id: "9",
+    mainTag: "Expert's Edit /",
+    subTag: "#BEAUTY",
+    title: "올 데이 아이 세럼",
+    category: "Expert's Edit",
+    img: "http://dummyimage.com/300x300.png/dddddd/000000",
+  },
+  {
+    id: "10",
+    mainTag: "Tester's Edit /",
+    title: "프리플러스 베스트 리뷰 @young1y_",
+    category: "Tester's Edit",
+    img: "http://dummyimage.com/300x300.png/dddddd/000000",
+  },
+
+  {
+    id: "11",
+    mainTag: "Tester's Edit /",
+    title: "프리플러스 베스트 리뷰 @young1y_",
+    category: "Tester's Edit",
+    img: "http://dummyimage.com/300x300.png/dddddd/000000",
+  },
+  {
+    id: "12",
+    mainTag: "Tester's Edit /",
+    title: "프리플러스 베스트 리뷰 @young1y_",
+    category: "Tester's Edit",
+    img: "http://dummyimage.com/300x300.png/dddddd/000000",
+  },
+
+  {
+    id: "13",
+    mainTag: "Tester's Edit / ",
+    title: "프리플러스 베스트 리뷰 @young1y_",
+    category: "Tester's Edit",
+    img: "http://dummyimage.com/300x300.png/dddddd/000000",
+  },
+
+  {
+    id: "14",
+    mainTag: "Tester's Edit / ",
+    title: "프리플러스 베스트 리뷰 @young1y_",
+    category: "Tester's Edit",
+    img: "http://dummyimage.com/300x300.png/dddddd/000000",
+  },
+
+  {
+    id: "15",
+    mainTag: "Tester's Edit / ",
+    title: "프리플러스 베스트 리뷰 @young1y_",
+    category: "Tester's Edit",
+    img: "http://dummyimage.com/300x300.png/dddddd/000000",
+  },
+];
+
+export default DummyData;
