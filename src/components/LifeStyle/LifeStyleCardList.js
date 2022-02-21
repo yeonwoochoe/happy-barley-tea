@@ -8,8 +8,13 @@ function LifeStyleCardList(props) {
     <WrapperDiv>
       <LifeStyleSort category={props.category} sort={props.sort} />
       <CardList>
-        {props.data.map((data, idx) => (
-          <LifeStyleCard key={idx} category={data.category} image={data.image} title={data.title} />
+        {props.data.map(data => (
+          <LifeStyleCard
+            key={data.id}
+            category={data.category}
+            image={data.image}
+            title={data.title}
+          />
         ))}
       </CardList>
     </WrapperDiv>

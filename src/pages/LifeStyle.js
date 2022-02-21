@@ -5,7 +5,7 @@ import LifeStyleCardList from '../components/LifeStyle/LifeStyleCardList';
 import { HeaderSecondTitle, SectionWrapper, WrapperDiv } from '../components/common/Common';
 import { db, storage } from '../firebase-config';
 import { collection, onSnapshot } from 'firebase/firestore';
-import { ref, listAll, list, getDownloadURL } from 'firebase/storage';
+import { ref, getDownloadURL } from 'firebase/storage';
 
 const StyledDiv = styled.section`
   width: 100%;
@@ -51,17 +51,17 @@ const LifeStyle = () => {
   const [isLoading, setIsloding] = useState(true);
   const [loadedData, setLoadedData] = useState([]);
   const [clickNum, setClickNum] = useState(1);
-  const [categoryName, setCategoryName] = useState('All');
+  const [categoryName, setCategoryName] = useState('all');
 
   const categoryArr = [
-    'All',
-    'Trend',
-    'Enjoy',
-    'Shopping',
-    'Relationship',
-    'Business',
-    'Viewpoint',
-    'Culture',
+    'all',
+    'trend',
+    'enjoy',
+    'shopping',
+    'relationship',
+    'business',
+    'viewpoint',
+    'culture',
   ];
 
   useEffect(() => {
@@ -91,12 +91,12 @@ const LifeStyle = () => {
     setIsloding(false);
   }, []);
 
-  const storageRef = ref(storage, 'lifestyle/thumb_00001.png');
+  const storageRef = ref(storage, 'lifestyle/thumb_000.png');
   getDownloadURL(storageRef).then(url => console.log(url));
 
   const filterData = loadedData
     .filter((card, idx) => {
-      if (categoryName === 'All') {
+      if (categoryName === 'all') {
         return card;
       } else {
         return categoryName === card.category;
