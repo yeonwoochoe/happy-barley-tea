@@ -1,5 +1,5 @@
 import React from "react";
-import DummyData from "./DummyData";
+
 import styled from "styled-components";
 
 const TabMenuBtn = styled.li`
@@ -15,11 +15,11 @@ const TabMenuBtn = styled.li`
   }
 `;
 
-const TabBtn = ({ filterItem, setItem, conItems }) => {
+const TabBtn = ({ filterItem, setItem, conItems, filterData }) => {
   return (
     <>
       <TabMenuBtn transform={`uppercase`}>
-        <button type="button" onClick={() => setItem(DummyData)}>
+        <button type="button" onClick={() => setItem(filterData)}>
           All
         </button>
       </TabMenuBtn>

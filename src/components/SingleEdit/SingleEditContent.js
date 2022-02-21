@@ -89,7 +89,7 @@ const IconDiv = styled.div`
   cursor: pointer;
 `;
 
-const SingleEditContent = ({ item, setItem }) => {
+const SingleEditContent = ({ item, fetchMoreHandler }) => {
   return (
     <WrapperDiv>
       <SoltBtnWrapper justify={`end`}>
@@ -106,15 +106,15 @@ const SingleEditContent = ({ item, setItem }) => {
               </IconDiv>
               <CardImage height={`400px`}>
                 <Link to="/">
-                  <img alt="" src={`${Val.img}`} />
+                  <img alt="" src={`${Val.image}`} />
                 </Link>
               </CardImage>
               <CardContent>
                 <CardCaption>
                   <dt>
                     <Link to="/">
-                      <span> {Val.mainTag}</span>
-                      <span>{Val.subTag}</span>
+                      <span> {Val.category}</span>
+                      <span>{Val.tag}</span>
                     </Link>
                   </dt>
                   <dd>
@@ -132,7 +132,9 @@ const SingleEditContent = ({ item, setItem }) => {
         color={`#333`}
         decoration={`underline`}
       >
-        <button>&#43;MORE</button>
+        <button type="button" onClick={fetchMoreHandler}>
+          &#43;MORE
+        </button>
       </SoltBtnWrapper>
     </WrapperDiv>
   );
