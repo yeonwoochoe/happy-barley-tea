@@ -149,34 +149,33 @@ const ShowCase = () => {
           <NewInfoImg>img</NewInfoImg>
           <NewCaption>
             <dl>
-              <dt>제철 딸기 투어</dt>
+              <dt>서울 신상 맛집 업데이트</dt>
               <dd>
-                제철을 맞은 딸기는 지금 가장 맛있고 화려하다. 여행하듯 떠날 수
-                있는 호텔의 딸기 뷔페 투어 가이드
+                새로운 한 해만큼 맛집 리스트도 새롭게 재정비할 때. 서울 핫한 신상 맛집만 모았다.
               </dd>
             </dl>
           </NewCaption>
         </NewInfo>
         <WorkInWinter>
           <figure>img</figure>
-          <figcaption>걸어서 겨울 속으로</figcaption>
+          <figcaption>만나서 반가워요</figcaption>
         </WorkInWinter>
         <Item>
           <ItemDiv>
             <figure>img</figure>
-            <figcaption>맛있는 제주의 낮과 밤</figcaption>
+            <figcaption>나홀로 즐겁게 혼밥</figcaption>
           </ItemDiv>
           <ItemDiv>
             <figure>img</figure>
-            <figcaption>인센스 주의보</figcaption>
+            <figcaption>스킨케어, 푸드로 하세요</figcaption>
           </ItemDiv>
           <ItemDiv>
             <figure>img</figure>
-            <figcaption>번진듯 자연스러운 입술을 위한, 립커서</figcaption>
+            <figcaption>방구석을 헬스장으로 만들어 줄 앱4</figcaption>
           </ItemDiv>
           <ItemDiv>
             <figure>img</figure>
-            <figcaption>가성비 좋은 벤츠 SUV, EQA</figcaption>
+            <figcaption>2022 베리 페리 블러셔 모음. zip</figcaption>
           </ItemDiv>
         </Item>
         <ListTitle>
@@ -198,10 +197,6 @@ const ShowCase = () => {
           <ListDiv>
             <figure>img</figure>
             <figcaption>빵순이를 위한 건강 빵집 4</figcaption>
-          </ListDiv>
-          <ListDiv>
-            <figure>img</figure>
-            <figcaption>서울 신상 맛집 업데이트</figcaption>
           </ListDiv>
         </ShowCaseList>
       </ShowCaseWapper>
