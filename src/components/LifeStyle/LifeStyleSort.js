@@ -37,7 +37,7 @@ function LifeStyleSort(props) {
     }
   };
 
-  console.log(props.category);
+  // console.log(props.category);
 
   return (
     <SortList>
