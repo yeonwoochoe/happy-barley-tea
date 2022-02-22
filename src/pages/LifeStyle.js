@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router";
 import styled from "styled-components";
-import Card from "../components/LifeStyle/Card";
+import LifeStyleCardList from "../components/LifeStyle/LifeStyleCardList";
 import {
-  CardList,
   HeaderSecondTitle,
   SectionWrapper,
   WrapperDiv,
 } from "../components/common/Common";
-import { useLocation } from "react-router";
+import { db, storage } from "../firebase-config";
+import { collection, onSnapshot } from "firebase/firestore";
+import { ref, getDownloadURL } from "firebase/storage";
 
 const StyledDiv = styled.section`
   width: 100%;
@@ -28,6 +30,12 @@ const TabMenuList = styled.ul`
   li:first-child {
     text-transform: uppercase;
   }
+  button {
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    text-transform: inherit;
+  }
 `;
 
 const More = styled.div`
@@ -44,10 +52,89 @@ const More = styled.div`
 
 const LifeStyle = () => {
   const { pathname } = useLocation();
+  const [isLoading, setIsloding] = useState(true);
+  const [loadedData, setLoadedData] = useState([]);
+  const [clickNum, setClickNum] = useState(1);
+  const [categoryName, setCategoryName] = useState("all");
+
+  const categoryArr = [
+    "all",
+    "trend",
+    "enjoy",
+    "shopping",
+    "relationship",
+    "business",
+    "viewpoint",
+    "culture",
+  ];
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  useEffect(() => {
+    setIsloding(true);
+    onSnapshot(collection(db, "lifestyle"), (snapshot) => {
+      const dataArr = [];
+      const textArr = snapshot.docs.map((doc) => doc.data());
+      for (const key in textArr) {
+        const rel = {
+          image: `https://firebasestorage.googleapis.com/v0/b/the-single-plus.appspot.com/o/lifestyle%2Fthumb_${key.padStart(
+            3,
+            "0"
+          )}.png?alt=media&token=8e94089b-651c-4904-95d8-103ae92d681b`,
+          ...textArr[key],
+        };
+        dataArr.push(rel);
+      }
+
+      console.log(dataArr);
+      setLoadedData(dataArr);
+    });
+
+    setIsloding(false);
+  }, []);
+
+  const storageRef = ref(storage, "lifestyle/thumb_000.png");
+  getDownloadURL(storageRef).then((url) => console.log(url));
+
+  const filterData = loadedData
+    .filter((card, idx) => {
+      if (categoryName === "all") {
+        return card;
+      } else {
+        return categoryName === card.category;
+      }
+    })
+    .filter((card, idx) => idx < 10 * clickNum);
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  const movePageHandler = (cateName) => {
+    setClickNum(1);
+    setCategoryName(cateName);
+  };
+
+  const sortNewHandler = () => {
+    const sortData = [...loadedData];
+    sortData.sort((a, b) => new Date(b.date) - new Date(a.date));
+    console.log(sortData, "new");
+    setLoadedData(sortData);
+  };
+
+  const sortPopularHandler = () => {
+    const sortData = [...loadedData];
+    sortData.sort((a, b) => b.like - a.like);
+    console.log(sortData, "like");
+    setLoadedData(sortData);
+  };
+
+  const fetchMoreHandler = (e) => {
+    e.preventDefault();
+    setClickNum(clickNum + 1);
+  };
 
   return (
     <StyledDiv>
@@ -58,24 +145,27 @@ const LifeStyle = () => {
           </HeaderSecondTitle>
           <WrapperDiv>
             <TabMenuList>
-              <li>all</li>
-              <li>trend</li>
-              <li>enjoy</li>
-              <li>shopping</li>
-              <li>relationship</li>
-              <li>business</li>
-              <li>viewpoint</li>
-              <li>culture</li>
+              {categoryArr.map((el, idx) => (
+                <li key={idx}>
+                  <button type="button" onClick={() => movePageHandler(el)}>
+                    {el}
+                  </button>
+                </li>
+              ))}
             </TabMenuList>
           </WrapperDiv>
         </WrapperDiv>
-        <WrapperDiv>
-          <CardList>
-            <Card />
-          </CardList>
-        </WrapperDiv>
+
+        <LifeStyleCardList
+          data={filterData}
+          category={categoryName}
+          sort={[sortNewHandler, sortPopularHandler]}
+        />
+
         <More>
-          <button type="button">+ more</button>
+          <button type="button" onClick={fetchMoreHandler}>
+            + more
+          </button>
         </More>
       </SectionWrapper>
     </StyledDiv>

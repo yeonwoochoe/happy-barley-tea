@@ -14,7 +14,9 @@ const Router = () => {
       <Route path="/" element={<Main />} />
       <Route path="/showcase" element={<ShowCase />} />
       <Route path="/lifestyle" element={<LifeStyle />} />
-      <Route path="/single-edit" element={<SingleEdit />} />
+      <Route path="/single-edit" element={<SingleEdit />}>
+        <Route path=":id" element={<></>} />
+      </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/join" element={<Join />} />
       <Route path="/mypage" element={<MyPage />} />
