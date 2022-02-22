@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import {
   HeaderSecondTitle,
@@ -87,7 +88,7 @@ const Join = () => {
               <Link to={"/signup"}>일반 회원가입</Link>
             </li>
             <li>
-              <Link to={""}>이메일 계정으로 가입</Link>
+              <Link to={"/emailsignup"}>이메일 계정으로 가입</Link>
             </li>
           </JoinList>
         </WrapperDiv>
