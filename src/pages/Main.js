@@ -8,14 +8,14 @@ import SearchBox from "../components/Main/SearchBox";
 import ShowCase from "../components/Main/ShowCase";
 import SingleEdit from "../components/Main/SingleEdit";
 import YoutubeBox from "../components/Main/YoutubeBox";
-
+import getSinglePlus from "../api";
 const MainWrapper = styled.main`
   width: 100%;
 `;
 
 const Main = () => {
   const { pathname } = useLocation();
-
+  console.log(getSinglePlus);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
