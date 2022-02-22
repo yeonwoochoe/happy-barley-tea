@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import Figure from "react-bootstrap/Figure";
 import { useLocation } from "react-router";
 import { HeaderSecondTitle } from "../components/common/Common";
+import ItemDiv from "../components/Showcase/ItemDiv.js";
 
 const ShowCaseDiv = styled.div`
   width: 100%;
@@ -18,7 +18,7 @@ const ShowCaseWapper = styled.div`
   height: auto;
   padding: 0 80px 0 80px;
 `;
-
+// -------------------------------------
 const ShowCaseTitle = styled.div`
   width: 100%;
   height: 100%;
@@ -87,20 +87,6 @@ const Item = styled.div`
   margin-bottom: 40px;
 `;
 
-const ItemDiv = styled.div`
-  width: 290px;
-  height: 382px;
-  figure {
-    width: 290px;
-    height: 290px;
-    margin-bottom: 20px;
-    background-color: #111;
-  }
-  figcaption {
-    font-size: 24px;
-    color: #fff;
-  }
-`;
 
 const ListTitle = styled.div`
   width: 100%;
@@ -143,7 +129,7 @@ const ShowCase = () => {
     <ShowCaseDiv>
       <ShowCaseWapper>
         <ShowCaseTitle>
-          <HeaderSecondTitle color="#fff">showcase</HeaderSecondTitle>
+          <HeaderSecondTitle fontSize={"44px"} color="#fff" >showcase</HeaderSecondTitle>
         </ShowCaseTitle>
         <NewInfo>
           <NewInfoImg>img</NewInfoImg>
@@ -161,25 +147,10 @@ const ShowCase = () => {
           <figcaption>만나서 반가워요</figcaption>
         </WorkInWinter>
         <Item>
-          <ItemDiv>
-            <figure>img</figure>
-            <figcaption>나홀로 즐겁게 혼밥</figcaption>
-          </ItemDiv>
-          <ItemDiv>
-            <figure>img</figure>
-            <figcaption>스킨케어, 푸드로 하세요</figcaption>
-          </ItemDiv>
-          <ItemDiv>
-            <figure>img</figure>
-            <figcaption>방구석을 헬스장으로 만들어 줄 앱4</figcaption>
-          </ItemDiv>
-          <ItemDiv>
-            <figure>img</figure>
-            <figcaption>2022 베리 페리 블러셔 모음. zip</figcaption>
-          </ItemDiv>
+          <ItemDiv />
         </Item>
         <ListTitle>
-          <HeaderSecondTitle color="#fff">showcase list</HeaderSecondTitle>
+          <HeaderSecondTitle color="#fff" fontSize={"44px"}>showcase list</HeaderSecondTitle>
         </ListTitle>
         <ShowCaseList>
           <ListDiv>
