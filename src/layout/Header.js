@@ -10,20 +10,6 @@ const HeaderDiv = styled.header`
   width: 100%;
   height: 100px;
   background-color: #333;
-  h1 {
-    width: 180px;
-    height: 50px;
-    margin-right: 68px;
-    background-image: url("/assets/logo.png");
-    background-size: contain;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    a {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-  }
 `;
 
 const HeaderWrapper = styled.div`
@@ -34,6 +20,32 @@ const HeaderWrapper = styled.div`
   margin: auto;
   padding: 25px;
   text-transform: capitalize;
+`;
+
+const HeaderFirstTitle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  h1 {
+    width: 180px;
+    height: 50px;
+    margin-right: 18px;
+    background-image: url("/assets/logo.png");
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    @media screen and (max-width: 1024px) {
+      margin-right: 10px;
+    }
+    @media screen and (max-width: 640px) {
+    }
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
 `;
 
 const WrapperDiv = styled.div`
@@ -54,16 +66,28 @@ const GlobalNavi = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+
   margin-left: 20px;
+  @media screen and (max-width: 1024px) {
+    margin-left: 0;
+  }
+  @media screen and (max-width: 640px) {
+    display: none;
+  }
   ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 18px;
     color: #fff;
+    @media screen and (max-width: 1024px) {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0;
+    }
   }
   li {
     a {
@@ -78,6 +102,7 @@ const UserNavi = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+
   ul {
     display: flex;
     justify-content: center;
@@ -87,6 +112,9 @@ const UserNavi = styled.nav`
     text-transform: capitalize;
     word-spacing: -3px;
     color: #fff;
+    @media screen and (max-width: 640px) {
+      display: none;
+    }
   }
   li:first-of-type {
     position: relative;
@@ -103,19 +131,20 @@ const UserNavi = styled.nav`
       background-color: #fff;
     }
   }
-  li:last-of-type {
-    width: 30px;
-    height: 30px;
-    margin-left: 38px;
-    button {
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-image: url("/assets/search-solid.svg");
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
+`;
+const SearchBox = styled.div`
+  width: 30px;
+  height: 30px;
+  margin-left: 38px;
+
+  button {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/search-solid.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 `;
 
@@ -124,11 +153,13 @@ function Header() {
     <HeaderDiv>
       <HeaderWrapper>
         <WrapperDiv>
-          <h1>
-            <Link to="/">
-              <span className="blind">single plus</span>
-            </Link>
-          </h1>
+          <HeaderFirstTitle>
+            <h1>
+              <Link to="/">
+                <span className="blind">single plus</span>
+              </Link>
+            </h1>
+          </HeaderFirstTitle>
           <MenuNavi>
             <h2 className="blind">Menu Navigation</h2>
           </MenuNavi>
@@ -157,12 +188,12 @@ function Header() {
             <li>
               <Link to="/join">join</Link>
             </li>
-            <li>
-              <button>
-                <span className="blind">search</span>
-              </button>
-            </li>
           </ul>
+          <SearchBox>
+            <button>
+              <span className="blind">search</span>
+            </button>
+          </SearchBox>
         </UserNavi>
       </HeaderWrapper>
     </HeaderDiv>
