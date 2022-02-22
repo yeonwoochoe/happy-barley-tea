@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router";
 import styled from "styled-components";
 import {
   HeaderSecondTitle,
@@ -55,6 +56,10 @@ const SnsLogin = styled.ul`
 `;
 
 const Join = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <JoinDiv>
       <SectionWrapper width="620px" padding="200px 0">

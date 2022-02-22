@@ -8,20 +8,23 @@
  * */
 
 // Imports
-const firestoreService = require('firestore-export-import');
-const firebaseConfig = require('./src/firebase-config.js');
-const serviceAccount = require('./serviceAccount.json');
+const firestoreService = require("firestore-export-import");
+const firebaseConfig = require("./src/firebase-config.js");
+const serviceAccount = require("./serviceAccount.json");
 
 // JSON To Firestore
 const jsonToFirestore = async () => {
   try {
-    console.log('Initialzing Firebase');
-    await firestoreService.initializeApp(serviceAccount, firebaseConfig.databaseURL);
-    console.log('Firebase Initialized');
+    console.log("Initialzing Firebase");
+    await firestoreService.initializeApp(
+      serviceAccount,
+      firebaseConfig.databaseURL
+    );
+    console.log("Firebase Initialized");
 
     // Import File Location
-    await firestoreService.restore('./singleplus.json'); // json file 경로 입력
-    console.log('Upload Success');
+    await firestoreService.restore("./singleplus.json"); // json file 경로 입력
+    console.log("Upload Success");
   } catch (error) {
     console.log(error);
   }

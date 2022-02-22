@@ -53,14 +53,14 @@ const SingleEditConList = (props) => {
         <FaRegHeart />
       </IconDiv>
       <CardImage>
-        <Link to="/">
+        <Link to="2">
           <img alt="" src={`${props.data.image}`}></img>
         </Link>
       </CardImage>
       <CardContent>
         <CardCaption>
           <dt>
-            <Link to="/">
+            <Link to=":1">
               <span>{props.data.mainTag}</span>
               <span>{props.data.hashTag}</span>
             </Link>

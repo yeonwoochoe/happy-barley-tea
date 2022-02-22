@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router";
 import axios from "axios";
 import styled from "styled-components";
 
 import SingleEditContent from "../components/SingleEdit/SingleEditContent";
-import { useLocation } from "react-router";
 import {
   HeaderSecondTitle,
   SectionWrapper,
