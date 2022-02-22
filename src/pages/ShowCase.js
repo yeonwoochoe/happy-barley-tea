@@ -16,14 +16,15 @@ const ShowCaseWapper = styled.div`
   align-items: center;
   width: 100%;
   height: auto;
-  padding: 0 80px 0 80px;
+  padding: 0 22px 0 22px;
 `;
-// -------------------------------------
+
 const ShowCaseTitle = styled.div`
   width: 100%;
   height: 100%;
   padding-top: 50px;
 `;
+
 const NewInfo = styled.div`
   position: relative;
   z-index: 100;
@@ -85,8 +86,8 @@ const Item = styled.div`
   width: 100%;
   height: 382px;
   margin-bottom: 40px;
+  background-color: #fff;
 `;
-
 
 const ListTitle = styled.div`
   width: 100%;

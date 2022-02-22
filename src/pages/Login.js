@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { SectionWrapper, WrapperDiv } from "../components/common/Common";
@@ -99,6 +100,10 @@ const SnsLogin = styled.ul`
 `;
 
 const Login = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <LoginDiv>
       <SectionWrapper padding={"200px 0 310px"}>
