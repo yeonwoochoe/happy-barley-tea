@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -23,21 +25,13 @@ const LoginForm = styled.form`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }
-  input {
-    width: 400px;
-    height: 60px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    background-color: rgba(244, 244, 244);
-  }
-  button {
-    width: 400px;
-    height: 60px;
-    color: #ffffff;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    background-color: rgba(51, 51, 51);
+    > input {
+      width: 400px;
+      height: 60px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      background-color: rgba(244, 244, 244);
+    }
   }
   p {
     margin-top: 40px;
@@ -52,6 +46,20 @@ const LoginForm = styled.form`
     font-weight: bold;
     text-align: center;
     background-color: #ffffff;
+  }
+`;
+const LoginButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  > input {
+    width: 400px;
+    height: 60px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: rgba(51, 51, 51);
   }
 `;
 
@@ -100,6 +108,31 @@ const SnsLogin = styled.ul`
 `;
 
 const Login = () => {
+  const auth = getAuth();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const [errorFromSubmit, setErrorFromSubmit] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const onSubmit = async (data) => {
+    try {
+      setLoading(true);
+
+      await signInWithEmailAndPassword(auth, data.email, data.password);
+      setLoading(false);
+    } catch (error) {
+      setErrorFromSubmit(error.message);
+      setLoading(false);
+      setTimeout(() => {
+        setErrorFromSubmit("");
+      }, 5000);
+    }
+  };
+
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -107,14 +140,25 @@ const Login = () => {
   return (
     <LoginDiv>
       <SectionWrapper padding={"200px 0 310px"}>
-        <LoginForm>
+        <LoginForm onSubmit={handleSubmit(onSubmit)}>
           <legend></legend>
           <fieldset>
-            <label></label>
-            <input />
-            <label></label>
-            <input />
-            <button>로그인</button>
+            <label>이메일</label>
+            <input
+              name="email"
+              type="email"
+              {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+            />
+            <label>비밀번호</label>
+            <input
+              name="password"
+              type="password"
+              {...register("password", { required: true, minLength: 6 })}
+            />
+            {errorFromSubmit && <div>{errorFromSubmit}</div>}
+            <LoginButton>
+              <input type="submit" value="로그인" disabled={loading} />
+            </LoginButton>
           </fieldset>
           <WrapperDiv flexDirection={"row"}>
             <ForgotLogin>

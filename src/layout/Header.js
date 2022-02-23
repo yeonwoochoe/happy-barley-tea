@@ -1,5 +1,7 @@
 // SA K : header 컴포넌트가 너무 커서 쪼개야 될 것 같음
+import { getAuth, signOut } from "firebase/auth";
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 
@@ -136,7 +138,6 @@ const SearchBox = styled.div`
   width: 30px;
   height: 30px;
   margin-left: 38px;
-
   button {
     display: block;
     width: 100%;
@@ -149,6 +150,15 @@ const SearchBox = styled.div`
 `;
 
 function Header() {
+  const user = useSelector((state) => state.user.currentUser);
+
+  const handleLogout = () => {
+    const auth = getAuth();
+    signOut(auth)
+      .then(() => {})
+      .catch((error) => {});
+  };
+
   return (
     <HeaderDiv>
       <HeaderWrapper>
@@ -165,17 +175,19 @@ function Header() {
           </MenuNavi>
           <GlobalNavi>
             <h2 className="blind">Global Navigation</h2>
-            <ul>
-              <li>
-                <NavLink to="/showcase">showcase</NavLink>
-              </li>
-              <li>
-                <NavLink to="/lifestyle">lifestyle</NavLink>
-              </li>
-              <li>
-                <NavLink to="/single-edit">single edit</NavLink>
-              </li>
-            </ul>
+            <WrapperDiv>
+              <ul>
+                <li>
+                  <NavLink to="/showcase">showcase</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/lifestyle">lifestyle</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/single-edit">single&nbsp;edit</NavLink>
+                </li>
+              </ul>
+            </WrapperDiv>
           </GlobalNavi>
         </WrapperDiv>
 
@@ -183,7 +195,11 @@ function Header() {
           <h2 className="blind">User Navigation</h2>
           <ul>
             <li>
-              <Link to="/login">login</Link>
+              {user ? (
+                <button onClick={handleLogout}>logout</button>
+              ) : (
+                <Link to="/login">login</Link>
+              )}
             </li>
             <li>
               <Link to="/join">join</Link>
