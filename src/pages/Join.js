@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import {
   HeaderSecondTitle,
@@ -23,13 +24,15 @@ const JoinList = styled.ul`
   li {
     width: 100%;
     height: 130px;
-    padding: 49px 54px;
+    padding: 52px 54px;
     border: 1px solid #333;
   }
-  button {
+  a {
+    display: block;
     width: 100%;
     height: 100%;
     font-size: 18px;
+    text-align: center;
     background-color: transparent;
   }
 `;
@@ -82,10 +85,10 @@ const Join = () => {
         <WrapperDiv>
           <JoinList>
             <li>
-              <button>일반 회원가입</button>
+              <Link to={"/signup"}>일반 회원가입</Link>
             </li>
             <li>
-              <button>이메일 계정으로 가입</button>
+              <Link to={"/emailsignup"}>이메일 계정으로 가입</Link>
             </li>
           </JoinList>
         </WrapperDiv>
