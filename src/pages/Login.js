@@ -25,10 +25,16 @@ const LoginForm = styled.form`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    > label {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
     > input {
       width: 400px;
       height: 60px;
       margin-bottom: 20px;
+      padding: 10px 20px;
       border-radius: 10px;
       background-color: rgba(244, 244, 244);
     }
@@ -155,6 +161,12 @@ const Login = () => {
               type="password"
               {...register("password", { required: true, minLength: 6 })}
             />
+            {errors.password && errors.password.type === "required" && (
+              <p>This password field is required</p>
+            )}
+            {errors.password && errors.password.type === "minLength" && (
+              <p>Password must have at least 6 characters</p>
+            )}
             {errorFromSubmit && <div>{errorFromSubmit}</div>}
             <LoginButton>
               <input type="submit" value="로그인" disabled={loading} />
