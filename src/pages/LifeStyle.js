@@ -85,7 +85,7 @@ const LifeStyle = () => {
           )}.png?alt=media&token=8e94089b-651c-4904-95d8-103ae92d681b`,
           ...textArr[key],
         };
-        dataArr.push(rel);
+        dataArr.push(rel);  
       }
 
       console.log(dataArr);
