@@ -104,7 +104,6 @@ const UserNavi = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-
   ul {
     display: flex;
     justify-content: center;
@@ -113,24 +112,31 @@ const UserNavi = styled.nav`
     font-size: 18px;
     text-transform: capitalize;
     word-spacing: -3px;
-    color: #fff;
     @media screen and (max-width: 640px) {
       display: none;
     }
   }
-  li:first-of-type {
-    position: relative;
-    margin-right: 50px;
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      right: -28px;
-      bottom: 0;
-      width: 1px;
-      height: 18px;
-      background-color: #fff;
+  li {
+    color: #fff;
+    button {
+      font-size: 18px;
+      text-transform: capitalize;
+      color: #fff;
+    }
+    &:first-of-type {
+      position: relative;
+      margin-right: 50px;
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -28px;
+        bottom: 0;
+        width: 1px;
+        height: 18px;
+        background-color: #fff;
+      }
     }
   }
 `;
