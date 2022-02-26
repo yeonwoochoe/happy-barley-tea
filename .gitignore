@@ -24,4 +24,5 @@ yarn-error.log*
 
 # firebase
 # firebase-config.js
-# serviceAccount.json
+serviceAccount.json
+
