@@ -2,16 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import styled from 'styled-components';
 import LifeStyleCardList from '../components/LifeStyle/LifeStyleCardList';
-import { HeaderSecondTitle, SectionWrapper, WrapperDiv } from '../components/common/Common';
+import {
+  WrapperSection,
+  HeaderSecondTitle,
+  SectionWrapper,
+  WrapperDiv,
+} from '../components/common/Common';
 import { db, storage } from '../firebase-config';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { ref, getDownloadURL } from 'firebase/storage';
-
-const StyledDiv = styled.section`
-  width: 100%;
-  height: auto;
-  background-color: #fff;
-`;
 
 const TabMenuList = styled.ul`
   display: flex;
@@ -133,7 +132,7 @@ const LifeStyle = () => {
   };
 
   return (
-    <StyledDiv>
+    <WrapperSection>
       <SectionWrapper width='1320px' padding='100px 0 145px'>
         <WrapperDiv>
           <HeaderSecondTitle fontSize='44px' color='#111'>
@@ -141,6 +140,7 @@ const LifeStyle = () => {
           </HeaderSecondTitle>
           <WrapperDiv>
             <TabMenuList>
+              <h3 className='blind'>tab menu</h3>
               {categoryArr.map((el, idx) => (
                 <li key={idx}>
                   <button type='button' onClick={() => movePageHandler(el)}>
@@ -164,7 +164,7 @@ const LifeStyle = () => {
           </button>
         </More>
       </SectionWrapper>
-    </StyledDiv>
+    </WrapperSection>
   );
 };
 

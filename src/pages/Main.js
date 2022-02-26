@@ -8,7 +8,6 @@ import SearchBox from "../components/Main/SearchBox";
 import ShowCase from "../components/Main/ShowCase";
 import SingleEdit from "../components/Main/SingleEdit";
 import YoutubeBox from "../components/Main/YoutubeBox";
-
 const MainWrapper = styled.main`
   width: 100%;
 `;
