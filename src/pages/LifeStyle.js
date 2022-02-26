@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router';
+import { useLocation } from 'react-router';
 import styled from 'styled-components';
 import LifeStyleCardList from '../components/LifeStyle/LifeStyleCardList';
 import {
@@ -51,7 +51,6 @@ const LifeStyle = () => {
   const [loadedData, setLoadedData] = useState([]);
   const [clickNum, setClickNum] = useState(1);
   const [categoryName, setCategoryName] = useState('all');
-  let { id } = useParams();
 
   const categoryArr = [
     'all',
@@ -67,10 +66,6 @@ const LifeStyle = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-
-  useEffect(() => {
-    console.log(id);
-  }, [id]);
 
   useEffect(() => {
     setIsloding(true);

@@ -1,9 +1,10 @@
-import React from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useNavigate, useParams, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import { WrapperSection, HeaderSecondTitle, SectionWrapper, WrapperDiv } from '../common/Common';
+import { WrapperSection, SectionWrapper, WrapperDiv } from '../common/Common';
 
 const DUMMY_DATA = {
+  contentId: 0,
   content: [
     {
       id: 0,
@@ -100,6 +101,12 @@ T우주가 다른 통신사보다 더 많은 제휴사와 연계한 이유이기
     '통신사구독',
   ],
   like: 0,
+  relation: [
+    { title: '삶을 변화시키는 구독의 미래', image: 'https://picsum.photos/470' },
+    { title: '삶을 변화시키는 구독의 미래', image: 'https://picsum.photos/470' },
+    { title: '삶을 변화시키는 구독의 미래', image: 'https://picsum.photos/470' },
+    { title: '삶을 변화시키는 구독의 미래', image: 'https://picsum.photos/470' },
+  ],
 };
 
 const BreadCrumb = styled.div`
@@ -203,6 +210,11 @@ const HashTag = styled.ul`
     border-radius: 4px;
     font-size: 12px;
     color: #9f9f9f;
+
+    &:hover {
+      background-color: #ebebeb;
+      color: #171717;
+    }
   }
 `;
 
@@ -210,6 +222,12 @@ const StatusIcon = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 50px 0 20px;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
 
   ul {
     display: flex;
@@ -222,14 +240,67 @@ const StatusIcon = styled.div`
   }
 `;
 
+const ListButton = styled.div`
+  margin: 70px 0;
+
+  button {
+    display: block;
+    margin: auto;
+    padding: 14px 58px;
+    border-radius: 0.5rem;
+    border: 2px solid #333;
+    background-color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+
+    &:hover {
+      background-color: #eee;
+      color: #171717;
+    }
+  }
+`;
+
+const MoreContent = styled.div`
+  width: 100%;
+  max-width: 1320px;
+
+  h4 {
+    margin: 20px 0;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  ul {
+    display: flex;
+    gap: 40px;
+  }
+
+  img {
+    width: 290px;
+    height: 290px;
+  }
+
+  figcaption {
+    margin-top: 20px;
+    font-size: 24px;
+  }
+`;
+
 function LifeStyleDetail(props) {
-  let navigate = useNavigate();
-  let { id } = useParams();
+  const { pathname } = useLocation();
+  let params = useParams();
+
+  console.log(params.contentId);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <WrapperSection>
       <h2 className='blind'>Lifestyle</h2>
-      <SectionWrapper padding='100px 0 145px'>
+      <SectionWrapper width='1280px' padding='100px 0 145px'>
         <WrapperDiv justifyContent='flex-start'>
           <BreadCrumb>
             <ul>
@@ -284,7 +355,7 @@ function LifeStyleDetail(props) {
                   <button type='button'>
                     <img src='/assets/icon-like.svg' alt='like' />
                   </button>
-                  {DUMMY_DATA.like}
+                  <p>{DUMMY_DATA.like}</p>
                 </div>
 
                 <ul>
@@ -315,8 +386,26 @@ function LifeStyleDetail(props) {
                 </ul>
               </StatusIcon>
             </ContentFooter>
+
+            <ListButton>
+              <button type='button'>목록보기</button>
+            </ListButton>
           </WrapperContent>
         </WrapperDiv>
+
+        <MoreContent>
+          <h4>같이보면 좋은 기사</h4>
+          <ul>
+            {DUMMY_DATA.relation.map((el, idx) => (
+              <li key={idx}>
+                <figure>
+                  <img src={el.image} alt={el.title} />
+                  <figcaption>{el.title}</figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+        </MoreContent>
       </SectionWrapper>
     </WrapperSection>
   );

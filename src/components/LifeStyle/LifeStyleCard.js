@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { CardCaption, CardImage, WrapperDiv } from '../common/Common';
 
@@ -23,13 +24,15 @@ function LifeStyleCard(props) {
     <Fragment>
       <StyledLi>
         <WrapperDiv>
-          <CardImage height={'470px'}>
-            <img src={props.image} alt={props.title} />
-          </CardImage>
-          <CardCaption>
-            <dt>{props.category}</dt>
-            <dd>{props.title}</dd>
-          </CardCaption>
+          <Link to={`/lifestyle/${props.id}`}>
+            <CardImage height={'470px'}>
+              <img src={props.image} alt={props.title} />
+            </CardImage>
+            <CardCaption>
+              <dt>{props.category}</dt>
+              <dd>{props.title}</dd>
+            </CardCaption>
+          </Link>
         </WrapperDiv>
       </StyledLi>
     </Fragment>

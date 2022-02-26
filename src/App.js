@@ -18,7 +18,7 @@ const App = () => {
         navigate('/');
         dispatch(setUser(user));
       } else {
-        // navigate("/login"); // 임시주석처리
+        navigate('/login');
         dispatch(claerUser());
       }
     });

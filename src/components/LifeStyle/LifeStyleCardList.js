@@ -12,6 +12,7 @@ function LifeStyleCardList(props) {
         {props.data.map(data => (
           <LifeStyleCard
             key={data.id}
+            id={data.id}
             category={data.category}
             image={data.image}
             title={data.title}
