@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import {
@@ -14,7 +14,7 @@ import {
   ViewWrapper,
   WrapperDiv,
 } from "../common/Common";
-
+import { singleEdit } from "../../api";
 const SingleEditDiv = styled.section`
   width: 100%;
   background-color: #ffffff;
@@ -28,6 +28,12 @@ const HeaderMoreButton = styled.div`
 `;
 
 const SingleEdit = () => {
+  const data = [1, 2, 3];
+  console.log(singleEdit());
+
+  const recentData = singleEdit().filter(data);
+  console.log(recentData);
+
   return (
     <SingleEditDiv>
       <SectionWrapper width={"1280px"}>
@@ -49,7 +55,20 @@ const SingleEdit = () => {
               justifyContent: "space-between",
             }}
           >
-            <CardLi>
+            {data.map((data) => (
+              <CardLi>
+                <WrapperDiv>
+                  <CardImage width={"400px"} height={"400px"}>
+                    img
+                  </CardImage>
+                  <CardCaption>
+                    <dt>your edit</dt>
+                    <dd>텃새 딱새</dd>
+                  </CardCaption>
+                </WrapperDiv>
+              </CardLi>
+            ))}
+            {/* <CardLi>
               <WrapperDiv>
                 <CardImage width={"400px"} height={"400px"}>
                   img
@@ -81,7 +100,7 @@ const SingleEdit = () => {
                   <dd>텃새 딱새</dd>
                 </CardCaption>
               </WrapperDiv>
-            </CardLi>
+            </CardLi> */}
           </CardList>
         </CardWrapper>
       </SectionWrapper>
