@@ -104,6 +104,22 @@ const SingleEdit = () => {
     setClickNum(clickNum + 1);
   };
 
+  const sortNewHandler = () => {
+    const sortData = [...item];
+    sortData.sort((a, b) => new Date(b.date) - new Date(a.date));
+    console.log(sortData, "new");
+    setItem(sortData);
+  };
+
+  const sortPopularHandler = () => {
+    const sortData = [...item];
+    sortData.sort((a, b) => b.like - a.like);
+    console.log(sortData, "like");
+    setItem(sortData);
+  };
+
+  const ExpertsEditSolt = categoryArr.filter((el) => el === "Expert's Edit");
+
   return (
     <SingleEditDiv>
       <SectionWrapper width="1320px" padding="100px 0 145px">
@@ -125,6 +141,9 @@ const SingleEdit = () => {
         </WrapperDiv>
         <SingleEditContent
           item={filterData}
+          category={categoryName}
+          sortExpertsEdit={ExpertsEditSolt}
+          sort={[sortNewHandler, sortPopularHandler]}
           fetchMoreHandler={fetchMoreHandler}
         />
       </SectionWrapper>

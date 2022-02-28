@@ -3,6 +3,11 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
+import { applyMiddleware, createStore } from "redux";
+import promiseMiddleWare from "redux-promise";
+import ReduxThunk from "redux-thunk";
+import Reducer from "./redux/reducers";
+import { Provider } from "react-redux";
 
 const GlobalStyle = createGlobalStyle`
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
@@ -106,12 +111,25 @@ button {
 }
 `;
 
+const createStoreWithMiddleWare = applyMiddleware(
+  promiseMiddleWare,
+  ReduxThunk
+)(createStore);
+
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <GlobalStyle />
-      <App />
-    </BrowserRouter>
+    <Provider
+      store={createStoreWithMiddleWare(
+        Reducer,
+        window.__REDUX_DEVTOOLS_EXTENSTION__ &&
+          window.__REDUX_DEVTOOLS_EXTENSTION__()
+      )}
+    >
+      <BrowserRouter>
+        <GlobalStyle />
+        <App />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
