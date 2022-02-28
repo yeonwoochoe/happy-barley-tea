@@ -32,7 +32,7 @@ const SingleEdit = () => {
   console.log(singleEdit());
 
   // const recentData = singleEdit().filter(data);
-  // console.log(recentData);  // 렌더링 에러가 나서 임시로 주석처리
+  // console.log(recentData);
 
   return (
     <SingleEditDiv>
