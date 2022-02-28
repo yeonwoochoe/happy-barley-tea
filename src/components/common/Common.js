@@ -1,29 +1,29 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const HeaderSecondTitle = styled.h2`
-  align-self: ${props => props.alignSelf || 'flex-start'};
+  align-self: ${(props) => props.alignSelf || "flex-start"};
   margin-top: 40px;
   margin-bottom: 40px;
-  word-spacing: ${props => props.wordSpacing || '-10px'};
-  font-size: ${props => props.fontSize || '60px'};
+  word-spacing: ${(props) => props.wordSpacing || "-10px"};
+  font-size: ${(props) => props.fontSize || "60px"};
   font-weight: bold;
   text-transform: capitalize;
-  color: ${props => props.color};
+  color: ${(props) => props.color};
   &::before {
-    content: '';
-    display: ${props => props.display || 'inline-block'};
+    content: "";
+    display: ${(props) => props.display || "inline-block"};
     width: 24px;
     height: 48px;
     margin-right: 10px;
-    background-color: ${props => props.color};
+    background-color: ${(props) => props.color};
   }
 `;
 
 export const ViewWrapper = styled.div`
   display: grid;
-  grid-template-columns: ${props => props.columns};
+  grid-template-columns: ${(props) => props.columns};
   width: 100%;
-  height: ${props => props.height || '580px'};
+  height: ${(props) => props.height || "580px"};
   margin-bottom: 40px;
 `;
 export const ViewContent = styled.div`
@@ -37,10 +37,10 @@ export const ViewImage = styled.div`
 
 export const WrapperDiv = styled.div`
   display: flex;
-  justify-content: ${props => props.justifyContent || 'center'};
+  justify-content: ${(props) => props.justifyContent || "center"};
   align-items: center;
-  flex-direction: ${props => props.flexDirection || 'column'};
-  width: ${props => props.width || '100%'};
+  flex-direction: ${(props) => props.flexDirection || "column"};
+  width: ${(props) => props.width || "100%"};
 `;
 
 export const SectionWrapper = styled.div`
@@ -49,9 +49,9 @@ export const SectionWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: ${props => props.width || '100%'};
+  max-width: ${(props) => props.width || "100%"};
   margin: auto;
-  padding: ${props => props.padding || '0 0 0 0'};
+  padding: ${(props) => props.padding || "0 0 0 0"};
 `;
 
 /* display: grid;
@@ -67,7 +67,7 @@ export const SectionWrapper = styled.div`
 // width: 100%;
 
 export const CardWrapper = styled.div`
-  width: ${props => props.width || '100%'};
+  width: ${(props) => props.width || "100%"};
 `;
 
 export const CardList = styled.ul`
@@ -80,17 +80,19 @@ export const CardList = styled.ul`
 `;
 
 export const CardLi = styled.li`
-  width: ${props => props.width || '100%'};
+  width: ${(props) => props.width || "100%"};
   margin-bottom: 40px;
 `;
 
 export const CardImage = styled.div`
-  width: ${props => props.width || '100%'};
-  height: ${props => props.height};
+  width: ${(props) => props.width || "100%"};
+  height: ${(props) => props.height};
   background-color: #dddddd;
   img {
     width: 100%;
-    background: no-repeat center/contain;
+    height: 100%;
+    object-fit: cover;
+    background: no-repeat center/cover;
   }
 `;
 
@@ -108,20 +110,84 @@ export const CardCaption = styled.dl`
   }
 `;
 
+export const SortList = styled.div`
+  width: 100%;
+  height: 21px;
+  margin-bottom: 20px;
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+  li {
+    &:first-child {
+      margin-right: 20px;
+      padding-right: 20px;
+      border-right: 1px solid #9f9f9f;
+    }
+  }
+  button {
+    font-size: 14px;
+    font-weight: bold;
+    color: #9f9f9f;
+  }
+`;
+
+export const SortAllList = styled.div`
+  width: 100%;
+  height: 21px;
+  margin-bottom: 20px;
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+  li {
+    position: relative;
+    margin-right: 40px;
+    &:last-child {
+      margin-right: 0;
+      &::after {
+        display: none;
+      }
+    }
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 4px;
+      right: -20px;
+      width: 1px;
+      height: 13px;
+      background-color: #9f9f9f;
+    }
+  }
+  button {
+    font-size: 14px;
+    font-weight: bold;
+    color: #9f9f9f;
+  }
+`;
+
 export const FaceBook = styled.li`
-  background: ${props => `url(${props.backgroundImage})`} no-repeat center/contain;
+  background: ${(props) => `url(${props.backgroundImage})`} no-repeat
+    center/contain;
 `;
 export const Instargram = styled.li`
-  background: ${props => `url(${props.backgroundImage})`} no-repeat center/contain;
+  background: ${(props) => `url(${props.backgroundImage})`} no-repeat
+    center/contain;
 `;
 export const Youtube = styled.li`
-  background: ${props => `url(${props.backgroundImage})`} no-repeat center/contain;
+  background: ${(props) => `url(${props.backgroundImage})`} no-repeat
+    center/contain;
 `;
 export const Twitter = styled.li`
-  background: ${props => `url(${props.backgroundImage})`} no-repeat center/contain;
+  background: ${(props) => `url(${props.backgroundImage})`} no-repeat
+    center/contain;
 `;
 export const NaverPost = styled.li`
-  background: ${props => `url(${props.backgroundImage})`} no-repeat center/contain;
+  background: ${(props) => `url(${props.backgroundImage})`} no-repeat
+    center/contain;
 `;
 
 export const Container = styled.div`
