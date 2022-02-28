@@ -1,14 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router";
-import axios from "axios";
-import styled from "styled-components";
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router';
+import axios from 'axios';
+import styled from 'styled-components';
 
-import SingleEditContent from "../components/SingleEdit/SingleEditContent";
-import {
-  HeaderSecondTitle,
-  SectionWrapper,
-  WrapperDiv,
-} from "../components/common/Common";
+import SingleEditContent from '../components/SingleEdit/SingleEditContent';
+import { HeaderSecondTitle, SectionWrapper, WrapperDiv } from '../components/common/Common';
 
 const SingleEditDiv = styled.section`
   width: 100%;
@@ -47,9 +43,7 @@ const SingleEdit = () => {
 
   // data 불러오기
   useEffect(() => {
-    axios
-      .get("./data/SingleEdit/dummyData.json")
-      .then((res) => setPdData(res.data));
+    axios.get('./data/SingleEdit/dummyData.json').then(res => setPdData(res.data));
   }, []);
 
   const fnTab = (e, i) => {
@@ -64,15 +58,15 @@ const SingleEdit = () => {
 
   return (
     <SingleEditDiv>
-      <SectionWrapper width="1320px" padding="100px 0 145px">
+      <SectionWrapper width='1320px' padding='100px 0 145px'>
         <WrapperDiv>
-          <HeaderSecondTitle fontSize={"44px"} color={`#111`}>
+          <HeaderSecondTitle fontSize={'44px'} color={`#111`}>
             single edit
           </HeaderSecondTitle>
           <WrapperDiv>
             <TabMenuList>
               {PdData.map((data, id) => (
-                <li key={data.id} type="button" onClick={(e) => fnTab(e, id)}>
+                <li key={data.id} type='button' onClick={e => fnTab(e, id)}>
                   {data.tabTitle}
                 </li>
               ))}
