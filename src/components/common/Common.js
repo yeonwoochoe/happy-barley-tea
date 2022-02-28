@@ -110,6 +110,65 @@ export const CardCaption = styled.dl`
   }
 `;
 
+export const SortList = styled.div`
+  width: 100%;
+  height: 21px;
+  margin-bottom: 20px;
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+  li {
+    &:first-child {
+      margin-right: 20px;
+      padding-right: 20px;
+      border-right: 1px solid #9f9f9f;
+    }
+  }
+  button {
+    font-size: 14px;
+    font-weight: bold;
+    color: #9f9f9f;
+  }
+`;
+
+export const SortAllList = styled.div`
+  width: 100%;
+  height: 21px;
+  margin-bottom: 20px;
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+  li {
+    position: relative;
+    margin-right: 40px;
+    &:last-child {
+      margin-right: 0;
+      &::after {
+        display: none;
+      }
+    }
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 4px;
+      right: -20px;
+      width: 1px;
+      height: 13px;
+      background-color: #9f9f9f;
+    }
+  }
+  button {
+    font-size: 14px;
+    font-weight: bold;
+    color: #9f9f9f;
+  }
+`;
+
 export const FaceBook = styled.li`
   background: ${(props) => `url(${props.backgroundImage})`} no-repeat
     center/contain;

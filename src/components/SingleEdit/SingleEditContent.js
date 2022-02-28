@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
 import { CardCaption, CardImage } from "../common/Common";
-
+import SingleEditSort from "./SingleEditSort";
+import ExpertsEditSort from "./ExpertsEditSort";
 import { WrapperDiv } from "../common/Common";
 
 const CardContainer = styled.div`
@@ -89,16 +90,20 @@ const IconDiv = styled.div`
   cursor: pointer;
 `;
 
-const SingleEditContent = ({ item, fetchMoreHandler }) => {
+const SingleEditContent = (props) => {
+  const [isExpertsEditSort, setIsxpertsEditSort] = useState(false);
+
+  // const ExpertsEditSortHadler = () => {
+  //   setIsxpertsEditSort(true);
+  // };
+
+  console.log(props);
   return (
     <WrapperDiv>
-      <SoltBtnWrapper justify={`end`}>
-        <button>최신순</button>
-        <span></span>
-        <button>추천순</button>
-      </SoltBtnWrapper>
+      <ExpertsEditSort category={props.category} sort={props.sort} />
+      <SingleEditSort category={props.category} sort={props.sort} />
       <CardContainer>
-        {item.map((Val) => {
+        {props.item.map((Val) => {
           return (
             <Card key={Val.id}>
               <IconDiv>
@@ -128,11 +133,11 @@ const SingleEditContent = ({ item, fetchMoreHandler }) => {
       </CardContainer>
       <SoltBtnWrapper
         justify={`center`}
-        size={`18px`}
+        size={`20px`}
         color={`#333`}
         decoration={`underline`}
       >
-        <button type="button" onClick={fetchMoreHandler}>
+        <button type="button" onClick={props.fetchMoreHandler}>
           &#43;MORE
         </button>
       </SoltBtnWrapper>
