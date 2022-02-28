@@ -196,3 +196,9 @@ export const Container = styled.div`
   max-width: 1320px;
   margin: auto;
 `;
+
+export const WrapperSection = styled.section`
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+`;
