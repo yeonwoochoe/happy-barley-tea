@@ -23,7 +23,9 @@ const jsonToFirestore = async () => {
     console.log("Firebase Initialized");
 
     // Import File Location
-    await firestoreService.restore("./singleplus.json"); // json file 경로 입력
+
+    await firestoreService.restore("./singleEdit.json"); // json file 경로 입력
+
     console.log("Upload Success");
   } catch (error) {
     console.log(error);
