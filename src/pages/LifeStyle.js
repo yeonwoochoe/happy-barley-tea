@@ -69,9 +69,9 @@ const LifeStyle = () => {
 
   useEffect(() => {
     setIsloding(true);
-    onSnapshot(collection(db, "lifestyle"), (snapshot) => {
+    onSnapshot(collection(db, "lifestyle"), snapshot => {
       const dataArr = [];
-      const textArr = snapshot.docs.map((doc) => doc.data());
+      const textArr = snapshot.docs.map(doc => doc.data());
       for (const key in textArr) {
         const rel = {
           image: `https://firebasestorage.googleapis.com/v0/b/the-single-plus.appspot.com/o/lifestyle%2Fthumb_${key.padStart(
@@ -83,7 +83,7 @@ const LifeStyle = () => {
         dataArr.push(rel);
       }
 
-      console.log(dataArr);
+      // console.log(dataArr);
       setLoadedData(dataArr);
     });
 
@@ -91,7 +91,7 @@ const LifeStyle = () => {
   }, []);
 
   const storageRef = ref(storage, "lifestyle/thumb_000.png");
-  getDownloadURL(storageRef).then((url) => console.log(url));
+  // getDownloadURL(storageRef).then(url => console.log(url));
 
   const filterData = loadedData
     .filter((card, idx) => {
@@ -107,7 +107,7 @@ const LifeStyle = () => {
     return <p>Loading...</p>;
   }
 
-  const movePageHandler = (cateName) => {
+  const movePageHandler = cateName => {
     setClickNum(1);
     setCategoryName(cateName);
   };
@@ -126,7 +126,7 @@ const LifeStyle = () => {
     setLoadedData(sortData);
   };
 
-  const fetchMoreHandler = (e) => {
+  const fetchMoreHandler = e => {
     e.preventDefault();
     setClickNum(clickNum + 1);
   };
@@ -152,11 +152,13 @@ const LifeStyle = () => {
           </WrapperDiv>
         </WrapperDiv>
 
-        <LifeStyleCardList
-          data={filterData}
-          category={categoryName}
-          sort={[sortNewHandler, sortPopularHandler]}
-        />
+        {
+          <LifeStyleCardList
+            data={filterData}
+            category={categoryName}
+            sort={[sortNewHandler, sortPopularHandler]}
+          />
+        }
 
         <More>
           <button type="button" onClick={fetchMoreHandler}>

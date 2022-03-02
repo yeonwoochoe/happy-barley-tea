@@ -206,7 +206,7 @@ function Header() {
                 <Link to="/login">login</Link>
               )}
             </li>
-            <li>{user ? <Link to="/mypage">마이페이지</Link> : <Link to="/join">login</Link>}</li>
+            <li>{user ? <Link to="/mypage">마이페이지</Link> : <Link to="/join">join</Link>}</li>
           </ul>
           <SearchBox>
             <button>
