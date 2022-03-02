@@ -1,8 +1,8 @@
-import { getAuth, signOut } from 'firebase/auth';
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { Link, NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import { getAuth, signOut } from "firebase/auth";
+import React from "react";
+import { useSelector } from "react-redux";
+import { Link, NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 const HeaderDiv = styled.header`
   z-index: 2000;
@@ -32,7 +32,7 @@ const HeaderFirstTitle = styled.div`
     width: 180px;
     height: 50px;
     margin-right: 18px;
-    background-image: url('/assets/logo.png');
+    background-image: url("/assets/logo.png");
     background-size: contain;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -126,10 +126,10 @@ const UserNavi = styled.nav`
       position: relative;
       margin-right: 50px;
       &::after {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
-        top: 0;
+        top: 4px;
         right: -28px;
         bottom: 0;
         width: 1px;
@@ -147,7 +147,7 @@ const SearchBox = styled.div`
     display: block;
     width: 100%;
     height: 100%;
-    background-image: url('/assets/search-solid.svg');
+    background-image: url("/assets/search-solid.svg");
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: contain;
@@ -170,26 +170,26 @@ function Header() {
         <WrapperDiv>
           <HeaderFirstTitle>
             <h1>
-              <Link to='/'>
-                <span className='blind'>single plus</span>
+              <Link to="/">
+                <span className="blind">single plus</span>
               </Link>
             </h1>
           </HeaderFirstTitle>
           <MenuNavi>
-            <h2 className='blind'>Menu Navigation</h2>
+            <h2 className="blind">Menu Navigation</h2>
           </MenuNavi>
           <GlobalNavi>
-            <h2 className='blind'>Global Navigation</h2>
+            <h2 className="blind">Global Navigation</h2>
             <WrapperDiv>
               <ul>
                 <li>
-                  <NavLink to='/showcase'>showcase</NavLink>
+                  <NavLink to="/showcase">showcase</NavLink>
                 </li>
                 <li>
-                  <NavLink to='/lifestyle'>lifestyle</NavLink>
+                  <NavLink to="/lifestyle">lifestyle</NavLink>
                 </li>
                 <li>
-                  <NavLink to='/single-edit'>single&nbsp;edit</NavLink>
+                  <NavLink to="/single-edit">single&nbsp;edit</NavLink>
                 </li>
               </ul>
             </WrapperDiv>
@@ -197,22 +197,20 @@ function Header() {
         </WrapperDiv>
 
         <UserNavi>
-          <h2 className='blind'>User Navigation</h2>
+          <h2 className="blind">User Navigation</h2>
           <ul>
             <li>
               {user ? (
-                <button onClick={handleLogout}>logout</button>
+                <button onClick={handleLogout}>로그아웃</button>
               ) : (
-                <Link to='/login'>login</Link>
+                <Link to="/login">login</Link>
               )}
             </li>
-            <li>
-              <Link to='/join'>join</Link>
-            </li>
+            <li>{user ? <Link to="/mypage">마이페이지</Link> : <Link to="/join">join</Link>}</li>
           </ul>
           <SearchBox>
             <button>
-              <span className='blind'>search</span>
+              <span className="blind">search</span>
             </button>
           </SearchBox>
         </UserNavi>
