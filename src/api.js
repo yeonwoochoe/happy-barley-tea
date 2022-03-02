@@ -1,8 +1,7 @@
-import { db, storage } from "./firebase-config";
+import { db } from "./firebase-config";
 import { collection, onSnapshot } from "firebase/firestore";
-import { ref, getDownloadURL } from "firebase/storage";
 
-const getSinglePlus = () => {
+export const singleEdit = () => {
   const dataArr = [];
   onSnapshot(collection(db, "lifestyle"), (snapshot) => {
     const textArr = snapshot.docs.map((doc) => doc.data());
@@ -17,11 +16,5 @@ const getSinglePlus = () => {
       dataArr.push(rel);
     }
   });
-
-  const storageRef = ref(storage, "lifestyle/thumb_000.png");
-  getDownloadURL(storageRef).then((url) => console.log(url));
-
   return dataArr;
 };
-
-export default getSinglePlus;

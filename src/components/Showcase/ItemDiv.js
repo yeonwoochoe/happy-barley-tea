@@ -1,23 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import ItemList from '../components/Showcase/ItemList.js';
 
 const ItemDiv = styled.div`
-  width: 290px;
+  display: flex;
+  flex-direction: row;  
+  width: 100%;
   height: 382px;
+  margin-right: 20px;
   background-color: #fad;
-    figure {
-    width: 290px;
-    height: 290px;
-    margin-bottom: 20px;
-    background-color: #111; }
-    figcaption {
-      font-size: 24px;
-      color: #fff; }
+  
+  // ItemList 
 `;
 
 const ItemDivSample = () => {
-  const names = ['나홀로 즐겁게 혼밥', '스킨케어', '방구석 헬스장', '2022 베리 페리'];
-  const nameList = names.map((name, idx) => <figcaption key={idx}>{name}</figcaption>);
+  const names = ['1', '2', '3', '4'];
+  const nameList = names.map((name, idx) => <ItemDiv key={idx}>{name}</ItemDiv>);
 return <ItemDiv>{nameList}</ItemDiv>;
 };
 
