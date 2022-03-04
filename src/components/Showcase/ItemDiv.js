@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import ItemList from '../components/Showcase/ItemList.js';
 
@@ -13,10 +13,53 @@ const ItemDiv = styled.div`
   // ItemList 
 `;
 
-const ItemDivSample = () => {
-  const names = ['1', '2', '3', '4'];
-  const nameList = names.map((name, idx) => <ItemDiv key={idx}>{name}</ItemDiv>);
-return <ItemDiv>{nameList}</ItemDiv>;
+const ItemDivSample = (props) => {
+  const [items, setItems ] = useState([
+    { id: 1, name: "눈사람" },
+    { id: 2, name: "얼음" },
+    { id: 3, name: "눈" },
+    { id: 4, name: "바람" }
+  ]);
+  const [ name, setName ] = useState("");
+
+  const addItems = () => {
+    let itemCopy = [...items];
+    let size = items[items.length - 1].id;
+    itemCopy.push({id: size + 1, name: name });
+    setItems(itemCopy);
+  };
+
+  const onChangeHandle = (e) => {
+    let value = e.target.value;
+    setName(value);
+  };
+
+  const onRemoveItem = (id) => {
+    setItems((items) => items.filter((item) => item.id != id));
+  };
+
+  return (
+    <>
+      <input type="text" value={name} onChange={onChangeHandle} />
+      <buttton onClick={addItems}>add</buttton>
+
+      <div>
+        {items.map((item, index) => {
+          return (
+            <ItemList
+            key={index}
+            item={item}
+            onRemoveItem={onRemoveItem}
+            />
+          );
+        })}
+      </div>
+    </>
+  )
+// return <ItemDiv>
+//         {/* {nameList} */}
+//         {ItemList}
+//        </ItemDiv>;
 };
 
 // const ItemDivSample = () => {
