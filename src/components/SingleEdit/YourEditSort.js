@@ -4,7 +4,6 @@ import { SortAllList } from "../common/Common";
 const YourEditSort = (props) => {
   const listArr = ["ALL", "#ITEM", "#SWEATLIFE", "#OOTD", "#YUMMY", "#ROUTINE"];
   const [sortData, setSortData] = useState(listArr[0]);
-  console.log(props);
 
   const sortHandler = (el) => {
     setSortData(el);

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
@@ -91,18 +92,18 @@ const IconDiv = styled.div`
 `;
 
 const SingleEditContent = (props) => {
-  // const [isExpertsEditSort, setIsxpertsEditSort] = useState(false);
+  const [isExpertsEditSort, setIsxpertsEditSort] = useState(props.category);
 
-  // const ExpertsEditSortHadler = () => {
-  //   setIsxpertsEditSort(true);
-  // };
+  console.log(props.category);
 
-  console.log(props);
   return (
     <WrapperDiv>
+      {isExpertsEditSort && (
+        <SingleEditSort category={props.category} sort={props.sort} />
+      )}
       <YourEditSort category={props.category} sort={props.sort} />
       <ExpertsEditSort category={props.category} sort={props.sort} />
-      <SingleEditSort category={props.category} sort={props.sort} />
+
       <CardContainer>
         {props.item.map((Val) => {
           return (
