@@ -18,7 +18,7 @@ const YourEditSort = (props) => {
   return (
     <SortAllList>
       <ul>
-        {props.category === "Expert's Edit" ? (
+        {props.category === "Your Edit" ? (
           <ul>
             {listArr.map((el, idx) => (
               <li key={idx}>
