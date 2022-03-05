@@ -80,9 +80,6 @@ const WorkInWinter = styled.div`
 `;
 
 const Item = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   width: 100%;
   height: 382px;
   margin-bottom: 40px;

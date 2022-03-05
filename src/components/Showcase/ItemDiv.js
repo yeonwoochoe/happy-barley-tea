@@ -1,24 +1,65 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
+import ItemList from '../components/Showcase/ItemList.js';
 
 const ItemDiv = styled.div`
-  width: 290px;
+  display: flex;
+  flex-direction: row;  
+  width: 100%;
   height: 382px;
+  margin-right: 20px;
   background-color: #fad;
-    figure {
-    width: 290px;
-    height: 290px;
-    margin-bottom: 20px;
-    background-color: #111; }
-    figcaption {
-      font-size: 24px;
-      color: #fff; }
+  
+  // ItemList 
 `;
 
-const ItemDivSample = () => {
-  const names = ['나홀로 즐겁게 혼밥', '스킨케어', '방구석 헬스장', '2022 베리 페리'];
-  const nameList = names.map((name, idx) => <figcaption key={idx}>{name}</figcaption>);
-return <ItemDiv>{nameList}</ItemDiv>;
+const ItemDivSample = (props) => {
+  const [items, setItems ] = useState([
+    { id: 1, name: "눈사람" },
+    { id: 2, name: "얼음" },
+    { id: 3, name: "눈" },
+    { id: 4, name: "바람" }
+  ]);
+  const [ name, setName ] = useState("");
+
+  const addItems = () => {
+    let itemCopy = [...items];
+    let size = items[items.length - 1].id;
+    itemCopy.push({id: size + 1, name: name });
+    setItems(itemCopy);
+  };
+
+  const onChangeHandle = (e) => {
+    let value = e.target.value;
+    setName(value);
+  };
+
+  const onRemoveItem = (id) => {
+    setItems((items) => items.filter((item) => item.id != id));
+  };
+
+  return (
+    <>
+      <input type="text" value={name} onChange={onChangeHandle} />
+      <buttton onClick={addItems}>add</buttton>
+
+      <div>
+        {items.map((item, index) => {
+          return (
+            <ItemList
+            key={index}
+            item={item}
+            onRemoveItem={onRemoveItem}
+            />
+          );
+        })}
+      </div>
+    </>
+  )
+// return <ItemDiv>
+//         {/* {nameList} */}
+//         {ItemList}
+//        </ItemDiv>;
 };
 
 // const ItemDivSample = () => {
