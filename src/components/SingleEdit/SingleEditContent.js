@@ -94,16 +94,16 @@ const IconDiv = styled.div`
 const SingleEditContent = (props) => {
   const [isExpertsEditSort, setIsxpertsEditSort] = useState(props.category);
 
-  console.log(props.category);
-
   return (
     <WrapperDiv>
-      {isExpertsEditSort && (
-        <SingleEditSort category={props.category} sort={props.sort} />
-      )}
-      <YourEditSort category={props.category} sort={props.sort} />
-      <ExpertsEditSort category={props.category} sort={props.sort} />
+      <SingleEditSort category={props.category} sort={props.sort} />
 
+      {isExpertsEditSort && (
+        <YourEditSort category={props.category} sort={props.sort} />
+      )}
+      {isExpertsEditSort && (
+        <ExpertsEditSort category={props.category} sort={props.sort} />
+      )}
       <CardContainer>
         {props.item.map((Val) => {
           return (
