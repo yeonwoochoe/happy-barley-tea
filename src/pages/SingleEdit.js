@@ -118,8 +118,6 @@ const SingleEdit = () => {
     setItem(sortData);
   };
 
-  const ExpertsEditSolt = categoryArr.filter((el) => el === "Expert's Edit");
-
   return (
     <SingleEditDiv>
       <SectionWrapper width="1320px" padding="100px 0 145px">
@@ -142,7 +140,6 @@ const SingleEdit = () => {
         <SingleEditContent
           item={filterData}
           category={categoryName}
-          sortExpertsEdit={ExpertsEditSolt}
           sort={[sortNewHandler, sortPopularHandler]}
           fetchMoreHandler={fetchMoreHandler}
         />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
@@ -6,6 +6,7 @@ import { CardCaption, CardImage } from "../common/Common";
 import SingleEditSort from "./SingleEditSort";
 import ExpertsEditSort from "./ExpertsEditSort";
 import { WrapperDiv } from "../common/Common";
+import YourEditSort from "./YourEditSort";
 
 const CardContainer = styled.div`
   display: flex;
@@ -91,17 +92,18 @@ const IconDiv = styled.div`
 `;
 
 const SingleEditContent = (props) => {
-  const [isExpertsEditSort, setIsxpertsEditSort] = useState(false);
+  const [isExpertsEditSort, setIsxpertsEditSort] = useState(props.category);
 
-  // const ExpertsEditSortHadler = () => {
-  //   setIsxpertsEditSort(true);
-  // };
-
-  console.log(props);
   return (
     <WrapperDiv>
-      <ExpertsEditSort category={props.category} sort={props.sort} />
       <SingleEditSort category={props.category} sort={props.sort} />
+
+      {isExpertsEditSort && (
+        <YourEditSort category={props.category} sort={props.sort} />
+      )}
+      {isExpertsEditSort && (
+        <ExpertsEditSort category={props.category} sort={props.sort} />
+      )}
       <CardContainer>
         {props.item.map((Val) => {
           return (
