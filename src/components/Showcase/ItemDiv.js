@@ -1,33 +1,56 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
 const ItemDiv = styled.div`
-  width: 290px;
-  height: 382px;
-  background-color: #fad;
-    figure {
-    width: 290px;
-    height: 290px;
-    margin-bottom: 20px;
-    background-color: #111; }
-    figcaption {
-      font-size: 24px;
-      color: #fff; }
+  display: flex;
+  justify-content: space-between;
+  // align-items:center;
+  flex-wrap:wrap;
+  width: 100%;
+  height: ${(props) => props.height || "100%"};
+  margin-right: 20px;
+  background-color: #add;
+
+  @media screen and (max-width: 320px) {
+    display:flex;
+    flex-dirextion: column;
+    gap: 10px;
+  }
 `;
 
+const ItemCard = styled.div`
+  width: calc(100% / 4);
+  
+`
+const ItemContent = styled.div`
+  width: 100%;
+  height: auto;
+  padding: 0.3rem 0;
+`
+
+const ItemDivContent = (props) => {
+  console.log(props);
+   
+  return (
+    <ItemDiv>
+      <ItemCard height={'290px'} />
+        <Link to="/">
+          <img alt="" src=""/>
+        </Link>
+      <ItemContent></ItemContent>
+    </ItemDiv>
+  )
+}
+
+
 const ItemDivSample = () => {
-  const names = ['나홀로 즐겁게 혼밥', '스킨케어', '방구석 헬스장', '2022 베리 페리'];
-  const nameList = names.map((name, idx) => <figcaption key={idx}>{name}</figcaption>);
-return <ItemDiv>{nameList}</ItemDiv>;
+    return (
+        <ItemDiv>
+          <figure>img</figure>
+          <figcaption>나홀로 즐겁게 혼밥</figcaption>
+        </ItemDiv>
+    );
 };
 
-// const ItemDivSample = () => {
-//     return (
-//         <ItemDiv>
-//           <figure>img</figure>
-//           <figcaption>나홀로 즐겁게 혼밥</figcaption>
-//         </ItemDiv>
-//     );
-// };
-
-export default ItemDivSample;
+export default ItemDivContent;

@@ -80,9 +80,6 @@ const WorkInWinter = styled.div`
 `;
 
 const Item = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   width: 100%;
   height: 382px;
   margin-bottom: 40px;
@@ -148,7 +145,8 @@ const ShowCase = () => {
           <figcaption>만나서 반가워요</figcaption>
         </WorkInWinter>
         <Item>
-          <ItemDiv />
+          <ItemDiv 
+          /> {/* item={filterData} */}
         </Item>
         <ListTitle>
           <HeaderSecondTitle color="#fff" fontSize={"44px"}>showcase list</HeaderSecondTitle>
