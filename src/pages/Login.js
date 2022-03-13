@@ -65,6 +65,7 @@ const LoginButton = styled.div`
     color: #ffffff;
     margin-bottom: 20px;
     border-radius: 10px;
+    cursor: pointer;
     background-color: rgba(51, 51, 51);
   }
 `;
@@ -124,7 +125,7 @@ const Login = () => {
   const [errorFromSubmit, setErrorFromSubmit] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = async (data) => {
+  const onSubmit = async data => {
     try {
       setLoading(true);
 

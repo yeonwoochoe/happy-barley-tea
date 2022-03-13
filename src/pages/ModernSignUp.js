@@ -66,16 +66,12 @@ const ModernSignUp = () => {
   const password = useRef();
   password.current = watch("password");
 
-  const onSubmit = async (data) => {
+  const onSubmit = async data => {
     try {
       setLoading(true);
 
       const auth = getAuth();
-      let createdUser = await createUserWithEmailAndPassword(
-        auth,
-        data.email,
-        data.password
-      );
+      let createdUser = await createUserWithEmailAndPassword(auth, data.email, data.password);
 
       set(ref(getDatabase(), `users/${createdUser.user.uid}`), {
         name: createdUser.user.displayName,
@@ -136,17 +132,15 @@ const ModernSignUp = () => {
                 placeholder="비밀번호를 다시 한번 입력해주세요."
                 {...register("password_confirm", {
                   required: true,
-                  validate: (value) => value === password.current,
+                  validate: value => value === password.current,
                 })}
               />
-              {errors.password_confirm &&
-                errors.password_confirm.type === "required" && (
-                  <p>This password confirm field is required</p>
-                )}
-              {errors.password_confirm &&
-                errors.password_confirm.type === "validate" && (
-                  <p>The passwords do not match</p>
-                )}
+              {errors.password_confirm && errors.password_confirm.type === "required" && (
+                <p>This password confirm field is required</p>
+              )}
+              {errors.password_confirm && errors.password_confirm.type === "validate" && (
+                <p>The passwords do not match</p>
+              )}
             </InputWrapper>
           </fieldset>
           <fieldset>
