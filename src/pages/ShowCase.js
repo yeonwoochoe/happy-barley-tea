@@ -145,7 +145,8 @@ const ShowCase = () => {
           <figcaption>만나서 반가워요</figcaption>
         </WorkInWinter>
         <Item>
-          <ItemDiv />
+          <ItemDiv 
+          /> {/* item={filterData} */}
         </Item>
         <ListTitle>
           <HeaderSecondTitle color="#fff" fontSize={"44px"}>showcase list</HeaderSecondTitle>
