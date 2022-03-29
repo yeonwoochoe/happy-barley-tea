@@ -1,74 +1,56 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import ItemList from '../components/Showcase/ItemList.js';
+import { Link } from "react-router-dom";
 
 const ItemDiv = styled.div`
   display: flex;
-  flex-direction: row;  
+  justify-content: space-between;
+  // align-items:center;
+  flex-wrap:wrap;
   width: 100%;
-  height: 382px;
+  height: ${(props) => props.height || "100%"};
   margin-right: 20px;
-  background-color: #fad;
-  
-  // ItemList 
+  background-color: #add;
+
+  @media screen and (max-width: 320px) {
+    display:flex;
+    flex-dirextion: column;
+    gap: 10px;
+  }
 `;
 
-const ItemDivSample = (props) => {
-  const [items, setItems ] = useState([
-    { id: 1, name: "눈사람" },
-    { id: 2, name: "얼음" },
-    { id: 3, name: "눈" },
-    { id: 4, name: "바람" }
-  ]);
-  const [ name, setName ] = useState("");
+const ItemCard = styled.div`
+  width: calc(100% / 4);
+  
+`
+const ItemContent = styled.div`
+  width: 100%;
+  height: auto;
+  padding: 0.3rem 0;
+`
 
-  const addItems = () => {
-    let itemCopy = [...items];
-    let size = items[items.length - 1].id;
-    itemCopy.push({id: size + 1, name: name });
-    setItems(itemCopy);
-  };
-
-  const onChangeHandle = (e) => {
-    let value = e.target.value;
-    setName(value);
-  };
-
-  const onRemoveItem = (id) => {
-    setItems((items) => items.filter((item) => item.id != id));
-  };
-
+const ItemDivContent = (props) => {
+  console.log(props);
+   
   return (
-    <>
-      <input type="text" value={name} onChange={onChangeHandle} />
-      <buttton onClick={addItems}>add</buttton>
-
-      <div>
-        {items.map((item, index) => {
-          return (
-            <ItemList
-            key={index}
-            item={item}
-            onRemoveItem={onRemoveItem}
-            />
-          );
-        })}
-      </div>
-    </>
+    <ItemDiv>
+      <ItemCard height={'290px'} />
+        <Link to="/">
+          <img alt="" src=""/>
+        </Link>
+      <ItemContent></ItemContent>
+    </ItemDiv>
   )
-// return <ItemDiv>
-//         {/* {nameList} */}
-//         {ItemList}
-//        </ItemDiv>;
+}
+
+
+const ItemDivSample = () => {
+    return (
+        <ItemDiv>
+          <figure>img</figure>
+          <figcaption>나홀로 즐겁게 혼밥</figcaption>
+        </ItemDiv>
+    );
 };
 
-// const ItemDivSample = () => {
-//     return (
-//         <ItemDiv>
-//           <figure>img</figure>
-//           <figcaption>나홀로 즐겁게 혼밥</figcaption>
-//         </ItemDiv>
-//     );
-// };
-
-export default ItemDivSample;
+export default ItemDivContent;

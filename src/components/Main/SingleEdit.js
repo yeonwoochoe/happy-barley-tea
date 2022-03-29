@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 import {
   CardCaption,
   CardImage,
@@ -13,8 +13,8 @@ import {
   ViewImage,
   ViewWrapper,
   WrapperDiv,
-} from '../common/Common';
-import { singleEdit } from '../../api';
+} from "../common/Common";
+import { singleEdit } from "../../api";
 const SingleEditDiv = styled.section`
   width: 100%;
   background-color: #ffffff;
@@ -29,36 +29,32 @@ const HeaderMoreButton = styled.div`
 
 const SingleEdit = () => {
   const data = [1, 2, 3];
-  console.log(singleEdit());
-
-  // const recentData = singleEdit().filter(data);
-  // console.log(recentData);
 
   return (
     <SingleEditDiv>
-      <SectionWrapper width={'1280px'}>
-        <WrapperDiv flexDirection={'row'} justifyContent={'space-between'}>
+      <SectionWrapper width={"1280px"}>
+        <WrapperDiv flexDirection={"row"} justifyContent={"space-between"}>
           <HeaderSecondTitle color={`#111111`}>single edit</HeaderSecondTitle>
           <HeaderMoreButton>
-            <Link to='/'> + more</Link>
+            <Link to="/"> + more</Link>
           </HeaderMoreButton>
         </WrapperDiv>
-        <ViewWrapper columns={'2fr 1fr'}>
+        <ViewWrapper columns={"2fr 1fr"}>
           <ViewImage>image</ViewImage>
           <ViewContent>title</ViewContent>
         </ViewWrapper>
         <CardWrapper>
           <CardList
             style={{
-              display: 'grid',
-              gridAutoFlow: 'column',
-              justifyContent: 'space-between',
+              display: "grid",
+              gridAutoFlow: "column",
+              justifyContent: "space-between",
             }}
           >
-            {data.map(data => (
-              <CardLi>
+            {data.map((index, key) => (
+              <CardLi key={key}>
                 <WrapperDiv>
-                  <CardImage width={'400px'} height={'400px'}>
+                  <CardImage width={"400px"} height={"400px"}>
                     img
                   </CardImage>
                   <CardCaption>

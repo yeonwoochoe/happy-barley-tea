@@ -111,16 +111,30 @@ https://m.thesingle.co.kr/
 - **GlobalStyle.js** : reset.css
 - **theme.js** : common.css
 
-### 이벤트 핸들러 props
+# 협업 내용
 
-- `on*` 접두사 + 동사의 형태로 작성.
-- _onClick, onClose, onSubmit..._
+프론트 엔드로만 구성된 협업 프로젝트이기 때문에 백 서버 및 데이터는 파이어 베이스를 통해 구축을 하였으며, **파이어베이스**에 있는 로그인 회원가입 및 데이터를 불러오는 작업을 진행 하였습니다.
 
-### 이벤트 핸들러
+하나의 팀원의 레파지토리에서 작업을 하되 나머지 팀원들이 자기의 git에 fork를 통하여 pull request로 메인 레파지토리에 요청을 보내어 파일을 관리하도록 하였습니다.
 
-- `*handler` 동사 + 접미사의 형태로 작성.
-- _isValidHandler, isLoginEnteredHandler..._
+또한 pull request 할때 reviewer 기능을 추가하도록 하였으나, 이 부분은 서로의 시간이 맞지 않는 관계상 스킵을 하여 관리 하였으며 꾸준한 대화를 통해 기능적인 부분과 UI/UX 부분들을 맞춰 나아갔습니다.
 
-```jsx
-<Component **onClick**={**isValidHandler**} />
-```
+프로젝트를 처음 접해보기에 스타일 가이드 및 컨벤션을 맞추도록 하였으나 쉽지 않아, 각자의 변수 네이밍 및 스타일을 갖추어 제작하였으나, 공통적인 common 부분들은 맞추도록 노력했습니다.
+
+![Untitled 1](https://user-images.githubusercontent.com/34502254/160141212-98bdf169-ffcd-400a-bc9c-563f0db70102.png)
+
+해당 Login Join 으로 로그인 및 회원가입을 할수 있으며,
+
+![Untitled 2](https://user-images.githubusercontent.com/34502254/160141230-2e3e7023-db76-43f3-a334-f50c81b07286.png)
+
+회원 가입 성공시 로그아웃과 마이페이지로 변경이 됩니다.
+
+- 로그인이 되지 않았을때 마이페이지로 들어가게 된다면, 로그인 상태 값을 확인하여 메인으로 이동하게 하는 기능을 추가하였습니다.
+- 로그인시 이메일과 비밀번호가 옳바르지 않거나 없는 이메일이 없는 이메일 이라면 경고창으로 해당 하는 아이디가 없도록 표시를 하도록 하였습니다.
+- 회원가입시 중복 가입을 막기 위해 고유 이메일이 있는지 확인하는 검증을 파이어베이스로 기능 구현을 하였습니다.
+- 리덕스를 이용해 상태관리를 하였습니다. 유저의 이메일이 접속이 되었다는것을 모든 컴포넌트에서 사용하기위해 provider를 통해 모든 컴포넌트에서 사용할 수 있도록 처리 하였으며, payload 와 action.state 및 type을 지정햐여 redux를 사용하는 방법을 배우게 된 계기가 되었습니다.
+
+![single_pluse_1](https://user-images.githubusercontent.com/34502254/160141256-120cfaa0-4f9e-48ae-a803-334ef6d5c3ad.gif)
+
+- 카테고리를 클릭하면 type 일치한 이미지를 불러오게 됩니다.
+    - 미숙한 점으로는 해당 기능을 버튼으로 구사하였기에 , location 값에 query 주소값이 포함이 되지 않는 점으로 이 부분은 추후 route 기능을 통해 다시 재작업할 예정입니다.
