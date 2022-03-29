@@ -111,18 +111,14 @@ button {
 }
 `;
 
-const createStoreWithMiddleWare = applyMiddleware(
-  promiseMiddleWare,
-  ReduxThunk
-)(createStore);
+const createStoreWithMiddleWare = applyMiddleware(promiseMiddleWare, ReduxThunk)(createStore);
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider
       store={createStoreWithMiddleWare(
         Reducer,
-        window.__REDUX_DEVTOOLS_EXTENSTION__ &&
-          window.__REDUX_DEVTOOLS_EXTENSTION__()
+        window.__REDUX_DEVTOOLS_EXTENSTION__ && window.__REDUX_DEVTOOLS_EXTENSTION__()
       )}
     >
       <BrowserRouter>
